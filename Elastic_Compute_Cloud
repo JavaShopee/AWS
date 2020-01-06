@@ -1,4 +1,6 @@
 https://www.youtube.com/watch?v=f_6GmwWnyNc : Nov 2019
+https://drive.google.com/file/d/18qqmrwgIEr2qNYJfmt7Rtgf8tks4jmo7/view
+https://www.youtube.com/channel/UCONG6lbxc5avyn-4HZIbXMg/videos
 
 Secure Resizable compute capacity in clouds
 Can be scaled up or down
@@ -36,3 +38,61 @@ from Customized AMI , you can launch any num of instance of any instance type wi
 
 Example : AWS Cloud >> Launced EC2 Instance using public AMI(Amazon Linux)>> Deploy upon it Drupal Web app + MySQL DB >> 
 Customization >> Capture Image >> Launced 10 EC2 instances >> same Drupal Web / MySQL db running upon them
+
+
+
+IP Address  : Com b/w servers
+
+Private IP Addr : Internal Communcation(not supposed to be use access internet). Fre and static(stay with instance till it's life time)
+Ranges of private IP addr :
+10.x.x.x
+172.16.x.x to 172.31.x.x
+192.168.x.x 
+assigned by soultion architects
+
+
+Public IP Addr : Public comm/Extenal/Internet comm
+AWS can assign it automatically free/Client Paid/Architect Paid
+If you restart the server it will change(Dynamic in nature)
+
+
+Elastic IP: Relevant to AWS, same as public IPs, used for external/internet comm, they never change(static) even if you 
+restart the instance
+
+End Users >> type Domain xyz.com >> Hit the DNS server>> Translate to public IP addr of instance >> reach the website 
+
+Range : Any except private/ Loop Back IP(for troubleshooting) 127.0.0.1
+X b/w zero to 255
+
+5 Elastic IPs /Region free
+
+EIP when assigend to Stopped/Idle instances are paid
+
+________________________VPC________Virtual Data Center________
+Isolated DCs maintained by individual orginizations 
+>> Enhanced security 
+>> Transperancy
+>> Flexibility
+>> Isolation
+
+
+Imagine VPC inside mumbai region with private IP 10.0.0.0/16 having 2 subnets(belongs to ap-south 1a and 1b AZ)
+
+subnets : complete block of private IP adds which consists of your EC2 instances/DB instances
+max 256 subnet in a VPC
+Launced EC2 ins inside subnets>> 
+
+Your instances will get the private IP from subnet range
+Subet Range : 10.0.2.0/32 >> Instance IP 10.0.2.2/32
+Subet Range : 10.0.3.0/24 >> Instance IP 10.0.3.3/24
+
+
+Billing of Instances :
+Ondemand : based on num of hours. No Partial hr billing
+Reserved : 10 m5.2x large instance for 3 years>> 70% discount compared to on demand
+1 yr or 3 yr contract / no 2 yr
+Spot Pricing : Lab purpose/Experimatation >>90% discount compared to on demand using bidding. Instace can be terminated anytime
+Dedicated hosts : Allocate a complete physical server 
+Per Second Billing : Num of sec consumed at least 60 sec
+only support Amazon Linux/Ubuntu linux AMIs 
+
