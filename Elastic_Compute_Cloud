@@ -96,3 +96,7 @@ Dedicated hosts : Allocate a complete physical server
 Per Second Billing : Num of sec consumed at least 60 sec
 only support Amazon Linux/Ubuntu linux AMIs 
 
+
+Cloud Watch : Default monitoring tool, gauge upon the performance of EC2 intace 
+Standard Monitoring : frequency 5 min >> Free
+Detailed Monitoring >> frequency 1 min >> paid
