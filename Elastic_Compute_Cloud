@@ -1,0 +1,38 @@
+https://www.youtube.com/watch?v=f_6GmwWnyNc : Nov 2019
+
+Secure Resizable compute capacity in clouds
+Can be scaled up or down
+Can be integrated with other services(RDS, S3)
+Can be integrated with VPC for providing secure network
+Can be launched in one or more Regions/Availability Zones
+Support for different OS
+
+
+We can install OS(Windows /Linux) over EC2 instance, can run apps, install softwares, run scripts.
+Compute Power: VCPU, RAM, GPU, Storage
+Instance Type : Virtual representation of underlying physical resource for example t2.micro (free instance)
+1 VCPU, 1 GB RAM, 8(Linux)/30 GB(Windows) storage, 2.5 GHz Intel Xeon processor
+
+Higher Instance Type : m5.Xlarge 
+3 GB Ram
+
+Vertical Scaling : Add on the specification. Bump up the specs of exiting servers, RAM, CPU, GPU
+
+Horizonatl Scaling : Increase/Decrease the number of instances
+
+Amazon Machine Image: OS/Application/Software/Scrips/Services bundled/encapluslated together 
+Preconfigured package / Single Template which consists of different attributes required to boot EC2 instacne from scratch
+
+Categories : 
+Public AMI : Preconfigured/default template that anyone can use.
+             Disadv : less flexibility/customization
+             
+Customized AMI : My AMIs
+> Make use of public AMIs
+> Install Application/Sofware/Service/Scripts on public AMIs and then perform customization
+> Capure image out of it  >> Final Product
+
+from Customized AMI , you can launch any num of instance of any instance type with same serice / app running upon them
+
+Example : AWS Cloud >> Launced EC2 Instance using public AMI(Amazon Linux)>> Deploy upon it Drupal Web app + MySQL DB >> 
+Customization >> Capture Image >> Launced 10 EC2 instances >> same Drupal Web / MySQL db running upon them
