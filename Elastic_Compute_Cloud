@@ -92,7 +92,13 @@ Ondemand : based on num of hours. No Partial hr billing
 Reserved : 10 m5.2x large instance for 3 years>> 70% discount compared to on demand
 1 yr or 3 yr contract / no 2 yr
 Spot Pricing : Lab purpose/Experimatation >>90% discount compared to on demand using bidding. Instace can be terminated anytime
-Dedicated hosts : Allocate a complete physical server 
+Dedicated hosts : Allocate a complete physical server >> Tenancy 
+
+             Tenancy : Shared, Dedicated
+             Shared : Shared among different orginizations, individuals
+             Dedicated : Oracle Enterprise Edition database, software compliance and licencing
+    
+
 Per Second Billing : Num of sec consumed at least 60 sec
 only support Amazon Linux/Ubuntu linux AMIs 
 
@@ -100,3 +106,9 @@ only support Amazon Linux/Ubuntu linux AMIs
 Cloud Watch : Default monitoring tool, gauge upon the performance of EC2 intace 
 Standard Monitoring : frequency 5 min >> Free
 Detailed Monitoring >> frequency 1 min >> paid
+
+
+Security Group : Virtual Firewall , restrict incoming and outgoing traffic to the instance
+Filters : Includes Protocal, Ports, Source/Destination IP addresses
+
+SSH from Known IP address : port 22 for Linux bases and port 3389 for windows based EC2 instance
