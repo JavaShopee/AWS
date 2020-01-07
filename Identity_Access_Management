@@ -8,3 +8,52 @@ Authentiation/Autherization,Manages Billing,User Activity Tracking(cloud trail)
 
 Root account is not supposed to perform any launching, termination or deletion of resource
 Permissions are given using JSON policies/documents
+         Effect : Allow /Deny
+         
+Roles : Define permission for resources and external accounts
+
+Roles are assigned to Serrvice for example 1, S3FullAccess Json Policy/Permission role assigned to EC2 instance in order to communicate to 
+S3 Service
+
+Ex 2
+Cross region Relication : for ex S3 bucket in mumbai replicated to S3 in N Cal. AWS uses SSL/TLS to encript the data that flows
+across regions.
+Create IAM role and attach it to the source bucket in order to complete the replication
+
+Ex 3 : Cross Account Access
+Steve( from Developer root account) use the commnad "Switch Role" and use the IAM role to commit the code in S3 bucket (from another root 
+account)
+
+Roles are user 1. For Service to Service comm 2. Comm b/w two separate root accounts
+
+Policies : JSON Doc, Defines permission for 3 diff entities >> User, Groups, Roles
+
+Create a custom IAM policy and implement it
+
+1. Create 2 S3 
+2. Cretae custom IAM policy that will give read only permission to one of the bucket
+3. Create Grp 
+4. Attach custom IAM policy to that grp
+5. Create USer and attach it to the same grp
+6. Test
+
+Object >> Fundamental entity , Any piece of data that we put in S3 bucket is called object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
