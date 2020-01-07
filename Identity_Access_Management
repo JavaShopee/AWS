@@ -1,5 +1,10 @@
 Managed Policies : Managed by AWS/Customers. Can be applied to group or mutliple users or entities 
 
 Inline Polocies : Restricted to particular user
+https://www.youtube.com/watch?v=ydoD4pU_9Wo
 
-https://www.youtube.com/watch?v=WYH8SQW6RJQ
+Root Accout/Master Account : you signup using debit/credit card, Create IAM users.
+Authentiation/Autherization,Manages Billing,User Activity Tracking(cloud trail)
+
+Root account is not supposed to perform any launching, termination or deletion of resource
+Permissions are given using JSON policies/documents
