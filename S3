@@ -1,0 +1,10 @@
+Bucket : Fundamental Container
+Object : Fundamental Entity
+
+11 9's durability : 99.99...% durable
+It create multiple copies of obj and stores across mutiple AZs in same region
+
+Bucket can have unlimited amt of data /objects
+Free Tier Acc : 5 GB /month S3 storage
+Size of single obj should not exceed 5 tb
+Any Account : 100 buckets per account
