@@ -1,0 +1,5 @@
+Elastic_Block_Store : Categories : 
+Volumes   Snapshots
+
+Volumes : Block Level Storage , You attach with EC2 and DB Instances, Virtual Hard Disks
+Root Voulme : That consists of entire info to boot your instance from scratch
