@@ -1,0 +1,45 @@
+Bucket : Fundamental Container
+Object : Fundamental Entity
+
+11 9's durability : 99.99...% durable
+It create multiple copies of obj and stores across mutiple AZs in same region
+
+Bucket can have unlimited amt of data /objects
+Free Tier Acc : 5 GB /month S3 storage
+Size of single obj should not exceed 5 tb
+Any Account : 100 buckets per account
+
+S3 Selection is global : On the same page, we can access buckets that belongs to particular region
+
+DNS Complaint bucket name : Unique like gmail id
+Special Char : - and .
+Alphanumeric Chars
+lowercase
+3 to 63 characters long
+
+AES 256: Encript the data at rest, data isn't moving anywhere
+Transfer Accelerations : Upto 300% faster using edge locations
+
+User from europe can choose local edge locations to transfer data to and from mumbai.
+Speed up content uploading using best optimized network path
+
+It create multiple copies of obj and stores across mutiple AZs in same region
+Storage Classes : 
+Redundany
+Features
+
+Statndard Storage Class : Default 
+Features : Max amt of replication, highly available, highly durable, Real time and fast access to data, Costilist option
+Use Cases : Used to store mission critical data, needs to be access frequently
+
+Standard in Frequent Access 
+Standard_IA
+Same amt of replication, availability m, durability, 
+But Cheaper
+Downsides /Restrictions : at least 128 KB obj size, should keep for at least 30 days first as standard before converting to 
+Standard_IA
+
+
+
+
+
