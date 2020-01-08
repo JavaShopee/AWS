@@ -3,3 +3,46 @@ Volumes   Snapshots
 
 Volumes : Block Level Storage , You attach with EC2 and DB Instances, Virtual Hard Disks
 Root Voulme : That consists of entire info to boot your instance from scratch
+EBS Volumes Gurantees Durability and Security
+
+EBS Volumes are attached and mounted with EC2 Instances
+
+EC2 Instaces running on HP/IBM/Dell physical sever,EBS volumes running on NAS/SAN/Disk Physical Storage. Even though these
+two components appears as one, behind the scene they are running on separate h/w
+This increates durabbility >> Life cycle of volume is independent from Life Cycle of EC2 instance. Even in case EC2 crashes.
+
+EBS volume is confirned in a single AZ. Same EBS can be attahced to two diff EC2 in same AZ
+EBS volume is redundant in nature behind the scene. Data is replicated across servers within same AZ
+
+EBS volume are measured in terms if GibiByte(1 GiB = 1.07 GB)
+Max size of volume is 16 TibiByte
+
+IOPS/Throughput are used to measure the perfrmance of volumes.
+IOPS : Input Output Operations Per Second
+Throughput : Used for Sequential IOPS operations
+
+
+Administrator
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAms5PXyz3ZpkAc6CUdd96U+WdsKOagCBIPV/66utdEbK/VPX91Nx4o3ipZZUS
+nfYs4ST8wCSOb1lKyFHIIS2T+ZAJVIaFvvfBNV+Wum3Dv6oKxBUBrZS1OsR2GYAPksyrcflvVx7Q
+LcDk5FrFVNH8eDsZhzcsgeN6HbI3rhKbr1mPwBtEr+KxHfSotVD/1C5x1txVG9bKuxBNYzCFryW4
+OWNRiPFjEKWvG/9SIZJFSRp/p4oHjrEXAWmA8/9uFOBCsaZdWEooqFRKsEjVbzkGekVblnmUcJVR
+W8LlZGCVpwtgGb1jI/GSV2bx4Yx9ByjpQjI+Sl5fgzt3HpDTeTzStwIDAQABAoIBAQCGsUdCKl/A
+NxO7h1ZlEOLgqIKBtHezT2NLc31gdRTvVzU+eSI32PRmV5AcQI6IPi9iXcpEbAo6O9jjXrTgmUWM
++JQFpV4tgGftRpRg9SxCUXM4lIZ3P1JIJbQUD+Z89fOeIUeM59R+Wr1NKuVTHbmr6tAVZB4njYMs
+32mu3aXz9HeyBS0jNJvriH6Ftxl2VxvH+2Cy3WqjMoYaI7KsQV1Sl+YYk5lsbcIKTJg9Md2jqh+9
+wyS5yh7t22VOaMFNMx9HHc11nl9DSolIgWVUB4NiyaRjxMbzakxB1R1QQinKsZ4XaKPy6tfcUC+M
+yfbTyE+rmW136Aps/eHCqW8EmGiBAoGBAPoYu55t/0UKclQV7G+5yV9XhuWb7k7AaYsmdPXl4nnM
+uXuCG7aJTCRtC64D4MPEtwmn0JnvzDOWldvqrgopiQwtxyTPOiWPYws78A3OlLcAef+1vFnNjZtr
+Uue8/tlnHV6OoRW8470e4oSTM4LVvxTBkOY0DhaKEypV/9gFpi2hAoGBAJ51wsNpEuXkvqIZ9S6l
+zNChsO2r3BrAeKee2yDOWoTvyYB5BZhFoJKKLg5UVH9vperHujUKNQpi3rFNdY8Zdr65r+q8K/Wx
+fMLGyfFYssmGnJvmlpbXWqRie4F33ggCtq7VU94C3OcjPKP71TQQUhnf4iib99TeyzGDBxWW17FX
+AoGBAJj4CcG0e98prZYatrv7gdzL91l3T4Jhk+ylgAJrMmPXQVf206aJQcZB4FP2UULMjjvcpe2R
+y29+WnjhiMP0dbu6QEUWbvVMR4M2jPSU90cbhoNOED9JR6TZNyNA6QvmUwNj78kQ+KbTPi9ira4H
+uNEkN9Fl43wLxf8uDMd/ZQ4hAoGAY0hZXWIqSwxFPP+SlUWgzF9ioad6YvCRKETp+uYP5RbwY6Rw
+EvYdI3OcY7IGt0nW5QF689yPWxCTgveLXruPoPRq+mIoEOrBxrASuzrd2lKTMUMKuzv3OOPTikz2
+OoKov2Y+A+47Rj7Xsc8JyHMpXbje1J7UavWkzkLQX4CBaEUCgYABoJqWFYamSYKoN0cM6iHRAvVP
+aWqMp8mRFZ8RYdVfdBySOTR++Mcz8vjSTxcKL67uyl1URC9OPGpFp0TSoOjSZB6S6HeW8QMxNK4U
+s89Xi3F3LgnV3IpVzCl2zc3R8wgP2qkIHUUvZDjqUwlvPxD/JL/FFSzbO9M4jIuHt5/Rqg==
+-----END RSA PRIVATE KEY-----
