@@ -32,12 +32,27 @@ Statndard Storage Class : Default
 Features : Max amt of replication, highly available, highly durable, Real time and fast access to data, Costilist option
 Use Cases : Used to store mission critical data, needs to be access frequently
 
-Standard in Frequent Access 
+Standard Infrequent Access 
 Standard_IA
 Same amt of replication, availability m, durability, 
 But Cheaper
 Downsides /Restrictions : at least 128 KB obj size, should keep for at least 30 days first as standard before converting to 
 Standard_IA
+Retriveal Fee : per gb back to local machine
+Use Case : Any data that you access infrequently for ex Archived data 
+
+Intelligent Tiering : Saves the data in 2 formats : Frequent access, Infrequent access
+Any data that is not being accessed from last 30 days,auto transitioned to infreq category
+As soon as the data is accessed again, it's moved to freq access cat
+
+One Zone IA : Data is stored and replicated in only one AZ. Less redudant, less durable, less available and you may 
+loose the data in case AZ goes down
+Use Case : Less Critaical, Secondary backups
+
+Glacier : Cheapest option in terms of storage used for archiving 
+Compliance Data, Data that is not accessed frequently because there is retiival fee and retrival time is high
+Optionally you can expedite the retrival but have to pay 
+
 
 
 
