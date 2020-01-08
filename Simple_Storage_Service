@@ -53,6 +53,22 @@ Glacier : Cheapest option in terms of storage used for archiving
 Compliance Data, Data that is not accessed frequently because there is retiival fee and retrival time is high
 Optionally you can expedite the retrival but have to pay 
 
+LIfeCycle Management
+Transitions 	
+
+For current version of objects
+Transition to Standard-IA after 30 days
+Transition to One Zone-IA after 60 days
+Expiration 	
+Expire after 365 days
+Permanently delete after 365 days
+
+
+Replication : Cross Region Replication : Object in S3 bucket in mumbai auto replicated to S3 bucket in N Cal
+We have to enable versioning on both the buckets
+Apply IAM role to source bucket
+Use Case : DR
+
 
 
 
