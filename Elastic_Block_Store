@@ -92,6 +92,12 @@ Incremental in nature : Only changed blocks will be added after first snapshot
 
 Volume(If Encripted) >> Snapshot (Auto Encripted) >> Duplicate Vol(Auto Encripted) >> In same or different AZ/Region
 
+Unencrypted Sanpshot : We can make it public and share with other accounts
+Anyhhing that is encrypted can't be made public
+Encrypted Sanpshot : Can't be shared with other acc if encrpted using Default CMK
+Encrypted Sanpshot : Can be shared with other acc if encrpted using Custom CMK + Custom CMK is already shared wiht that acc
+
+
 
 
 
