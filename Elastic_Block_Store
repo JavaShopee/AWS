@@ -28,6 +28,21 @@ Volume and Instance should be in same AZ in order to allocate volume to that ins
 Start menu : RUN >> diskmgmtm.msc
 To be on safer side, it's recommended NOT to change the size of C drive/root volume
 
+Whenever we encrypt the data : 
+1. Data at rest will be encrypted
+2. Sanpshot will be encrypted
+3. I/O ops b/w EC2 instance and volume will be encrypted
+
+To encrypt the volume, we make use of the service called KMS(Key management Service)
+
+Key management Service wiil help you to maintain 2 types of keys >
+> Default CMS(Customer Master Key)/AWS Maanged Keys : No Flexibility >> NOT FREE 
+> Custom CMK (Customer managed Key) : Lot of Flexibility >> NOT FREE
+
+Volume and Key should be in same region
+Volume and EC2 instance should be in same AZ
+
+
 
 
 
