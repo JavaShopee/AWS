@@ -82,6 +82,15 @@ Throughput : 250 MiB/S/GiB
 Cheaper than Throughput optimized 
 
 Magnetic : Previous generation volume 
+Cheapest / Worst Performance / Experientation Lab Purpose
+
+Snapshots : 
+point-in-time backups, Incremental in nature , Disaster recovery and Data Migration
+Let say snapshot for specific volume is stored in one of the S3 bucket managed by AWS
+Volume is AZ specific resource wheras Snapshot is region specific
+Incremental in nature : Only changed blocks will be added after first snapshot  
+
+Volume(If Encripted) >> Snapshot (Auto Encripted) >> Duplicate Vol(Auto Encripted) >> In same or different AZ/Region
 
 
 
