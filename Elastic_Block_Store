@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=WAj--8exE5c
+
 Elastic_Block_Store : Categories : 
 Volumes   Snapshots
 
@@ -20,6 +22,114 @@ Max size of volume is 16 TibiByte
 IOPS/Throughput are used to measure the perfrmance of volumes.
 IOPS : Input Output Operations Per Second
 Throughput : Used for Sequential IOPS operations
+
+Volume and Instance should be in same AZ in order to allocate volume to that instance
+
+Start menu : RUN >> diskmgmtm.msc
+To be on safer side, it's recommended NOT to change the size of C drive/root volume
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Administrator
