@@ -43,9 +43,45 @@ Volume and Key should be in same region
 Volume and EC2 instance should be in same AZ
 
 
+Types of voulumes : 
+1. General Purpose SSD gp2
+2. Provisioned IOPS SSD io1
+3. Magnetic 
+4. Throughput optimized HDD st1
+5. Cold HDD sc1
+
+Free Tier you will get : General Purpose SSD gp2 /Magnetic
+
+Voulmes : SSD(Solid State Disk) 
+ : Faster / Costlier /High Performace(IOPS)
+ IOPS : Input Ouput Opr Per Sec : Higher the IOPS, higher the performance
+
+/ HDD(Hard Disk Drive)
+  Traditional Hard Drive/Slower(low Throughput)/Cheaper
+Higher the Throughput, better the performance  
 
 
+General Purpose SSD GP2 : Small to medium size envs, No consitent performance, 
+On an average : 3000 IPS
+Max/Burst performance : 10,000 IOPS
+Use Case : Development Env, System Boot volumes
 
+Provisioned IOPS SSD : Highest and consistent performance 
+Max/Burst performance :20,000 - 64,000 IOPS
+Costlient
+Use Case : Casandra, Mongo DB, Dynamo DB, Ultra High Performance in terms of IOPS
+
+IOPS to Volume Size Ratio : 50 : 1 
+For each GiB of volume, you will get 50 IOPS 
+
+Throughput optimized HDD : Long Sequentioal Operations, Big Data , ETL, Log Processing
+Throughput : 500 MiB/S/GiB
+  
+Cold HDD : Store Cold Data /Archive Data that you don't access freq
+Throughput : 250 MiB/S/GiB
+Cheaper than Throughput optimized 
+
+Magnetic : 
 
 
 
