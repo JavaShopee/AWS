@@ -1,4 +1,7 @@
 Virtual_Private_Cloud
+https://www.youtube.com/watch?v=G4KJPLDGMiI
+AWS Tutorials | Virtual Private Cloud (VPC) Masterclass | May 21 and 22, 2019
+
 
 Is the virtual data center and you get the full control upon its resources
 Flexibility and enhanced security
@@ -22,4 +25,36 @@ Ranges (X from 0 to 255):
 192.168.x.x
 
 Depending upon the private IP addr range of subnet and vpc, private IP is assigend to EC2 instance 
+VPC : 10.0.0.0/16
+SUbnet : 10.0.2.0/24
+EC2 : 10.0.2.32/24
+
+Public IP : External Communication over the internet
+Range : Except private and loop back IPs troubleshooting (127.x.x.x)
+Assined by AWS/ISP
+Not Static in nature : It will change as you restart the instance
+
+XYZ.com >> DNS Service >> Public IP Addr
+You have to change your DNS entries everytime the instance restarts
+
+Elastic IP Address : Same as public but they are static in nature even you stpo and start instances multiple times
+External Communication 
+Account specific IPs
+Maanged by customers
+
+Downside : 5 elastic ips/region free and this is max limit for any account type
+Should not be allocated to Idle/Stopped Instances otherwise AWS will start charging
+
+
+Subnet : is a complete range/block of private IPs. It consists of instances and each subnet is assocaited to specific AZ.
+Types of Subnet > Public Based Resources    >>  Like Web Servers
+                > Private Based Resources   >>  Database resources
+                
+                
+Internet Gateway >> Opens the access to internet for VPCs.
+I IGW is enough for 1 VPC
+
+Route Table : 
+set of routes which determines how the network traffic will flow in and out of VPC
+
 
