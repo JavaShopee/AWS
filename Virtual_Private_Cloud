@@ -171,4 +171,19 @@ Now, try installing updates to the instance running within Private
 subnet.
 Clean up
 
+VPC Peering:
+Connect mutliple VPCs together
+Estblaish connection across VPCs in separate regions
+Estblaish connection across VPCs in separate accounts
 
+Use Case :
+Finance VPC, Mgmt VPC, HR VPC in same comapny can be connected together
+Connect Nasa VPS to SpaceX VPC (separate accounts)
+
+Limitations : No overlapping CIDR blocks(no two ip addr should be same)
+
+VPC Peering connection across 2 diff VPCs
+Default VPC(Requestor) --------------------> Custom VPC(Acceptor)
+Requestor---------------Invite-------------->Acceptor
+Acceptor accepts the invite
+Manipulate route table
