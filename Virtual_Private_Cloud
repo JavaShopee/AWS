@@ -111,3 +111,64 @@ CG at the Branch Office/ Data Center border
 VPN connection b/w VPG and CG , it's encrypted tunnel over the internet
 
 
+CIDR : Classless inter domain routing : CIDR Block/ IP Block
+IPV4 address : 32 bits
+10.0.0.0 >> 4 octate each with 8 bits(8+8+8+8)
+
+Let say VPC with CIDR range : 10.0.0.0/16
+first 16 bits > Define N/w
+last 16 > Define host
+
+Carve out subnet out of it , add 8 more bits to n/w
+10.0.0.0/24
+10.0.1.0/24
+10.0.2.0/24
+10.0.3.0/24 ...............10.0.255.0/24
+
+Total 256 subnets
+
+Carve out instance out of it , add 8 more bits to subnet let'say 10.0.2.0/24
+
+10.0.2.0/32
+10.0.2.1/32
+10.0.2.2/32
+10.0.2.3/32....10.0.2.255/32
+
+Total 256 instances in one submet
+
+
+Custom VPC :
+1. Allocate Elasti IPs to Servers/Instances in public subnet
+2. Connect public subnet with IGW
+3. Private Subnet should be isolated from internet
+
+If you choose Dedicated tenancy at the VPC level, every instance in that VPC will be launched in dedicated 
+tenancy no matter what tenancy you choose at the instance level while creating instance
+
+If you choose default tenancy at the VPC level, you can decide later on that you want to launch 
+instance on dedicated host(dediacted tenancy) or shared host(shared tenancy)
+
+Building Our First Non-Default VPC
+
+Create a VPC with CIDR 10.0.0.0/16 while choosing tenancy as “Default”.
+Create two different subnets - one Public and another Private within this VPC.
+Create an Internet Gateway and attach it to the VPC.
+Create a route table consisting of a route towards the internet through same internet gateway.
+Associate this route table to the subnet to make it a “Public” subnet.
+Launch an instance in each of these subnets.
+Allocate an IP to your account and associate it with the EC2
+instance running in Public subnet.
+Initiate an SSH connection to the instance running in Public subnet
+and try installing updates to it.
+Initiate an SSH connection to the instance running in Private subnet
+through instance running in Public one.
+Create a NAT Gateway while associating an Elastic IP to it.
+Create a route table with a route towards the internet through NAT
+Gateway.
+Associate this route table to the subnet which would be your Private
+one.
+Now, try installing updates to the instance running within Private
+subnet.
+Clean up
+
+
