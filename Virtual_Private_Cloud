@@ -42,19 +42,72 @@ External Communication
 Account specific IPs
 Maanged by customers
 
+Once you assign the elastic ip to the instance, it's public ip is released. Elastic IP = Public IP
+Life Cycle of elastic IPs is independent of Life Cycle of Instace. 
+Elastic IPs are account specific resources
+
 Downside : 5 elastic ips/region free and this is max limit for any account type
 Should not be allocated to Idle/Stopped Instances otherwise AWS will start charging
 
 
 Subnet : is a complete range/block of private IPs. It consists of instances and each subnet is assocaited to specific AZ.
-Types of Subnet > Public Based Resources    >>  Like Web Servers
-                > Private Based Resources   >>  Database resources
+Types of Subnet Public Subnet  > Public Based Resources   >> Like Web Servers
+                Private Subnet > Private Based Resources  >> Database resources
                 
                 
-Internet Gateway >> Opens the access to internet for VPCs.
-I IGW is enough for 1 VPC
+Internet Gateway >> Opens the access to internet for VPCs
+1 IGW is enough for 1 VPC
 
 Route Table : 
-set of routes which determines how the network traffic will flow in and out of VPC
+Set of routes which determines how the network traffic will flow in and out of VPC(internally or externally out of VPC)
+
+
+NAT(Network Addreess Translation) Device : 
+
+
+NAT Deivce running on public subnet
+1. Help instance running in private subnet to download updates
+2. Launched in public subnet
+3. Associate an IP to it
+
+Translate the IP addresses as soon as the traffic goes thru it
+
+MySql Database running on private subnet need to download some pathces and updates
+via Route table, it will communicate to NAT Device. NAT Device will expose it's own elastic ip as source ip to reach the
+internet. When NAT will get the resonse, it will use mysql private ip as destination ip to route the updates
+
+NAT Gateway  > Virtual Gateway    More stable   More Redundant     Managed Servcie(by AWS)  Requires less admin efforts 
+NAT Instance > EC2 Instance       Less stable   Less Redundant     Managed by customer      Requires lot of config      
+
+NAT Gateway  >  > Highly Available                              Cater to High Bandwidth requirements
+NAT Instance >  > Not Stable as compared to gateway             Not capable enough for High Bandwidh needs
+
+VPC >
+Default           : Managed by AWS  
+Customer Managed  : Managed by customer
+
+Every subnet is public, there is no concept of security/private subnet
+By default, every instance will be launched in public subnet and every instance will get public ip by default
+Less flexible , Less Secure
+
+Custom VPC >> has concept of private subnet/public subnet. There is no concept of public IPs, you have to depend upon 
+elastic IPs
+Flexible and more secure, you can deploy db in private subnet of VPC
+
+You should not delete any of the parameter of default VPC
+
+
+NACL  : Network Access Control List
+-Virtual Firewall that you apply to the subnets
+
+Security Grp : Restrict incoming and outgoing traffic wrt instance with the help of security grp
+NACL : Restrict incoming and outgoing traffic wrt subnet with the help of NACL
+
+
+Virtual Private Gateway/ Customer Gateway
+
+VPG at the VPC border
+CG at the Branch Office/ Data Center border
+VPN connection b/w VPG and CG , it's encrypted tunnel over the internet
 
 
