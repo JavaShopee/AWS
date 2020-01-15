@@ -19,6 +19,81 @@ other DNS Service provider in market : GoDaddy, Behost
 Why Route 53? Route -->Routing, DNS uses TCP/UDP port 53
 
 3 main functions of Route 53:
-1. It's being used for domain registration, but fresh new domain from aws
+1. It's being used for domain registration, buy fresh new domain from aws
 2. DNS Service : Converitng domain into IP addresses or DNS name of resources running in AWS
-3. Used for Health checking, based upon that you can perform DNS failover. Route 53 works with CloudWatch to perform health check
+3. Used for Health checking, based upon that you can perform DNS failover. Route 53 works with CloudWatch to perform health check.
+and to monitor the performance of your resources.
+
+DNS Failover : If one region goes down,we have entire backup of that region.
+If mumbai goes down, I can failover to N Cal
+
+Hosted Zone : Container that contains entire routing info for your domains and sub domains
+
+NS  : Name Servers(actual Domain Name Servers).AWS will allocate 4 DNS that perofm the DNS resolution/DNS Servcie
+      Convert Domain to IP addr of instances, end point names of instacne, IP of load balancer
+SOA : Start Of Authority : Points towards primary name server(out of all 4)
+     It's a master server(out of all 4)
+     It will just manage majority of DNS queries 
+     It will contain the entire read/ write copy of the hosted zone db
+     
+     
+     
+Create Record sets :
+Type A                   : Convert domain name into IP addresses of instances IPV4
+Type AAAA                : Convert domain name into IPV6 address
+Type CNAME Canonical Name: use alias like facebook.com to www.facebook.com
+
+
+Create 2 instances with script :
+
+#!/bin/bash
+yum update -y
+yum install httpd24 -y
+service httpd start
+chkconfig httpd on
+echo "<html><body><h1>Hi there, this is web server</h1></body></html>" > /var/www/html/index.html
+
+TTL(seconds) Time to live : How long the record set is cached by the web browser on the computer.
+The time for which a DNS resolver caches a response is set by a value called the time to live (TTL) associated with every record.
+The lower the value, faster the chnages will be propogated.
+
+Distrubuted the traffic to different instances running in separate AZs with the help of load balancer network using 
+Latency Based and Weighted Routing Policy.
+For this, we need to have domain registered and go to Hosted Zone and Create Record Set
+Create Record Set >> Alias Record >> Choose Mumbai / NCAL LB
+
+
+Routing Policiy : Simple : Just route the traffic to one of the instance in n/w
+Routing Policiy : Latency Based : For user in india, Mumabi region will serve the traffic as opposed to N Cal
+Routing Policiy : Weighted Routing Policy : 50% traffic to Mumbai and 50% to N Cal
+Routing Policiy : GeoLocation Routing Policy : Depending upon the geo location, you will be routed to that particualr 
+resource/region
+                 Asia Users : Mumbai
+                 North Amarica : N Cal
+                 rest will not go anywhre(other than these 2 continents, will not go anywhere)
+Routing Policiy : FailOver :
+Mumbai : Primary/Active
+N Cal : Seconday / Stand By
+
+Route 53 will make use of cloudwatch to perform health checkup of Mumbai Region, IF Mumbai goes down, it will failover to 
+the N Cal region. cloudwatch will declare mumbai as unhealthy.
+We have to configure helt check for this.
+
+Routing Policiy : Multi Value Answer :
+Different Instances for same domain
+xyz.com >> 122.12.32.22, 132.23.32.22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
