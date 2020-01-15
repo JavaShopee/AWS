@@ -1,1 +1,24 @@
+https://www.youtube.com/watch?v=FxLtEnrb84M
+
 Route_53 : is a Domain Name System(DNS)
+
+Domanin name like (facebook.com) ------hit the DNS Server---->Convert it into IPV4/IPV6 ip address ------> Hit the actual web server
+DNS Server is the phonebook of the internet
+
+Whenevr you type in website name in browser, your computer will first look into the local cache and then it hits the DNS server.
+
+>>Example
+Load Balancer running over public subnets
+Private Subnet with db instacnce commuicationg with public subnet
+Users typing in xyz.com, DNS Server/Route 53 will translate it Load Balancer's DNS name
+Load balancer will route the traffic to instances running in public subnet
+
+AWS they have there own DNS Service known as Route 53
+other DNS Service provider in market : GoDaddy, Behost
+
+Why Route 53? Route -->Routing, DNS uses TCP/UDP port 53
+
+3 main functions of Route 53:
+1. It's being used for domain registration, but fresh new domain from aws
+2. DNS Service : Converitng domain into IP addresses or DNS name of resources running in AWS
+3. Used for Health checking, based upon that you can perform DNS failover. Route 53 works with CloudWatch to perform health check
