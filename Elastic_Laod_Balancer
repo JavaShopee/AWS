@@ -28,4 +28,10 @@ AWS Certificate Manager (ACM) makes it easy to provision, manage, deploy, and re
 
 If I included HTTPS/SSL Traffic in the front end, I need that certificate on my website.
 
-LB is region specific resource. Will work on mutilpe AZs in same region
+LB is region specific resource. Will work on mutilpe AZs in single region
+
+Classic Load Balancer >> Works with 2 layes: Transport and Application Layer. No advanced routing mechanism
+Application Load Balancer >> Advanced compared to Classic Load Balancer. Only entertains HTTP and HTTPS traffic. Used for 
+content based routing.You can just route the traffic to ports,IP addresses, containers, microservices
+Network Load Balancer >> Newest, Ultra High Perfomcnae, Fast, millions of request per sec.
+Should be handling millions of request, ecommerce platform
