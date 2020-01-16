@@ -31,7 +31,101 @@ If I included HTTPS/SSL Traffic in the front end, I need that certificate on my 
 LB is region specific resource. Will work on mutilpe AZs in single region
 
 Classic Load Balancer >> Works with 2 layes: Transport and Application Layer. No advanced routing mechanism
+
 Application Load Balancer >> Advanced compared to Classic Load Balancer. Only entertains HTTP and HTTPS traffic. Used for 
 content based routing.You can just route the traffic to ports,IP addresses, containers, microservices
+
 Network Load Balancer >> Newest, Ultra High Perfomcnae, Fast, millions of request per sec.
-Should be handling millions of request, ecommerce platform
+Should be handling millions of request, ecommerce platform.
+
+
+Launch 2 instances with script :
+#!/bin/sh
+yum -y install httpd php
+chkconfig httpd on
+/etc/init.d/httpd start
+cd /var/www/html
+wget https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl-03/scripts/examplefiles-elb.zip
+unzip examplefiles-elb.zip
+
+
+This will install apache php over the instances.
+
+Stickiness : User will be redirected to same instance for predetermined time.
+Logs can be generated in S3 bucket
+
+******************************************************************************
+Auto Scaling : Based on the principle of elasticity
+It's a concept wherein you can expand and shrink the infrastructure based on 
+> Incoming Traffic
+> Time of Day
+> Demand
+
+Normal Days > 20 instances
+Christmas Sale > 200 instances
+
+Auto Scaling Components :1.  Auto Scaling Group 
+                          It is a logical collection of identical EC2 instances.
+                          Group the instances together depending upon the services/application running upon them.
+
+For Example : ASG1 : 3 Instances > Running Wordpress Site
+            : ASG2 : 4 Instances > Running Drupal Application
+            
+2. Launch Configuration : 
+Ability to launch and terminate the instances automatically
+What should be the AMI, Security Grp, EBS Volume, Instance Type, Key Pairs, Softwares/Scripts/Application ??
+
+Auto Scaling as a service will refer to Launch Configuration to undersatnd the specification
+and based upon that it will deploy the instances in auto scaling group.
+
+3. Scaling Policies : Scale Out / Scale In
+Scale Out : Increase/ Launch the num of instances within auto scaling group
+Scale In  : Decrease/ Terminate(Not STOP) the num of instances within auto scaling group
+
+4. Scaling Plan :
+Fixed : Fix the num of instances up and running within ASG
+Dynamic : Depending upon certain threshold, increase /decrease num of instances up and running within ASG
+Dynamic Example : 
+            CPU usage of entire ASG > 80, Scale Out
+            CPU usage of entire ASG < 30, Scale In
+Scheduled Action(Time of Day) : Depending upon Time/Date, SacleOut/ScaleIn
+
+
+Customized AMI :
+1. Launch EC2 using public AMI
+2. Insatll application/services/software upon launched instance
+3. Capture Image
+
+Example : Create EC2 using , and Install Apache Web server, MySQL DB and a wordpress site upon it
+Run the commande : Create Image >> Get the custom AMI
+Image : Bundle of all the above software/services
+
+
+Create 2 instance with Apache PHP 
+Create Image > I will create custome AMI and Snapshot for volumes
+Create Classic load balancer
+Auto Scaling> Launch Config
+
+Health Check Grace Period (300 Sec) >> New Instances will take some time to come up and runnign.
+They should not be declared unhealthy by LB
+
+Health Check Type: ELB /EC2
+ELB : take into account ELB health check + EC2 health check 
+EC2 : Just EC2 status checks only
+
+Target Tracking policy : 
+Cloudwatch will measure the performance of ASG(with 3 instnces) and ensure overall CPU utilization(Metric)
+is not more than 70%
+CPU utilization reached 90%
+Cloudwatch will send alert to ASG and email to you
+Auto Scaling will trigger scale out policiy (launch 2 more instaces)
+Auto Scaling refers to Lauch config and launch 2 more instacnes in same ASG
+
+sudo yum install stress >> to bump up cpu utilization
+stress -c 5
+
+
+
+
+
+
