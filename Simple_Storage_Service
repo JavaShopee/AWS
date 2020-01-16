@@ -9,7 +9,7 @@ Free Tier Acc : 5 GB /month S3 storage
 Size of single obj should not exceed 5 tb
 Any Account : 100 buckets per account
 
-S3 Selection is global : On the same page, we can access buckets that belongs to particular region
+S3 Selection is global : On the same page, we can access buckets that belongs to separate regions
 
 DNS Complaint bucket name : Unique like gmail id
 Special Char : - and .
