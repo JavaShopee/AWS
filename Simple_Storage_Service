@@ -10,6 +10,7 @@ Size of single obj should not exceed 5 tb
 Any Account : 100 buckets per account
 
 S3 Selection is global : On the same page, we can access buckets that belongs to separate regions
+Anything that you will put in the bucket will be constarined and contained in that region
 
 DNS Complaint bucket name : Unique like gmail id
 Special Char : - and .
@@ -70,6 +71,14 @@ Apply IAM role to source bucket
 Use Case : DR
 
 
+***********************2nd Revision**
+Properties of S3 bucket:
+1. Versioning
+2. Server Access Logging
+3. Static Website hostiing
+4. Transfer accelerations
+5. Tags
+6. Data Encryption: AES 256, AES KMS
 
 
 
