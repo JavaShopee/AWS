@@ -1,0 +1,31 @@
+Elastic_Laod_Balancer
+
+User sending taffic to ELB  >> Forwarding the traffic to >> 10 EC2 instances
+ELB >> Security Group >> ELB-SG
+10 EC2 Instances >> Security Group >> EC2-SG
+
+Incoming Traffic to LB >> HTTP, HTTPS all traffic from externa users 0.0.0.0/0
+Outgoing Traffic from LB >> HTTP, HTTPS to EC2-SG
+
+Incoming traffic to 10 EC2 Instances >> HTTP, HTTPS from ELB-SG
+Incoming traffic from 10 EC2 Instances >> HTTP, HTTPS all traffic to externa users 0.0.0.0/0
+
+Note : Ougoing traffic should be sent from instances to the users directly(Not from LB)
+
+SSL(Secure Socket Layer)/TLS Certificate
+User -----------Transaction ------------> Banking Server
+It's important that connection is closed and encrypted.
+To your Banking Server, they just upload SSL/TLS Cerificate. The cerifcate is issued to ensure the channel from end user to 
+Website is encrypted and kept secure.
+
+2 Ways to upload cerificate:
+1. Upload  on 10-50 instances
+2. to the load balancer ?? >> SSL Termination. Load Balancer will encrpt the front end connection from users.
+LB will encrpt the frond end connection and decrypt the backend traffic/connection >> called SSL termination.
+
+AWS Certificate Manager
+AWS Certificate Manager (ACM) makes it easy to provision, manage, deploy, and renew SSL/TLS certificates on the AWS
+
+If I included HTTPS/SSL Traffic in the front end, I need that certificate on my website.
+
+LB is region specific resource. Will work on mutilpe AZs in same region
