@@ -54,8 +54,7 @@ Glacier : Cheapest option in terms of storage used for archiving
 Compliance Data, Data that is not accessed frequently because there is retiival fee and retrival time is high
 Optionally you can expedite the retrival but have to pay 
 
-LIfeCycle Management
-Transitions 	
+LIfeCycle Management>Transitions 	
 
 For current version of objects
 Transition to Standard-IA after 30 days
@@ -77,9 +76,15 @@ Properties of S3 bucket:
 2. Server Access Logging
 3. Static Website hostiing
 4. Transfer accelerations
+
+User in Europe , Edge Location Europe, S3 bucket Min Mumabi, Best optimized n/w path 300% faster 
+Not Free
+You can run the speed test
+
 5. Tags
 6. Data Encryption: AES 256, AES KMS
 
 
 
-
+Storage Classes :  Define amt of rededuncany, Features
+Uplaod obj, availabel in multiple AZ in same region
