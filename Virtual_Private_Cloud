@@ -1,4 +1,8 @@
-Virtual_Private_Cloud
+Virtual_Private_Cloud : is the region specifc resourece.
+subnet is assocaited to specific AZ
+
+Like Mumbai VPC, ap south 1a 1b subnet
+
 https://www.youtube.com/watch?v=G4KJPLDGMiI
 AWS Tutorials | Virtual Private Cloud (VPC) Masterclass | May 21 and 22, 2019
 
@@ -53,6 +57,11 @@ Should not be allocated to Idle/Stopped Instances otherwise AWS will start charg
 Subnet : is a complete range/block of private IPs. It consists of instances and each subnet is assocaited to specific AZ.
 Types of Subnet Public Subnet  > Public Based Resources   >> Like Web Servers
                 Private Subnet > Private Based Resources  >> Database resources
+                
+                
+To expose any instance to the internet :
+1. Assign elastic IP to the instances in public subnet
+2. Launched in public subnet with access to IGW
                 
                 
 Internet Gateway >> Opens the access to internet for VPCs
@@ -187,3 +196,8 @@ Default VPC(Requestor) --------------------> Custom VPC(Acceptor)
 Requestor---------------Invite-------------->Acceptor
 Acceptor accepts the invite
 Manipulate route table
+
+
+
+******************2nd Revison*************
+Public IPs : BYOIPs : If you have spare IPs, you can use them as public IPs or otherwise AWS will provide you free of cost.
