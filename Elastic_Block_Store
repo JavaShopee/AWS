@@ -38,6 +38,7 @@ To encrypt the volume, we make use of the service called KMS(Key management Serv
 Key management Service wiil help you to maintain 2 types of keys >
 > Default CMS(Customer Master Key)/AWS Maanged Keys : No Flexibility >> NOT FREE 
 > Custom CMK (Customer managed Key) : Lot of Flexibility >> NOT FREE
+We can add admin permission/usage permission to custom cmk
 
 Volume and Key should be in same region
 Volume and EC2 instance should be in same AZ
@@ -62,12 +63,11 @@ Higher the Throughput, better the performance
 
 
 General Purpose SSD GP2 : Small to medium size envs, No consitent performance, 
-On an average : 3000 IPS
-Max/Burst performance : 10,000 IOPS
+On an average : Baseline of 3 iops per GiB with minimum of 100 and brustable upto 3000
 Use Case : Development Env, System Boot volumes
 
 Provisioned IOPS SSD : Highest and consistent performance 
-Max/Burst performance :20,000 - 64,000 IOPS
+Max/Burst performance :100 - 64,000 IOPS
 Costlient
 Use Case : Casandra, Mongo DB, Dynamo DB, Ultra High Performance in terms of IOPS
 
