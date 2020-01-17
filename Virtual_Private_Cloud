@@ -69,6 +69,22 @@ Internet Gateway >> Opens the access to internet for VPCs
 
 Route Table : 
 Set of routes which determines how the network traffic will flow in and out of VPC(internally or externally out of VPC)
+Like a GPS
+Faciliates the link b/w instaces(in public subnet) to the IGW and IGW to the internet
+Faciliates the link b/w instaces(in public subnet) and instaces in the private subnet(internal traffic) 
+
+Go to VPC(Default) >> Subnet( there will be 3 for mumbai) >> choose Route Table >> 
+It will consists of 2 route:
+1. Destination      Target
+	 172.31.0.0/16     local
+that will facilitates the internal communication
+
+2. Destination      Target
+   0.0.0.0/0      igw-179c427f
+that will facilitates the external communication
+
+Subnet should have route table assocaited with it
+route table should have IGW associated with it
 
 
 NAT(Network Addreess Translation) Device : 
