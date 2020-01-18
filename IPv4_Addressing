@@ -1,0 +1,51 @@
+IPv4 Addressing
+
+Binary to Decimal
+
+Octate (can't be more than 255): 
+128   64    32   16     8    4    2   1
+1     1     1    1      1    1    0   0
+= 128 + 64 +32 + 16 + 8 + 4
+
+Network IDs and Subnet Masks
+Network ID : 92.168.1.0/24  >> CIDR Notation
+24 : Bits are turned on for subnet mask 
+Subnet Mask : 255.255.255.0
+
+Subnet Mask : 255.255.248.0 what would be the CIDR(/21)
+Left 21 bits are turned on
+
+Subnet Mask : 255.255.248.0/21
+IP Addr  : 192.168.40.55
+Network ID : ?  : 192.168.40.0/21
+40  :  0  0 1 0 1 0 0 0
+248 :  1  1 1 1 1 0 0 0
+
+
+Subnet Mask : 255.255.248.0/21
+IP Addr  : 192.168.41.55
+Network ID : ?  : 192.168.40.0/21
+41  :  0  0 1 0 1 0 0 1
+248 :  1  1 1 1 1 0 0 0
+
+
+Subnet Mask : 255.255.248.0/21
+IP Addr  : 192.168.45.55
+Network ID : ?  : 192.168.40.0/21
+45  :  0  0 1 0 1 1 0 1
+248 :  1  1 1 1 1 0 0 0
+
+Subnet Mask : 255.255.255.192/26
+IP Addr : 192.168.45.55
+Network ID : ?  : 192.168.45.0/21
+55  :  0  0 1 1 0 1 1 1
+192 :  1  1 0 0 0 0 0 0
+Brodcast addr : 192.168.45.63(11|000000)
+Usable IP Addr : 63 - 1 = 62 hosts
+
+
+Subnet Mask : 255.255.255.0/24
+IP Addr : 202.10.133.11
+Network ID : ?  : 202.10.133.0/24
+Brodcast addr : 202.10.133.255
+Usable IP Addr : 254
