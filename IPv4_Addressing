@@ -49,3 +49,16 @@ IP Addr : 202.10.133.11
 Network ID : ?  : 202.10.133.0/24
 Brodcast addr : 202.10.133.255
 Usable IP Addr : 254
+
+
+
+
+Class       1st Octate Range       Default mask
+A             1  - 126               255.0.0.0
+B            128 - 191               255.255.0.0 
+C            191 - 223               255.255.255.0   
+
+127.x.x.x >> Lookp back IP address used for troubleshooting
+
+D            224 - 239                  Broadcasting
+E            240 - 255                  Experimental 
