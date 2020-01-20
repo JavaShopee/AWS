@@ -1,0 +1,32 @@
+AWS Elastic Beanstalk
+
+Challanges faced by developers : 
+1. Mutliple componenets needs to be created and configured while deploying 3 tier architecture 
+2. Might need to deploy multiple apps
+3. Each app consists of several envs  like dev, prd, stg
+4. Multiple versions needs to be maintained 
+5. Complexities involved while managing infrastructure
+6. Scaling concerns
+7. Achieve consitency across apps and envs
+
+
+Elastic Beanstalk : 
+Developer centric view of deploying applications on AWS
+Quicly deploy manage app
+Reduces management complexity without any restriction to choice
+No need to thing abt infrastructure that runs those app
+Simply uplad app 
+provides load balancing, health checking, capacity provisioning, scaling
+
+
+Elastic Beanstalk Componenets:
+Application Versions and Environments
+
+Application : Logical combination of EBS components incluing :
+1. Environments 2.Versions 3. Environments Configurations 
+
+Application Version : Application Source bundle or deployable code exapmple war file
+Environments : Logical collection of AWS resources that you use for running your app version
+Each env runs only one app version at a time
+
+Create App >> Upload Version >> Launch Env >> Manage Env
