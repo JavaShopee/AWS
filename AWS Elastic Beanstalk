@@ -30,3 +30,53 @@ Environments : Logical collection of AWS resources that you use for running your
 Each env runs only one app version at a time
 
 Create App >> Upload Version >> Launch Env >> Manage Env
+
+
+Elastic Beanstalk Deployment Modes :
+1. Single Instance : for Dev env
+One Instance + One SG+ AZ + DNS of instance mapped direcly to elastic ip
+
+2. High availablity with Load Balancer
+Great for production
+DNS Name mapped to EIP of load balancer, traffic going to multiple EC2 in diff AZes
+
+
+4 Diff Kinds of Deployment :
+All at once : Deploy all your app in one go
+Fastest, Downtime, Dev env, No additional cost
+
+Rolling : 4 instances , 2 with new version , 2 with old version and then 4 with new version
+Move onto next bucket(of two) when first bucket is healthy
+Application running below capacity 
+Can set the bucket size
+No additional cost, Long Deployments
+
+Rolling with Additional Batches :
+2 new instances initally wiht new version, then Rolling 
+Appication is running at capacity, 
+Additional cost(will be removed at the end of deployment)
+Long Deployment
+
+Immutable :
+Zero downtime
+New code is deployed to new instances in temp ASG
+High Cost, double capacity
+Longest Deployment
+Quick rollback
+Great for prod
+
+Temp ASG (with 3 new V2 instatcnes) merged with existing ASG(with three old V1 instances) 
+Old instances will be then terminated
+
+
+Blue (Old intsances 90%) megered by Route 53 to Green(New Instances 10%) and check if there is any impact
+Finally roo out 100% green 
+
+
+
+
+
+
+
+
+
