@@ -1,0 +1,5 @@
+AWS CloudFormation
+
+AWS CloudFormation is based on Template generation. Here are the components of template :
+
+1. Resource    2. Parameter         3. Mapping         4. Condition      5. Output         6. Metadata
