@@ -78,5 +78,16 @@ Dave:
  # This is the simple yaml comment
    
    
+YAML File for creating EC2 Instance : 
+https://s3.us-east-2.amazonaws.com/cf-templates-u78spvww26p9-us-east-2/2020021Kpl-statck-1.yml
+cfn-key-1.pem
+cfn-key-2.pem
+ami-0d542ef84ec55d71c
 
-
+AWSTemplateFormatVersion: "2010-09-09"
+Resources: 
+  DevEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties: 
+      ImageId: 'ami-0d542ef84ec55d71c'
+      InstanceType: t2.micro
