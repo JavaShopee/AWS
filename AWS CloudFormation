@@ -99,3 +99,26 @@ When we create the change set for InstanceType, the instance will be stopped and
 When we create the change set for KeyName with key that doesn't exists, it will auto trigger update rollback event
 
 
+Resources:
+Key Component of stack
+
+Resources: 
+  DevEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties: 
+      ImageId: 'ami-0d542ef84ec55d71c'
+      InstanceType: t2.micro
+      KeyName: cfn-key-2
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+
+
+Parameters :
+Enables us to input custom value to our template each time when we create or update stack
+60 parameters in cfn(cloud formation) tempalte
+logical name, alphanumeric
+parameter type defined by AWS cfn
+must be passed at runtime otherwise default value
+declared and referenced within the same template
+We can reference parameter from resource and output section of the template
+Parameters Propertis
+
