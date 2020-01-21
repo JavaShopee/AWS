@@ -91,3 +91,11 @@ Resources:
     Properties: 
       ImageId: 'ami-0d542ef84ec55d71c'
       InstanceType: t2.micro
+      KeyName: cfn-key-2
+      
+      
+When we create the change set for KeyName, it will be replacement for exiting instance(older one auto terminated)
+When we create the change set for InstanceType, the instance will be stopped and restarted
+When we create the change set for KeyName with key that doesn't exists, it will auto trigger update rollback event
+
+
