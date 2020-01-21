@@ -3,3 +3,80 @@ AWS CloudFormation
 AWS CloudFormation is based on Template generation. Here are the components of template :
 
 1. Resource    2. Parameter         3. Mapping         4. Condition      5. Output         6. Metadata
+
+YAML : Data Serilization Language
+
+Yaml KEy Value Pairs : YAML doc will be full of key value pairs
+Must have space after colun 
+Support different data types integer, Floting point number, Strings
+String can be in single or double quotes
+Date format : ISO 8601
+
+Name: Sachin
+Age: 56
+Gpa: 4.2
+State: 'New Jersey'
+DateOfBirth: 1900-01-01T12:00:00
+
+List/array
+Persons:
+ - Dave
+ - Steve
+ - Karl
+ Above is known as Block Sequence
+ 
+ Persons: [Dave, Steve, Karl]
+ Above is known as Flow Sequence
+ 
+ 
+YAML list is intended with opening dash.
+Dash indicates that it's element of array
+
+YAML Dictionaries : properties grouped together under item.
+YAML Dictionaries contains key value pairs
+
+Dave: 
+ Age: 45
+ Occupation: Engineer
+ State: NY
+ Male: true
+ 
+ 
+ 
+YAML Pipe : It needs to be passes as is(new lines, spaces, indentation) 
+Dave: 
+ Age: 45
+ Occupation: Engineer
+ State: NY
+ Male: true
+ Address: |
+|   277 NJ Street
+|   New York
+|   NY
+|   22551
+ 
+YAML Greater Than :
+Also referrend to as folded block.
+New Line wiht the single space, Blank line as new line
+
+Dave: 
+ Age: 45
+ Occupation: Engineer
+ State: NY
+ Male: true
+ Address: |
+|   277 NJ Street
+|   New York
+|   NY
+|   22551
+ About Me >
+   Thus is the sample Text.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+   CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+   
+ YAML Comments:
+ # This is the simple yaml comment
+   
+   
+
+
