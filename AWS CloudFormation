@@ -122,3 +122,80 @@ declared and referenced within the same template
 We can reference parameter from resource and output section of the template
 Parameters Propertis
 
+
+Sample YML1 :
+
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName: 
+    Description: Select the appropiate key from the list
+    Type: AWS::EC2::KeyPair::KeyName
+  MyAvailabilityZone: 
+    Description: Select the appropiate AZ from the list
+    Type: String
+    Default: ap-south-1a
+    AllowedValues:
+      - ap-south-1a
+      - ap-south-1b
+      - ap-south-1c
+  MyInstanceType:
+    Description: Select the appropiate Instance Type from the list
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.namo
+      - t2.medium
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: 'ami-01e074f40dfb9999d'
+      InstanceType: !Ref MyInstanceType
+      KeyName: !Ref MyKeyName
+      SecurityGroups: 
+        - default
+        - !Ref SSHSecurityGroup
+      AvailabilityZone: !Ref MyAvailabilityZone  
+  SSHSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: MySecGroup
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0 
+#     - IpProtocol: tcp
+#       FromPort: 8080
+#       ToPort: 8080
+#       CidrIp: 0.0.0.0/0
+# MyEIP:        
+#   Type: AWS::EC2::EIP
+#   Properties: 
+#     GroupDescription: MyEipForEC2
+#     InstanceId: !Ref DevEC2Instance 
+
+Sample YML2 :
+
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+Mappings:
+  MyRegionMap:
+    ap-south-1:
+      HMV64: 'ami-01e074f40dfb9999d'
+    us-east-2:
+      HMV64: 'ami-0d542ef84ec55d71c'
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: !FindInMap
+        - MyRegionMap
+        - !Ref 'AWS::Region'
+        - HMV64
+      InstanceType: t2.micro
+      KeyName: !Ref MyKeyName
