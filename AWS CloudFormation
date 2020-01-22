@@ -199,3 +199,91 @@ Resources:
         - HMV64
       InstanceType: t2.micro
       KeyName: !Ref MyKeyName
+      
+      
+      
+      Sample YML 3:
+      AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+  EnvironmentName:
+    Description: Select the Env
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod  
+Mappings:
+  MyRegionMap:
+    ap-south-1:
+      HMV64: 'ami-01e074f40dfb9999d'
+    us-east-2:
+      HMV64: 'ami-0d542ef84ec55d71c'
+  MyEnvironmentMap:
+    dev:
+      instanceType: t2.micro
+    prod:
+      instanceType: t2.small
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: !FindInMap
+        - MyRegionMap
+        - !Ref 'AWS::Region'
+        - HMV64
+      InstanceType: !FindInMap
+        - MyEnvironmentMap
+        - !Ref EnvironmentName
+        - instanceType
+      KeyName: !Ref MyKeyName
+      
+      
+      
+ Sample YML Templet for Conditions:
+ 
+ AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+  EnvironmentName:
+    Description: Select the Env
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod  
+Conditions:
+  MyEIPForProd: !Equals [!Ref EnvironmentName, prod]
+Mappings:
+  MyRegionMap:
+    ap-south-1:
+      HMV64: 'ami-01e074f40dfb9999d'
+    us-east-2:
+      HMV64: 'ami-0d542ef84ec55d71c'
+  MyEnvironmentMap:
+    dev:
+      instanceType: t2.small
+    prod:
+      instanceType: t2.micro
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: !FindInMap
+        - MyRegionMap
+        - !Ref 'AWS::Region'
+        - HMV64
+      InstanceType: !FindInMap
+        - MyEnvironmentMap
+        - !Ref EnvironmentName
+        - instanceType
+      KeyName: !Ref MyKeyName
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Condition: MyEIPForProd 
+    Properties:
+      InstanceId: !Ref DevEC2Instance
