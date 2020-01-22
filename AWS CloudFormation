@@ -345,3 +345,64 @@ Resources:
         FromPort: 80
         ToPort: 80
         CidrIp: 0.0.0.0/0 
+        
+        
+Yaml for NOT Interensic Function :
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+  EnvironmentName:
+    Description: Select the Env
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod  
+      - qa
+Conditions:
+  MyEIPForProd: !Equals [!Ref EnvironmentName, prod]
+  CreateProdSecurityGroup: !Equals [!Ref EnvironmentName, prod]
+  CreateDevSecurityGroup: !Not [{Condition: CreateProdSecurityGroup}]
+# CreateDevSecurityGroup: !Equals [!Ref EnvironmentName, dev]
+Mappings:
+  MyRegionMap:
+    ap-south-1:
+      HMV64: 'ami-01e074f40dfb9999d'
+    us-east-2:
+      HMV64: 'ami-0d542ef84ec55d71c'
+  MyEnvironmentMap:
+    dev:
+      instanceType: t2.small
+    prod:
+      instanceType: t2.micro
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: !FindInMap
+        - MyRegionMap
+        - !Ref 'AWS::Region'
+        - HMV64
+      InstanceType: !FindInMap
+        - MyEnvironmentMap
+        - !Ref EnvironmentName
+        - instanceType
+      KeyName: !Ref MyKeyName
+      SecurityGroups: !If [CreateDevSecurityGroup, [!Ref SSHSecurityGroup], !Ref 'AWS::NoValue']
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Condition: MyEIPForProd 
+    Properties:
+      InstanceId: !Ref DevEC2Instance
+  SSHSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Condition: CreateDevSecurityGroup
+    Properties:
+      GroupDescription: MySecGroup
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0 
