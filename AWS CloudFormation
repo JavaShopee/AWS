@@ -663,3 +663,60 @@ Outputs:
     Condition: CreateDevSecurityGroup
     Export: 
       Name: MyDevSSHSG
+      
+      
+                      CI / CD   
+>>>>>>>>>>>>>Source >>>>>>>>>>>>>>>>>>>>>>Build>>>>>>>>>>>>>>>>Test>>>>>>>>>>>>>>>>>>>>>>>>>>>Production>>>>>>>>>>
+-Check in source code         - Compile the code           Integration Test                   Deploy 
+                                and create war             UI Test                            Monitor
+-Peer review new code         - Build Artifacts,           Load Test
+                                Unit Tests                 Security Test
+                                
+-----------------------CI-----------------------                                
+-----------------------------------------------C Delivery-------------------------------------Manula App-----------
+------------------------------------------------C Deployment--------------------------------------------------------
+-------------------------------IASC---------------------------------------------------------------------------------
+
+Source  >> Code Commit
+-Version Control
+-Secure and Safe
+-Store and manage the source code
+
+
+Build   >> Code Build
+-Compilation
+-Run test
+-Build Packages
+-Pay By Min
+-No Build servers to manage
+-Monitor Build thru cloud watch events
+
+
+
+Test    >> Code Build + Third Party Tools
+-Compilation
+-Run test
+-Build Packages
+-Pay By Min
+-No Build servers to manage
+-Monitor Build thru cloud watch events
+
+
+Deploy  >> Code Deploy
+-Automated Code deployments
+-Rollback 
+-No Downtime
+
+Monitor >> AWS X Ray, AWS Coud Watch
+-Monitor source checkins
+-trigger builds
+-moniotr builds
+-collect logs
+-monitor infrastructure
+
+All this is manageed together by AWS Service : AWSCodePipeline
+
+
+
+
+
