@@ -592,9 +592,9 @@ Outputs:
     Description: My DNS Name
     Value: !GetAtt DevEC2Instance.PublicDnsName
     
-    
- Output with conditions :
- AWSTemplateFormatVersion: "2010-09-09"
+Output with conditions:
+
+AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
   MyKeyName:
     Type: 'AWS::EC2::KeyPair::KeyName'
