@@ -719,4 +719,120 @@ All this is manageed together by AWS Service : AWSCodePipeline
 
 
 
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+Resources:
+  MyCICDEC2InstanceProfileRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      Policies:
+        - PolicyName: MyCICDEC2InstancePolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action: 
+                  - 's3.Get'
+                  - 's3.List'  
+                Resource: '*'
+  MyInstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      Path: /
+      Roles:
+        - !Ref MyCICDEC2InstanceProfileRole  
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: ami-01e074f40dfb9999d
+      InstanceType: t2.micro
+      KeyName: !Ref MyKeyName
+      SecurityGroups: 
+        - !Ref MySecurityGroup
+      IamInstanceProfile: !Ref MyInstanceProfile
+      Tags: 
+        - Key: Name
+          Values: dev   
+        - Key: Environment
+          Values: stage
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          sudo yum update
+          sudo yum install ruby
+          sudo yum install wget
+          sudo yum -y erase java-1.7.0-openjdk.x86_64
+          sudo yum -y install java-1.8.0-openjdk.x86_64
+          sudo yum -y install java-1.8.0-openjdk-devel
+          sudo yum -y install tomcat8
+          cd /home/ec2-user
+          wget https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/install
+          chmod +x ./install
+          sudo ./install auto  
+  ProdEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: ami-01e074f40dfb9999d
+      InstanceType: t2.micro
+      KeyName: !Ref MyKeyName
+      SecurityGroups: 
+        - !Ref MySecurityGroup
+      IamInstanceProfile: !Ref MyInstanceProfile
+      Tags: 
+        - Key: Name
+          Values: prod   
+        - Key: Environment
+          Values: prod
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          sudo yum update
+          sudo yum install ruby
+          sudo yum install wget
+          sudo yum -y erase java-1.7.0-openjdk.x86_64
+          sudo yum -y install java-1.8.0-openjdk.x86_64
+          sudo yum -y install java-1.8.0-openjdk-devel
+          sudo yum -y install tomcat8
+          cd /home/ec2-user
+          wget https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/install
+          chmod +x ./install
+          sudo ./install auto
+
+
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: MySecGroup
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '8080'
+        ToPort: '8080'
+        CidrIp: 0.0.0.0/0  
+Outputs:
+  StageAppUrl:
+    Description: Staging App URL
+    Value: !Sub 'http://${DevEC2Instance.PublicDnsName}:8080/ccdemo/hello'                    
+  StageAppUrl:
+    Description: Production App URL
+    Value: !Sub 'http://${ProdEC2Instance.PublicDnsName}:8080/ccdemo/hello'                      
+
+
+
 
