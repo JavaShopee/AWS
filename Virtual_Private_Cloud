@@ -217,3 +217,9 @@ Manipulate route table
 
 ******************2nd Revison*************
 Public IPs : BYOIPs : If you have spare IPs, you can use them as public IPs or otherwise AWS will provide you free of cost.
+
+
+
+ssh-add -K linuxec2-kp.pem
+ssh -A ec2-user@52.9.171.211
+ssh ec2-user@10.0.2.153
