@@ -2,6 +2,7 @@ Stacks :
 
 If we try to change the key associated with the instance, then Relacement will be true.
 If we try to change the instance type associated with the instance,then Relacement will be false.
+If we try to add the new rules in SG ,then Relacement will be false.
 IF the kwy is non existing, it will auto rollback
 
 
@@ -45,3 +46,30 @@ Resources:
           CidrIp: 0.0.0.0/0
           
 Ref is a Intrinsic function, it returns value of specified parameter or resource.          
+
+
+
+Parameters allows to input custom values to our template each time when we create or update stack
+Max 60 parameters in cfn template
+We can refrecne parameters from Resources and Output section of the template
+
+
+Parameter:
+
+Parameter:
+  MyKeyName:
+    Description: 'My Key Name'
+    Type: AWS::EC2::KeyPair::KeyName
+  MyAZ:
+    Description: My AZ
+    Type: String
+    Default: 
+    AllowedValues:
+  MyiNSTANCEtYPE:
+    Description: My iNSTANCE tYPE
+    Type: String
+    Default: T2.MICRO
+    AllowedValues:  
+      - t2.micro
+      - t2.small
+      - t2.medium
