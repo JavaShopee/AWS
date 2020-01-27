@@ -56,7 +56,7 @@ We can refrecne parameters from Resources and Output section of the template
 
 Parameter:
 
-Parameter:
+Parameters:
   MyKeyName:
     Description: 'My Key Name'
     Type: AWS::EC2::KeyPair::KeyName
@@ -73,3 +73,64 @@ Parameter:
       - t2.micro
       - t2.small
       - t2.medium
+      
+      
+ Mappings:
+ 
+ We can use Intrinsic function FindInMap to retrieve values in map
+ 
+ 
+ Mappings:
+  MyMappingsForInstanceType:
+    us-east-2:
+      HVM64: imageid1
+    us-west-2:
+      HVM64: imageid2 
+  MyEnvironment:
+    dev:
+      HVM64: t2.micro  
+    prod:
+      HVM64: t2.small 
+
+
+
+Conditions: 
+  MyDevEnv: !Equals [!Ref Env, dev]  
+  MySecGrpForDev: !Equals [!Ref Env, dev]  
+  MySecGrpForProd: !Equals [!Ref Env, prod]
+  MySecGrpForDev: !Not [{Condition: MySecGrpForProd}]  
+  RegionForKey: !Or [!Equals [!Ref 'AWS::Region', 'ap-south-1'], !Equals [!Ref 'AWS::Region', 'us-east-2']]
+Resources: 
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap
+        - MyMappingsForInstanceType
+        - !Ref 'AWS::Region'
+        - HVM64
+      InstanceType: !FindInMap
+        - MyEnvironment
+        -  !Ref Env 
+        - HVM64
+      KeyName: !Ref MyKeyName
+      SecurityGroups: !If [MySecGrpForDev, [!Ref SSHSecurityGroupDev], [!Ref SSHSecurityGroupProd]] 
+  SSHSecurityGroupDev:
+    Type: AWS::EC2::SecurityGroup
+    Condition: MySecGrpForDev
+    Properties:
+      GroupDescription: SSHSecurityGroupDev
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+  SSHSecurityGroupProd:
+    Type: AWS::EC2::SecurityGroup
+    Condition: MySecGrpForProd
+    Properties:
+      GroupDescription: MySecGrpForProd
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0        
