@@ -1,0 +1,5 @@
+Stacks :
+
+If we try to change the key associated with the instance, then Relacement will be true.
+If we try to change the instance type associated with the instance,then Relacement will be false.
+IF the kwy is non existing, it will auto rollback
