@@ -3,3 +3,45 @@ Stacks :
 If we try to change the key associated with the instance, then Relacement will be true.
 If we try to change the instance type associated with the instance,then Relacement will be false.
 IF the kwy is non existing, it will auto rollback
+
+
+Resources :
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Basic EC2 Instance
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 
+      InstanceType:
+      KeyName:
+      SecurityGroups:
+        - default
+        
+        
+        
+        
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Basic EC2 Instance
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 
+      InstanceType:
+      KeyName:
+      SecurityGroups:
+        - default 
+        - Ref SSHSecurityGroup
+  SSHSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: New SSH SecurityGroups
+      SecurityGroupIngress:
+        - Ipprotocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+          
+Ref is a Intrinsic function, it returns value of specified parameter or resource.          
