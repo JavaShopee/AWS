@@ -254,3 +254,8 @@ Metadata
 UserInput
 Outputs >> Exports
 
+Metadata provides details abt cfn template. There are 3 types of metadata keys:
+AWS::Cloudformation::Designer
+AWS::Cloudformation::Init
+AWS::Cloudformation::Interface
+
