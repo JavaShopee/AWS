@@ -235,3 +235,11 @@ Outputs:
     Condition: CreateDevSecurityGroup
     Export: 
       Name: MyDevSSHSG
+      
+      
+Cross referencing the stack Exports from one stack to other       
+We can export Securtiy Group in Global Stack and all other stack can reference same Global Security Group.
+If we change the Securtiy Group in parent stack , it will be auto refelected to child stacks as well
+
+We can't delete the stack if another stack reference one of it's output
+We can't modify the output if it's referenced in other stacks.
