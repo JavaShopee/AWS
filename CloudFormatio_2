@@ -243,3 +243,14 @@ If we change the Securtiy Group in parent stack , it will be auto refelected to 
 
 We can't delete the stack if another stack reference one of it's output
 We can't modify the output if it's referenced in other stacks.
+
+
+
+Resources
+Paraeters
+Conditions
+Mappings
+Metadata
+UserInput
+Outputs >> Exports
+
