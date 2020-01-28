@@ -259,3 +259,6 @@ AWS::Cloudformation::Designer
 AWS::Cloudformation::Init
 AWS::Cloudformation::Interface
 
+AWS::Cloudformation::Init :
+Group together the parameter of similar type
+like AZ, InstanceType, KeyName Vs EnvironmentName(Environment related parameter)
