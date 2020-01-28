@@ -133,4 +133,105 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 0.0.0.0/0        
+          CidrIp: 0.0.0.0/0    
+          
+          
+!GetAtt : Get the value of resource property
+!GetAtt MyVMInstance.AvailabilityZone
+Like MyVMInstance.AvailabilityZone
+
+!Sub Intrincic function: 
+Substitute the value of pseudo param with it's value
+!Sub "${AWS::StackName}-InstanceAz"
+
+We can use intrinsic function ImportValue to import values that have been exported within the same region.
+
+
+
+Outputs:
+  MyInstanceId:
+    Description: My Instance Id
+    Value: !Ref DevEC2Instance  
+  MyDNSName:
+    Description: My DNS Name
+    Value: !GetAtt DevEC2Instance.PublicDnsName
+  MyInstanceAZ:
+    Description: My Instance AZ
+    Value: !GetAtt DevEC2Instance.AvailabilityZone
+    Export:
+      Name: !Sub "${AWS::StackName}-InstanceAz"
+  MyDevSSHSecurityGroup:
+    Description: My Dev SSH Security Group
+    Value: !Ref SSHSecurityGroup
+    Condition: CreateDevSecurityGroup
+    Export: 
+      Name: MyDevSSHSG
+      
+Full Template:
+
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  MyKeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Select the key pair
+  EnvironmentName:
+    Description: Select the Env
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod
+Mappings:
+  MyRegionMap:
+    ap-south-1:
+      HMV64: 'ami-01e074f40dfb9999d'
+    us-east-2:
+      HMV64: 'ami-0d542ef84ec55d71c'
+  MyEnvironmentMap:
+    dev:
+      instanceType: t2.micro
+    prod:
+      instanceType: t2.small
+Resources:
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: !FindInMap
+        - MyRegionMap
+        - !Ref 'AWS::Region'
+        - HMV64
+      InstanceType: !FindInMap
+        - MyEnvironmentMap
+        - !Ref EnvironmentName
+        - instanceType
+      KeyName: !Ref MyKeyName
+      SecurityGroups: 
+        - !Ref SSHSecurityGroup
+  SSHSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Condition: CreateDevSecurityGroup
+    Properties:
+      GroupDescription: MySecGroup
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0  
+Outputs:
+  MyInstanceId:
+    Description: My Instance Id
+    Value: !Ref DevEC2Instance  
+  MyDNSName:
+    Description: My DNS Name
+    Value: !GetAtt DevEC2Instance.PublicDnsName
+  MyInstanceAZ:
+    Description: My Instance AZ
+    Value: !GetAtt DevEC2Instance.AvailabilityZone
+    Export:
+      Name: !Sub "${AWS::StackName}-InstanceAz"
+  MyDevSSHSecurityGroup:
+    Description: My Dev SSH Security Group
+    Value: !Ref SSHSecurityGroup
+    Condition: CreateDevSecurityGroup
+    Export: 
+      Name: MyDevSSHSG
