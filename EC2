@@ -1,0 +1,6 @@
+EC2
+
+We never use public AMIs in production env, we use Custom/My AMIs in production env
+1. Launch instance using public AMI
+2. Intall upon tht app/serivces/software depending upon preference
+3. Capture Sanpshot of that customized Image from that instance 
