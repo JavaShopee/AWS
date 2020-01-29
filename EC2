@@ -7,6 +7,12 @@ We never use public AMIs in production env, we use Custom/My AMIs in production 
 
 We can launch 20 Ondemand Instaces we can launch in any account ? 
 
-
 IAM Role has some permisions attahced to it. For Example EC2 intance with IAM role having permission AmazonS3FullAccess
 so that EC2 can push/pull images to and from S3 bucket
+
+Cloud Watch : EC2 pust the metrics to CW. 
+Metrics ; parameters you use to analyze/gauge the performce of EC2 intatnce
+like CPU utilization
+CW perform healthcheck every 5 mins 
+It will retrive metric along with value
+CPU Utilization == 70%(every 5 mins stadard monitoring)
