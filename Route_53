@@ -29,6 +29,10 @@ If mumbai goes down, I can failover to N Cal
 
 Hosted Zone : Container that contains entire routing info for your domains and sub domains
 
+
+Whenver you buy domin from AWS using Route 53 as service, you get 4 NS allocated to domain.
+
+
 NS  : Name Servers(actual Domain Name Servers).AWS will allocate 4 DNS that perofm the DNS resolution/DNS Servcie
       Convert Domain to IP addr of instances, end point names of instacne, IP of load balancer
 SOA : Start Of Authority : Points towards primary name server(out of all 4)
@@ -45,6 +49,7 @@ Type CNAME Canonical Name: use alias like facebook.com to www.facebook.com
 
 
 Create 2 instances with script :
+Mumbai and N Cal
 
 #!/bin/bash
 yum update -y
@@ -77,7 +82,7 @@ N Cal : Seconday / Stand By
 
 Route 53 will make use of cloudwatch to perform health checkup of Mumbai Region, IF Mumbai goes down, it will failover to 
 the N Cal region. cloudwatch will declare mumbai as unhealthy.
-We have to configure helt check for this.
+We have to configure health check for this.
 
 Routing Policiy : Multi Value Answer :
 Different Instances for same domain
@@ -86,7 +91,7 @@ xyz.com >> 122.12.32.22, 132.23.32.22
 
 
 
-
+OfficeKey
 -----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAnZhwkJz5e6zApKa3GDgxsMJk0IPou/a+pN3cHG4NslCmDk/albq/2tgkFRjC
 5xJF+z1B9LDrxBJCgSXeNC5G/KtWzfb5Jho0olIFouLn4VKKlelLUR2QjLzUHlkHZEgpIZLMPOU2
