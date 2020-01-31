@@ -262,3 +262,65 @@ AWS::Cloudformation::Interface
 AWS::Cloudformation::Init :
 Group together the parameter of similar type
 like AZ, InstanceType, KeyName Vs EnvironmentName(Environment related parameter)
+
+
+
+
+
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_EC2.html
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Helper Script Demo
+Resources:
+  myVPC:  
+    Type: AWS::EC2::VPC
+    Properties: 
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true 
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-myVPC" 
+  mySubnet:
+    Type: AWS::EC2::Subnet
+    Properties: 
+      AvailabilityZone: 
+        Fn::Select:
+          - '0'
+          - Fn::GetAZs:
+              Ref: AWS::Region
+      CidrBlock: 10.0.1.0/24
+      VpcId: !Ref myVPC 
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-mySubnet" 
+  myRT:  
+    Type: AWS::EC2::RouteTable
+    Properties: 
+      Tags: 
+        - Key: Name
+          Value: Public Subnet
+      VpcId: !Ref myVPC 
+  mySubToRT:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: 
+      RouteTableId: !Ref myRT
+      SubnetId: !Ref mySubnet
+  myIGW:
+    Type: AWS::EC2::InternetGateway
+    Properties: 
+    Tags: 
+      - Name: myInterntGateway
+  myIGWToVpc:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties: 
+      InternetGatewayId: !Ref myIGW
+      VpcId: !Ref myVPC
+  myRoute:
+    DependsOn: myIGWToVpc
+    Type: AWS::EC2::Route
+    Properties: 
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref myIGW
+      RouteTableId: !Ref myRT
+  
