@@ -1,5 +1,7 @@
 docker info 
 
+sudo usermod -a -G docker $USER
+
 --Execute the image--
 docker container run hello-world
 docker run hello-world
