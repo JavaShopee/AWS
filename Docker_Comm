@@ -137,6 +137,11 @@ docker build -t imageName:tagName dir
 --volume in docker file is physical location on machine--
 --where container will execute--
 
+Persitance Data Problem::
+Data will not exists when container is stopped. It will start the new data generation
+
+We can start existing container or new container with existing volume >> Resolved Persitance Data Problem
+
 docker volume ls
 docker container run -d --name mysqldb3 --mount source=mysample-volume-name,target=/var/lib/mysql mysql:latest
 
