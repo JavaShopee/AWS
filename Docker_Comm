@@ -210,6 +210,8 @@ docker service update <service name> --replicas <Number of service>
 New Service --> New Container
 New Replica of Service--> New Containers
 
+If any of the container goes down, it will auto start the new replica
+
 docker swarm join-token manager
 It will issue token to paste on nodes
 docker nodes ls
