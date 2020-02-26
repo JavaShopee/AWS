@@ -99,3 +99,17 @@ def add(a,*b):
     print(c)
     
 add(1,2,3,4,5) 
+b is tuple
+
+
+
+Keyworded Variable Length Arguments in Python :
+
+def person(name,**data):
+    print(name)
+    print(data)
+    
+
+person('sachin',age='19',dob='21JAN') 
+sachin                                                                                                                               
+{'age': '19', 'dob': '21JAN'}
