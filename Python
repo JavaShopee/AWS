@@ -42,3 +42,23 @@ m2 = matrix('10,2,30;30,40,50;40,59,68')
 m3 = m1 + m2;  #  m1 * m2
 
 print(m3)
+
+
+
+Functions in python : 
+
+def myfunc(a,b):
+    return a + b;
+x = myfunc(2,3)    
+print(x)
+
+
+
+def add_sub(a,b):
+    c=  a + b;
+    d=  a - b;
+    return c , d
+
+
+x,y = add_sub(2,3)    
+print(x,y)
