@@ -115,3 +115,34 @@ sachin
 {'age': '19', 'dob': '21JAN'}
 
 Keyworded arguments works with ** only
+
+
+
+
+a = 10
+def xyz():
+    global a
+    a=15
+    print("Inside Function ", a)  #15
+    
+xyz()    
+print("Outside Function ", a)    #15
+
+
+
+
+
+
+a = 10
+
+def xyz():
+    a = 9
+    x = globals()['a']            #Without impacting the local variable
+    print("Inside Function ", a)  #9
+    globals()['a'] = 12
+    
+    
+    
+    
+xyz()    
+print("Outside Function ", a)    #12
