@@ -62,3 +62,40 @@ def add_sub(a,b):
 
 x,y = add_sub(2,3)    
 print(x,y)
+
+
+
+
+
+Calling method based on position:
+def myfunc(name,age):
+    print(name)
+    print(age)
+    
+
+myfunc('sachin',23)
+
+based on keyword:
+def myfunc(name,age):
+    print(name)
+    print(age)
+    
+
+myfunc(age=23,name='sachin')
+
+Default : 
+def myfunc(name,age=18):
+    print(name)
+    print(age)
+    
+
+myfunc('sachin')
+
+Varibale args:
+def add(a,*b):
+    c = a
+    for i in b:
+        c = c + i
+    print(c)
+    
+add(1,2,3,4,5) 
