@@ -146,3 +146,21 @@ def xyz():
     
 xyz()    
 print("Outside Function ", a)    #12
+
+
+
+
+
+
+Fibonaci Series in Python :
+def fibo():
+    i = 0
+    j = 1 
+    for k in range(0,100):
+        k = i + j 
+        i = j 
+        j = k 
+        if k < 100:
+            print(k," ")
+        
+fibo()
