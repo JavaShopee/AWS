@@ -191,3 +191,55 @@ def fact(n):
 
 k = fact(5)
 print(k)
+
+
+
+
+Annonymous Function : 
+f= lambda a,b : a+b
+
+result = f(3,4)
+print(result)
+
+
+
+
+
+from functools import reduce
+'''
+Filter , Map and Reduce
+'''
+
+lst = [2,33,24,32,24,44,56,43,22,56]
+
+filterMe = list(filter(lambda a : a%2 ==0, lst))
+print(filterMe)
+mapMe = list(map(lambda a : a*2, filterMe))
+print(mapMe)
+reduceMe = reduce(lambda a,b : a+b,mapMe)
+print(reduceMe)
+
+
+
+
+''''
+Decorators in python
+'''
+
+def div(a,b):
+    return a/b
+
+
+
+def smart_div(func):
+    def inner(a,b):
+        if a < b :
+            a,b = b, a
+            return func(a,b)
+    return inner
+
+
+
+div = smart_div(div)
+k=div(2,4)
+print(k)
