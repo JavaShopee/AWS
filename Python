@@ -243,3 +243,34 @@ def smart_div(func):
 div = smart_div(div)
 k=div(2,4)
 print(k)
+
+
+
+
+Classes, Objects and Constructor 
+
+class Abc:
+    def __init__(self):
+        self.name = 'Sachin'
+        self.age = 26
+        
+    def update(self):
+        self.age = 30
+        
+    def compare(self,other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+        
+a = Abc()
+a.update()
+b = Abc()
+
+if a.compare(b):
+    print("Both are same")
+else:
+    print("Both are different")
+    
+    
+    
