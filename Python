@@ -274,3 +274,22 @@ else:
     
     
     
+    
+  
+  
+  Instance Variables Vs Static/Class Variables: 
+  class Car:
+    wheel = 4
+    def __init__(self):
+        self.mil = 10
+        self.avg = 20
+        
+
+obj1 = Car()
+obj2 = Car()
+        
+obj1.avg = 25
+Car.wheel = 5
+
+print(obj1.mil, obj1.avg, obj1.wheel)
+print(obj2.mil, obj2.avg, obj2.wheel)
