@@ -293,3 +293,32 @@ Car.wheel = 5
 
 print(obj1.mil, obj1.avg, obj1.wheel)
 print(obj2.mil, obj2.avg, obj2.wheel)
+
+
+class Student:
+    
+    school = 'abc'
+    def __init__(self,m1,m2,m3):
+        self.m1= m1
+        self.m2= m2
+        self.m3= m3
+    
+    def avg(self):   #Instance Method
+        return (self.m1 + self.m2 + self.m3)/3
+        
+    def get_m1(self):          #Accessors
+        return self.m1
+        
+    def set_m1(self,value):    #Mutators
+        self.m1 =  vaue
+    
+    @classmethod    
+    def info(cls):
+        return cls.school
+    
+s1 = Student(12,13,14)
+s2 = Student(21,25,33)
+
+print(s1.avg())
+print(s2.avg())
+print(Student.info())
