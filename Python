@@ -454,3 +454,34 @@ class Laptop(Computer):
 com = Laptop()
 com.process()
 
+
+
+
+from abc import ABC, abstractmethod
+
+class Computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+
+class Laptop(Computer):
+    def process(self):
+        print("It's running")
+
+
+class Programmer:
+    def work(self,com1):
+        print("Solving Bugs")
+        com1.process()
+
+class Whiteboard:
+    def write(self):
+        print("Its writing")
+
+com = Laptop()
+com2 = Whiteboard()
+prog = Programmer()
+prog.work(com2)
+
+
+
