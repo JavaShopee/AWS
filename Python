@@ -326,3 +326,30 @@ print(s1.avg())
 print(s2.avg())
 print(Student.getSchool())
 Student.info()
+
+
+
+
+
+
+Ducktyping in python
+
+class PyCharm:
+    def execute(self):
+        print("Compile")
+        print("Run")
+class MyEditor:
+    def execute(self):
+        print("Spell Check")
+        print("Compile")
+        print("Run")
+class Laptop:
+    def code(self,ide):
+        ide.execute()
+
+
+ide = MyEditor()
+ide.execute()
+
+If there is a duck that can quack,swim then it's a duck
+If there is obj that has the method execute(no matters which class it's belongs to ) , it should execute
