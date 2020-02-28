@@ -419,3 +419,15 @@ b = Student(0,0)
 
 c = a + b
 print(c.__str__())
+
+
+
+
+from abc import ABC, abstractmethod
+
+class Computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+com = Computer()
+com.process()
