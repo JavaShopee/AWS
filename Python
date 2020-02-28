@@ -431,3 +431,26 @@ class Computer(ABC):
         pass
 com = Computer()
 com.process()
+
+
+
+
+
+If you fail to implement abstarct method, you will get the error
+
+from abc import ABC, abstractmethod
+
+class Computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+
+class Laptop(Computer):
+    def process(self):
+        print("It's running")
+
+
+
+com = Laptop()
+com.process()
+
