@@ -524,3 +524,17 @@ t2.start()
 t1.join()
 t2.join()
 print("Bye")
+
+Python MySQL connectivity 
+
+
+import mysql.connector as mysql
+
+cnx = mysql.connect(user='root', password='root', host='localhost', database='myrest')
+mycursor = cnx.cursor()
+
+
+sql = "INSERT INTO students VALUES (14,'Rajat')"
+
+mycursor.execute(sql)
+cnx.commit()
