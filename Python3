@@ -46,4 +46,21 @@ print(tup)
 Set : Unique Values, Insertion order not maintained so index number not supported
 s = {12,33,45,66,77,54,54}  >> Dups not allowed
 
+Dict:
+Keys = [1,2,3,4,5]
+Values = ['a','b','c','d','e']
+
+data = dict(zip(Keys,Values))
+print(data)
+
+data[6] =  'f'  # add into dictionary 
+del data[6]     # delete from dictionary
+
+
+Complex Dictionary Example :
+prog =  {'JS':'Atom','Java':{'JSE':'Netbeans','JEE':'Eclipse'},'Python':['Sublime','PyCharm']}
+
+print(prog['Java']['JEE'])
+print(prog['Python'][1])
+
 
