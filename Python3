@@ -16,3 +16,16 @@ name[-1]
 
  0  1  2  3  4  5  6  
 -7 -6 -5 -4 -3 -2 -1 
+
+
+String in python is immutable, you can't change the value of it.
+name[0:3] = 'my' >> Not allowed
+
+
+List in Python :
+List of list : 
+
+names = ['abc','def','ghi','jkl']
+nums = [1,2,3,4,5,6,7]
+mil = [names, nums]
+
