@@ -64,3 +64,10 @@ print(prog['Java']['JEE'])
 print(prog['Python'][1])
 
 
+Bitwise Operators :
+Complement(~)
+AND
+OR 
+XOR
+Left Shift
+Right Shift
