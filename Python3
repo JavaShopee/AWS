@@ -87,6 +87,40 @@ from array import *
 val = array('i',[11,23,32,34,55,66,54,43,22])
 print(val.buffer_info())
 
+##Print Array :
+
+print(val)
+
+for i in range(len(val)):
+    print(val[i])
+    
+from array import * 
+
+val = array('i',[11,23,32,34,55,66,54,43,22])
+print(val)
 
 
+Character Array in python :
+from array import * 
 
+chars = array('u',['a','e','i'])
+print(chars)
+
+for i in chars:
+    print(i)
+    
+    
+    
+
+for i in val:
+    print(i)
+
+
+Copy array to another array: 
+
+from array import * 
+
+vals = array('i',[21,22,34,45,66,77,65,21])
+
+chars = array(vals.typecode,(a for a in vals))
+print(chars)
