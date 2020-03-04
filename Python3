@@ -188,3 +188,11 @@ Third argument is optional, default is 50 parts
 from numpy import * 
 k = arange(0,15,2)
 print(k)
+
+4. logspace(from , to , parts)
+k = logspace(0,15,5)
+print(k)
+10^1 to 10^ 15 and 5 parts NOT equally spaced
+
+5. ones(5,int)
+6. zeros(5,int)
