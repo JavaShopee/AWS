@@ -84,11 +84,8 @@ else:
     
     
 from array import * 
-
-val = ('i',[11,23,32,34,-55,66,54,43,22]) >> Unsigned Int
-print(val)
-val = ('I',[11,23,32,34,55,66,54,43,22])  >> Signed Int
-print(val)
+val = array('i',[11,23,32,34,55,66,54,43,22])
+print(val.buffer_info())
 
 
 
