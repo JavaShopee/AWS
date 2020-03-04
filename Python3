@@ -165,8 +165,26 @@ arr = array([12,32,33,11,34,56,76],int)
 
 print(arr)
 
-TYpecode is optional using numpy
+Typecode is optional using numpy
+
+Ways of creating array using Numpy
+1. array()    2. linspace()   3. logspace()   4. arange
+5. zeros()    6. ones()
 
 
+1. array() : 
 
+from numpy import *
+k = array([1,2,3,4,5],float)
+print(k)
     
+2. linspace(from, to , parts)
+from numpy import * 
+k = linspace(0,15,16)   >> return float
+print(k)
+Third argument is optional, default is 50 parts
+
+3. arange(from, to , steps)
+from numpy import * 
+k = arange(0,15,2)
+print(k)
