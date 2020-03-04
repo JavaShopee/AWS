@@ -124,3 +124,49 @@ vals = array('i',[21,22,34,45,66,77,65,21])
 
 chars = array(vals.typecode,(a for a in vals))
 print(chars)
+
+
+
+Creating empty array :
+
+vals = array('i',[])
+
+
+Take array from user using append()
+from array import * 
+n = int(input("Enter the length of array"))
+
+arrmy = array('i',[])
+
+for i in range(n):
+    x = int(input("Enter the next element"))
+    arrmy.append(x)
+    
+    
+for e in arrmy:
+    print(e)
+    
+    
+    
+finding the index of elm : 
+
+from array import * 
+n = 77
+arrmy = array('i',[11,23,13,45,43,55,66,77,54])
+print(arrmy.index(n))
+
+
+array package doesn't support 2D array
+
+Numpy array creation:
+from numpy import * 
+
+arr = array([12,32,33,11,34,56,76],int)
+
+print(arr)
+
+TYpecode is optional using numpy
+
+
+
+    
