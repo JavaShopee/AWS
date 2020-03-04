@@ -71,3 +71,12 @@ OR
 XOR
 Left Shift
 Right Shift 
+
+for Else in Python :
+lst = [12,13,14,23,34,451,32]
+
+for i in lst:
+    if i %5==0:
+        print(i)
+else:
+    print("Not Found")
