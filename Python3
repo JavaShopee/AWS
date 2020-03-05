@@ -358,3 +358,19 @@ def myfunc():
  
 myfunc()    
 print(a)    
+
+
+
+Fibonacci Series in python :
+
+def fibo():
+    a = 0
+    b = 1 
+    c = a + b
+    for i in range (0,50):
+        c = a + b 
+        print(a)
+        a = b 
+        b = c 
+
+fibo()
