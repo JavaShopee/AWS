@@ -299,3 +299,19 @@ print("a ",a)
 1917119648
 x  80
 a  10
+
+
+Formal Arguments
+Actual Arguments >>
+Position  : add(name,age)     add('sachin',30)
+Keyword : add(name,age)  add(age=30,name='sachin')
+Default : add(name,age)  add('sachin',age=18)
+Variable Length  >>
+def sum(a,*b):
+    c=a
+    for e in b:
+        c=c+e
+    print(c)
+
+
+sum(2,3,4,5,6)
