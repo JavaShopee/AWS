@@ -259,3 +259,43 @@ m3 = m1 +m2
 print(m1)
 print(m2)
 print(m3)
+
+
+
+List is mutable Vs String/Integer Immutable:
+def update(x):
+    print(id(x))
+    x[1] = 80
+    print(id(x))
+    print("x ", x)
+
+lst = [10,20,30]
+print(id(lst))
+update(lst)
+print("lst ",lst)
+
+29312904
+29312904
+29312904
+x  [10, 80, 30]
+lst  [10, 80, 30]
+
+String/Integer Immutable
+
+def update(x):
+    print(id(x))
+    x = 80
+    print(id(x))
+    print("x ", x)
+
+a=10
+print(id(a))
+update(a)
+
+print("a ",a)
+
+1917118528
+1917118528
+1917119648
+x  80
+a  10
