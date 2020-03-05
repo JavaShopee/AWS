@@ -344,3 +344,17 @@ def myfunc():
  
 myfunc()    
 print(a)
+
+
+
+Without impacitng the local var
+
+a = 10
+def myfunc():
+    a= 20
+    print(a)
+    globals()['a'] = 30
+ 
+ 
+myfunc()    
+print(a)    
