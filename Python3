@@ -328,3 +328,19 @@ def person(name, **data):
 
 
 person('sachin',age=30,rol=20,gender='M')
+
+
+
+
+
+global/globals in python
+
+a = 10
+def myfunc():
+    global a
+    a= 20
+    print(a)
+ 
+ 
+myfunc()    
+print(a)
