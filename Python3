@@ -358,3 +358,24 @@ div = smart_div(div)
 
 k = div(2,4)
 print(k)
+
+
+
+
+Modules in python : 
+from Calc import * 
+
+addition = add(2,3)
+print(addition)
+
+
+Calc.py:
+def add(a,b):
+    return a+b 
+    
+    
+def sub(a,b):
+    return a-b 
+    
+def mul(a,b):
+    return a*b
