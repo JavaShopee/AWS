@@ -376,3 +376,14 @@ def sub(a,b):
     return a-b 
 def mul(a,b):
     return a*b
+    
+   
+__name__ = __main__ for currnet page
+otherwise module name
+
+from Calc import add > It will import all functions from Calc modules if main function is calling all other functions
+   
+   
+   
+    
+    
