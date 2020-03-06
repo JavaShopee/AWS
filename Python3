@@ -317,12 +317,44 @@ def sum(a,*b):
 sum(2,3,4,5,6)
 
 
-
-
-
 Keyworded Variable Length Arguments: 
 def person(name, **data):
     print(name)
     for i,j in data.items():
         print(i,j)
 person('sachin',age=30,rol=20,gender='M')
+
+
+lst = [1,2,3,4,5,6,7,8,9,10]
+k=list(filter(lambda a:a%2==0,lst))
+print(k)
+
+
+from functools import reduce
+lst = [1,2,3,4,5,6,7,8,9,10]
+
+
+reduce belogs to module called functools
+doubleit = reduce(lambda a,b:a+a,lst)
+print(doubleit)
+
+
+
+
+Decorators in Python :
+def div(a,b):
+    return a/b
+    
+
+def smart_div(func):
+    def inner(a,b):
+        if a < b:
+            a,b = b,a
+        return func(a,b)
+    return inner
+    
+    
+div = smart_div(div)
+
+k = div(2,4)
+print(k)
