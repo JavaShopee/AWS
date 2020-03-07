@@ -382,8 +382,19 @@ __name__ = __main__ for currnet page
 otherwise module name
 
 from Calc import add > It will import all functions from Calc modules if main function is calling all other functions
-   
-   
-   
-    
-    
+
+
+Class Variables/Static Variables Vs Instance Variables
+class Car:
+    wheels = 4
+    def __init__(self):
+        self.com = 'BMW'
+        self.mil = 10
+
+c1 = Car()
+c2 = Car()
+
+c1.mil = 8
+Car.wheels = 5
+print(c1.com, c1.mil, c1.wheels)
+print(c2.com, c2.mil, c2.wheels)
