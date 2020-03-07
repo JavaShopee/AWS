@@ -500,3 +500,7 @@ Duck Typing
 Operator Overloading
 Method Overloading
 Method Overriding
+
+
+Duck Typing : If there is an object, that has method(say execute) that's it, we can duck type object in order to call execute method.
+
