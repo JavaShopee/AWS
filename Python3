@@ -492,3 +492,11 @@ c.feature4()
 
 Method Resolution Order in Multiple Inheritence :
 from Left to Right
+
+
+
+Polymorphism : 
+Duck Typing
+Operator Overloading
+Method Overloading
+Method Overriding
