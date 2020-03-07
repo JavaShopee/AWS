@@ -434,3 +434,60 @@ p = Student.getSchool()
 print(p)
 
 q = Student.info()
+
+
+
+
+Inner Class
+class Student:
+    def __init__(self,name,roll):
+        self.name = name
+        self.roll = roll
+        self.lap = self.Laptop()
+
+    def show(self):
+        print(self.name, self.roll)
+
+    class Laptop:
+        def __init__(self):
+            self.brand = 'HP'
+            self.cpu = 'i5'
+            self.ram = 8
+
+
+a = Student('Navin',2)
+b = Student('Rachit',3)
+
+#print(a.lap.brand)
+#print(b)
+
+
+lap1= Student.Laptop()
+print(lap1.ram)
+
+lap2 = a.lap
+print(id(lap2))
+
+
+
+Multiple Inheritence :
+class A:
+    def feature1(self):
+        print("Feature 1 working")
+    def feature2(self):
+        print("Feature 2 working")
+
+class B(A):
+    def feature3(self):
+        print("Feature 3 working")
+    def feature4(self):
+        print("Feature 4 working")
+
+class C(A,B):
+    pass
+
+c = C()
+c.feature1()
+c.feature4()
+
+
