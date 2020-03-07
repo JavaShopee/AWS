@@ -398,3 +398,39 @@ c1.mil = 8
 Car.wheels = 5
 print(c1.com, c1.mil, c1.wheels)
 print(c2.com, c2.mil, c2.wheels)
+
+
+
+Class Methods , Instance Methods and Static Methods
+class Student:
+
+    school = 'abc'
+    def __init__(self ,m1 ,m2 ,m3):
+        self.m1=m1
+        self.m2=m2
+        self.m3=m3
+
+    def avg(self):
+        return (self.m1 + self.m2 + self.m3)/3
+
+    @classmethod
+    def getSchool(cls):
+        return cls.school
+
+    def setSchool(self, value):
+        self.school = value
+
+    @staticmethod
+    def info():
+        print('The info about the class')
+
+
+a = Student(12,13,14)
+k = a.avg()
+
+print(k)
+
+p = Student.getSchool()
+print(p)
+
+q = Student.info()
