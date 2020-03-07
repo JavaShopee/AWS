@@ -490,4 +490,5 @@ c = C()
 c.feature1()
 c.feature4()
 
-
+Method Resolution Order in Multiple Inheritence :
+from Left to Right
