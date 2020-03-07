@@ -504,3 +504,24 @@ Method Overriding
 
 Duck Typing : If there is an object, that has method(say execute) that's it, we can duck type object in order to call execute method.
 
+class PyCharm:
+    def execute(self):
+        print("Compiling")
+        print("Executing")
+
+
+class MyEditor:
+    def execute(self):
+        print("Spell Check")
+        print("Compiling")
+        print("Executing")
+
+
+class Laptop:
+    def code(self,ide):
+        ide.execute()
+
+a = MyEditor()
+lap = Laptop()
+lap.code(a)
+
