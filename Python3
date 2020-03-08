@@ -585,6 +585,23 @@ class Student:
 obj = Student()
 k = obj.add(12,13)
 print(k)
+
+
+
+Abstarct Class : 
+from abc import ABC,abstractmethod
+
+
+class Student(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+
+
+class Laptop(Student):
+    def process(self):
+        print("Hello Abstarct")
     
-    
+a = Student()
+TypeError: Can't instantiate abstract class Student with abstract methods process
 
