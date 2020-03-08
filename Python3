@@ -605,3 +605,22 @@ class Laptop(Student):
 a = Student()
 TypeError: Can't instantiate abstract class Student with abstract methods process
 
+
+
+
+
+Exception Handling in python
+a = 5
+b = 0
+
+try:
+    print(a / b)
+    k = int(input("Enter a number"))
+except ZeroDivisionError as e:
+    print("You can't divide a number by zero", e)
+except ValueError as v:
+    print("Invalid Input")
+except Exception as e:
+    print("Something went wrong")
+
+print('Bye')
