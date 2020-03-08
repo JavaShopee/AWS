@@ -525,3 +525,66 @@ a = MyEditor()
 lap = Laptop()
 lap.code(a)
 
+
+
+a = '5'
+b = '6'
+print(a+b)
+print(str.__add__(a,b))
+
+
+
+Operator Overloading:
+class Student:
+    def __init__(self,m1,m2):
+        self.m1 = m1
+        self.m2 = m2
+
+    def __add__(self, other):
+        m1tot =  self.m1 + other.m1
+        m2tot =  self.m2 + other.m2
+        s3 = Student(m1tot,m2tot)
+        return s3
+
+    def __gt__(self, other):
+        atot = self.m1 + self.m2
+        btot = other.m1 + other.m2
+        if atot > btot:
+            return True
+        else:
+            return False
+
+
+
+a = Student(22,80)
+b = Student(35,22)
+
+c = a + b
+print(c.m1)
+
+if a > b:
+    print("a wins")
+else:
+    print("b wins")
+    
+    
+Method Overloading is not directly supported in python:
+class Student:
+
+    def add(self,a=None,b=None,c=None):
+        s=0
+        if a != None and b!= None and c!= None:
+            s= a+b+c
+        elif a != None and b!= None:
+            s=a+b
+        else:
+            s=a
+        return s
+
+
+obj = Student()
+k = obj.add(12,13)
+print(k)
+    
+    
+
