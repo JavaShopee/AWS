@@ -1,0 +1,36 @@
+Instance Type : Virtual representation of underlying physical resource of an Instance
+
+Auto Scaling Group : Logical collection of identical EC2 Instances
+
+Request Spot Instance : Bid for the unused compute capacity
+
+Cloud Watch is default monitoring tool which captures all the information like : Disc read, Disc Write, Packets in , Packets Out, 
+N/W in N/W out
+It Gauge upon the perfomance of EC2 instances
+Cloud Watch comes in 2 diff flavours :
+
+Default /Std monitoring: send ping after gap of each 5 mins.Check health of the instance
+Detailed Monitoring: 1 min gap , send ping messages, check health of instance 
+
+
+Dedicated Tenancy : You run ur host on dedicated host/piece of h/w
+
+N/W interface : Default N/w Interface you attach to ur instance.
+  eth0: Mac add,Private IP or Public IP
+
+
+1 GiB = 1.07 GB
+
+Delete on Terimnation : Life of EC2 instance is independent of life of EC2 instance.
+Even if we delete EC2 instance, EBS volume is still secured.
+
+
+Private IPs : Instance fetches private IP from range of subnet.
+It's static in nature and used for internal communication.
+
+Private IP is assocaited to public IP using the concept called NAT
+
+As soon as you disassociate/associate elastic IP (which is same as Public IP), Instance will tend to get new public IP
+
+
+
