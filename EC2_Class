@@ -30,7 +30,9 @@ It's static in nature and used for internal communication.
 
 Private IP is assocaited to public IP using the concept called NAT
 
-As soon as you disassociate/associate elastic IP (which is same as Public IP), Instance will tend to get new public IP
+As soon as you disassociate / associate elastic IP(which is same as Public IP), Instance will tend to get new public IP.
+At any given point of time, you can accomadiate 5 EIPs per region.
+
 
 
 
