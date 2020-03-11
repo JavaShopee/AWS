@@ -124,7 +124,9 @@ Auto Scaling refers to Lauch config and launch 2 more instacnes in same ASG
 sudo yum install stress >> to bump up cpu utilization
 stress -c 5
 
-
+****************************
+Load Balancer : Performs the health check after every 30 seconds. If the instance stop responding, it will redirect the 
+traffic to instance in same or different AZ.
 
 
 
