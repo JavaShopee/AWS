@@ -131,5 +131,15 @@ Load Balancer : Performs the health check after every 30 seconds. If the instanc
 traffic to instance in same or different AZ.
 
 
+Connection Draining : Data Traffic (from User to EC2)
+HC Traffic (from LB to EC2)
+
+
+Whenever EC2 instance fails the health check, it ensures that existing connections are being taken care of
+and future traffic will not be redirected to Unhealth instances.
+
+
+
+
 
 
