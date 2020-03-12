@@ -1,0 +1,5 @@
+Used for Internal Purpose
+It works in the confirment of region
+Never ever recieves the traffic from the internet
+
+DNS name of ICLB is maaped to private IP addresses of nodes in diff AZs
