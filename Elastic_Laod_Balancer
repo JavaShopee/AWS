@@ -139,6 +139,11 @@ Whenever EC2 instance fails the health check, it ensures that existing connectio
 and future traffic will not be redirected to Unhealth instances.
 
 
+Stickness : User subsequent request/session wil be redirectied to only one instance tied to LB
+Cookie stored in User's browser : AWS ELB cookie
+Generally used in e commerce platforms.
+
+
 
 
 
