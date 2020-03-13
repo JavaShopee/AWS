@@ -245,3 +245,15 @@ None of the subnet have IG attached to them
 None of the subnet have access to Internet
 IG can be attached to subnet manually through entry within the route table
 
+
+Default VPC 
+Subnets = AZ
+1 RT, 1 IGW, 1 SG, 1 NACL
+IGW attahced to all the subnets >> manually in Non Default VPC
+All Subnets are public Subnets
+
+
+5 IGW per Region = VPC limit(including the default VPC)
+
+
+IG creates routes/path towards the Internet
