@@ -223,3 +223,25 @@ Public IPs : BYOIPs : If you have spare IPs, you can use them as public IPs or o
 ssh-add -K linuxec2-kp.pem
 ssh -A ec2-user@52.9.171.211
 ssh ec2-user@10.0.2.153
+
+*****************************************************VPC***************************************************
+
+Virual Private Gatewy : Border of VPC
+Customer Gateway : Border of Corpoate N/W
+You will have end to end IPSec VPN tunnel b/w VPG and CG
+VPN tunnel  will encrypt entire traffic / data flowing to and fro 
+
+
+Security, Flexibility and Cost Effective
+
+
+
+Default and Non Default VPC
+
+
+Non Default VPC : All EC2 Instances have private IPs
+No Public /Elastic IPs assigned automatically
+None of the subnet have IG attached to them
+None of the subnet have access to Internet
+IG can be attached to subnet manually through entry within the route table
+
