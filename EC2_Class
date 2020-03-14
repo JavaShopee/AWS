@@ -35,4 +35,19 @@ At any given point of time, you can accomadiate 5 EIPs per region.
 
 
 
+Launc EC2 via CLI : 
+
+1. Create SG and define Inbound rule
+2. Create Key Pair and download private key
+3. Lauch Instance
+
+aws EC2 create-security-group --group-name cli-sg --description "Launced via CLI"
+aws EC2 describe-security-groups --group-name cli-sg 
+aws EC2 authorize-security-group-ingress --group-name cli-sg --protocol tcp --port 22 --cidr 0.0.0.0/0
+
+aws EC2 authorize-security-group-ingress --group-name cli-sg --protocol tcp --port 80 --cidr 0.0.0.0/0
+
+aws EC2 authorize-security-group-ingress --group-name cli-sg --protocol tcp --port 443 --cidr 0.0.0.0/0
+aws ec2 run-instances --count 1 --image-id xxxx --instance-type t2.micro --security-group cli-sg --key-name cli-kp
+
 
