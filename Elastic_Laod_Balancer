@@ -123,6 +123,22 @@ Cloudwatch will send alert to ASG and email to you
 Auto Scaling will trigger scale out policiy (launch 2 more instaces)
 Auto Scaling refers to Lauch config and launch 2 more instacnes in same ASG
 
+
+CoolDown Period : Cloud Watch should allow atleast 300 sec (HCGP) before declaring the instance unhealthy.  
+We give 5 mins to new launched instaces to install all apps, scripts, software before they come into action
+
+WarmUp Period : 300 sec by default , applies to Step Scaling policies, time between two consequtive steps
+
+
+Scaling Policies with steps : 
+Add 2 more instances if CPU utilization is b/w 30 to 40 %
+Add 2 more instances if CPU utilization is b/w 40 to 50 %
+Add 2 more instances if CPU utilization is b/w 50 to 60 %
+Add 2 more instances if CPU utilization is b/w 60 to 80 %
+
+I am adding my 8 instances in 4 different steps
+
+
 sudo yum install stress >> to bump up cpu utilization
 stress -c 5
 
