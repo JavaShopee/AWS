@@ -49,5 +49,5 @@ aws EC2 authorize-security-group-ingress --group-name cli-sg --protocol tcp --po
 
 aws EC2 authorize-security-group-ingress --group-name cli-sg --protocol tcp --port 443 --cidr 0.0.0.0/0
 aws ec2 run-instances --count 1 --image-id xxxx --instance-type t2.micro --security-group cli-sg --key-name cli-kp
-
+aws ec2 describe-instances --instance-id xxxx
 
