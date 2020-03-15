@@ -42,3 +42,13 @@ print(lang[::-1])
 name,srch=input("Enter name and character").split(",")
 print(f"Length of name is {len(name)}")
 print(f"Count is {name.strip().lower().count(srch.strip().lower())}")
+
+
+
+Find and Replace Method :
+string = "she is beautiful and she is good dancer"
+# newstr = string.replace("is","was",1)
+# print(newstr)
+is_pos1 = string.find("is")
+is_pos2 = string.find("is", is_pos1+1)
+print(is_pos2)
