@@ -11,3 +11,6 @@ variable names starts with letter or _
 name,age= input("Enter your name and age : ").split()
 print(name)
 print(age)
+
+
+Emoji in python : https://unicode.org/emoji/charts/full-emoji-list.html#1f607
