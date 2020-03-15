@@ -2,3 +2,12 @@ Python 3 Vs Python 2 :
 
 Python 3 has much more advanced libraries as compared to python 2
 and much more efficient 
+
+
+We can't use special characters in varibale name like $
+variable names starts with letter or _
+
+
+name,age= input("Enter your name and age : ").split()
+print(name)
+print(age)
