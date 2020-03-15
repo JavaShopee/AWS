@@ -14,3 +14,26 @@ print(age)
 
 
 Emoji in python : https://unicode.org/emoji/charts/full-emoji-list.html#1f607
+
+
+name = 'Sachin'
+age = 34
+
+print("Your name is " + name + " and age is " + str(age) )
+print("Your name is {} and age is {}".format(name,age+2))
+print(f"Your name is {name} and age is {age+2}")
+
+
+i,j,k = input("Enter 3 numbers : ").split(",")
+avg = (int(i)+int(j)+int(k))/3
+print(f"average of three numbers is : {avg}")
+
+
+
+Reverse the string:
+lang = "Python"
+print(lang[-1::-1])
+
+Equivalent to 
+lang = "Python"
+print(lang[::-1])
