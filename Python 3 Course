@@ -52,3 +52,18 @@ string = "she is beautiful and she is good dancer"
 is_pos1 = string.find("is")
 is_pos2 = string.find("is", is_pos1+1)
 print(is_pos2)
+
+
+
+How many times each charachter is repeated: 
+
+name = input("enter your name : ") 
+lgth = len(name)
+
+i = 0
+temp_var = ""
+while i < lgth:
+    if name[i] not in temp_var: 
+        temp_var += name[i]
+        print(name[i], name.count(name[i]))
+    i+=1
