@@ -90,3 +90,29 @@ for i in range(0,lgth):
     sum += int(k[i])
     
 print(sum)
+
+
+
+Guessing Number Game
+
+
+import random
+
+winning_num = random.randint(1,100)
+guess = 1 
+
+game_over = False
+k = int(input("Enter the number between 1 and 100 : "))
+while not game_over:
+    if winning_num  == k:
+        game_over = True
+        print("You won the game in " , guess, " times")
+    else:
+        if k < winning_num:
+            print("too low")
+            guess += 1 
+            k= int(input("guess again : "))
+        else:
+            print("too high")
+            guess += 1
+            k= int(input("guess again : "))
