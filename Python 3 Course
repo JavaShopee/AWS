@@ -67,3 +67,15 @@ while i < lgth:
         temp_var += name[i]
         print(name[i], name.count(name[i]))
     i+=1
+
+
+
+Calculate sum of digits :
+k = input("Enter the number")
+lgth = len(k)
+
+sum=0
+for i in range(0,lgth):
+    sum += int(k[i])
+    
+print(sum)
