@@ -70,6 +70,17 @@ while i < lgth:
 
 
 
+k = input("Enter the name")
+lgth = len(k)
+
+
+temp_var = ""
+for i in range(0,lgth):
+    if k[i] not in temp_var:
+        temp_var += k[i]
+        print(k[i], k.count(k[i]))   
+
+
 Calculate sum of digits :
 k = input("Enter the number")
 lgth = len(k)
