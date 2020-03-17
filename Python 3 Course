@@ -116,3 +116,28 @@ while not game_over:
             print("too high")
             guess += 1
             k= int(input("guess again : "))
+
+
+
+fibonacci series in python : 
+def fibo(n):
+    i = 0 
+    j = 1 
+    k = 0
+    for i in range (0,n):
+        print(k)
+        i = j  
+        j = k
+        k =  i + j
+        
+
+
+Factorial using recursion: 
+def fact(n):
+    if n==0:
+        return 1 
+    else:
+        return n * fact(n-1)    
+        
+k = fact(4)
+print(k)        
