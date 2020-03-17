@@ -141,3 +141,8 @@ def fact(n):
         
 k = fact(4)
 print(k)        
+
+
+mixed = [1,2,3,4,5,'six','seven',8.9]
+mixed[1:] =  'two'
+print(mixed)
