@@ -146,3 +146,17 @@ print(k)
 mixed = [1,2,3,4,5,'six','seven',8.9]
 mixed[1:] =  'two'
 print(mixed)
+
+
+
+fruits1 = ['apple', 'mango']
+fruits2 = ['banana', 'orange']
+
+
+fruits1.append(fruits2)
+print(fruits1)
+['apple', 'mango', ['banana', 'orange']]
+
+fruits1.extend(fruits2)
+print(fruits1)
+['apple', 'mango','banana', 'orange']
