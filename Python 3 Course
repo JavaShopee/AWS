@@ -160,3 +160,10 @@ print(fruits1)
 fruits1.extend(fruits2)
 print(fruits1)
 ['apple', 'mango','banana', 'orange']
+
+
+## append, extend, insert
+## pop, remove, del
+
+del fruits1[1]
+fruits1.remove('banana')
