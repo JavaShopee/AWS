@@ -167,3 +167,9 @@ print(fruits1)
 
 del fruits1[1]
 fruits1.remove('banana')
+
+
+double equals Vs is
+double equals : Check for values
+is : same memory or not
+
