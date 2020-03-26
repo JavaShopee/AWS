@@ -173,3 +173,9 @@ double equals Vs is
 double equals : Check for values
 is : same memory or not
 
+
+Iterator Vs Iterable:
+
+Iterable :: iter() function---return--> next()
+Iterator::  next()
+
