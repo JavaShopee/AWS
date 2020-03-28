@@ -26,7 +26,19 @@ print(list3)
 
 list = [1,2,3,4,5,6,7,8,9,10]
 list.pop(5)
-print(list)
+print(list
+
+split method : string to list converstion
+join : list to string
+mystring = 'sachin arora grade a'
+listme = mystring.split(" ")
+
+
+name, age = input("Enter name and age separated by comma : ").split(",")
+print(name)
+print(age)
+
+print(listme)
 
 
 list = [1,2,3,4,5,6,7,8,9,10]
@@ -41,3 +53,33 @@ ValueError : If element not in list
 #Other list methods: Sorted(just to print in sorted) , sort , count , clear, copy 
 listme = ['apple','mango','banana','orange','grapes']
 print(sorted(listme))
+
+
+lisme = ['sachin','24']
+print(",".join(lisme))
+
+
+
+#List Vs Arrays:
+#List : flexible, hetrogeneous elelents
+#Array Modiule : Numpy 
+#Arrays : Homo 
+#
+#List Vs String:
+#List are mutable
+#String are immutable
+#strin.title()
+
+
+POP method returns a popped value :
+listme = list(range(0,11))
+popped_item = listme.pop()
+print(popped_item)
+
+
+
+Index functon with list 
+listme = [1,2,3,4,5,6,7,8,9,10]
+listme.index(1,2,7)
+
+
