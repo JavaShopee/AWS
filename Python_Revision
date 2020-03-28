@@ -1,0 +1,24 @@
+# Ordered Collection of Items
+# You can store anything inside list like int, float, char
+
+listme = [1,2,3,4,5,'sachin',8.9, None]
+
+listme[1:] = ['two','three','four','five']
+
+print(listme)
+
+O: [1, 'two', 'three', 'four', 'five']
+
+
+
+# insert at position
+# append : list within list
+# extend : element extend
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+
+list3 = list1 + list2
+
+list1.insert(1,'sachin')
+print(list1)
+print(list3)
