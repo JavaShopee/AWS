@@ -83,3 +83,21 @@ listme = [1,2,3,4,5,6,7,8,9,10]
 listme.index(1,2,7)
 
 
+tuples () : Immutable
+tuples are faster than lists
+Performcnce benefits
+
+Methods : count(), index(),len, slicing
+
+
+Tuple Unpacking:
+mytuple = ('abc', 'def', 'ghi')
+mytuple1,mytuple2,mytuple4 = (mytuple)
+print(mytuple1)
+print(mytuple2)
+print(mytuple4)
+
+Tuple Without paanthesis : 
+mytuple = 'abc', 'def', 'ghi'
+
+
