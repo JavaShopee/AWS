@@ -26,7 +26,12 @@ print(list3)
 
 list = [1,2,3,4,5,6,7,8,9,10]
 list.pop(5)
-print(list
+print(list)
+
+
+
+
+
 
 split method : string to list converstion
 join : list to string
@@ -100,7 +105,7 @@ print(mytuple4)
 Tuple Without paanthesis : 
 mytuple = 'abc', 'def', 'ghi'
 
-
+Unpacking: 
 user_info = {
     "Name": "Sachin",
     "Age": 34,
@@ -126,4 +131,50 @@ O:
 Name-->Sachin
 Age-->34
 Fav_movies-->['Dhoom', 'Sholey', 'Sally']
-Fav_Tunes-->['abc_tune', 'def_tune']    
+Fav_Tunes-->['abc_tune', 'def_tune']   
+
+
+
+
+
+user_info = {
+    "Name": "Sachin",
+    "Age": 34,
+    "Fav_movies": ['Dhoom','Sholey','Sally'],
+    "Fav_Tunes":["abc_tune","def_tune"]
+}
+
+poppd_item= user_info.pop('Fav_Tunes')
+
+print(f"popped item is {poppd_item}")
+print(user_info)
+
+
+
+popitem method : randomly any key value pair
+user_info = {
+    "Name": "Sachin",
+    "Age": 34,
+    "Fav_movies": ['Dhoom','Sholey','Sally'],
+    "Fav_Tunes":["abc_tune","def_tune"]
+}
+
+poppd_item = user_info.popitem()
+
+
+print(f"popped item is {poppd_item}")
+print(user_info)
+
+
+Get Method :
+to handle key error 
+
+user_info = {
+    "Name": "Sachin",
+    "Age": 34,
+    "Fav_movies": ['Dhoom','Sholey','Sally'],
+    "Fav_Tunes" : ["abc_tune","def_tune"]
+}
+
+newval= user_info.get('Name')
+print(newval)
