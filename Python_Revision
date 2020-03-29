@@ -178,3 +178,15 @@ user_info = {
 
 newval= user_info.get('Name')
 print(newval)
+
+user_info['Names'] : will give you keyerror for not existing keys, get will give you none
+
+
+user_info = {
+    "Name"       : "Sachin",
+    "Age"        : 34,
+    "Fav_movies" : ['Dhoom','Sholey','Sally'],
+    "Fav_Tunes"  : ["abc_tune","def_tune"]
+}
+
+print(user_info.get('Names','Not Found'))
