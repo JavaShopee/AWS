@@ -190,3 +190,40 @@ user_info = {
 }
 
 print(user_info.get('Names','Not Found'))
+
+
+
+Dictionary : 
+Unordered collection of key value pair
+Set: 
+Unordered collection of unique items
+
+
+Set is widely used to remove duplicate elements from the list :
+mylist = [8,7,3,4,5,6,7,1,2,3,9,10]
+
+myset = list(set(mylist))
+print(myset)
+
+
+set.add()
+.remove() > Will give you key error for non existing element, use discard() to avoid the error
+.clear() 
+.copy()
+
+
+Set can't store dict, list 
+similar to hashset for ordered coll
+
+
+
+s1 = {1,2,3,4,5}
+s2 = {4,5,6,7,8}
+
+##Union 
+s3 = s1 | s2
+print(s3)
+
+##Intersaction
+s4 = s1 & s2
+print(s4)
