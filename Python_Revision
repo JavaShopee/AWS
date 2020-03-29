@@ -101,3 +101,29 @@ Tuple Without paanthesis :
 mytuple = 'abc', 'def', 'ghi'
 
 
+user_info = {
+    "Name": "Sachin",
+    "Age": 34,
+    "Fav_movies": ['Dhoom','Sholey','Sally'],
+    "Fav_Tunes":["abc_tune","def_tune"]
+}
+
+for i in user_info.items():
+    print(i)
+
+O :
+('Name', 'Sachin')
+('Age', 34)
+('Fav_movies', ['Dhoom', 'Sholey', 'Sally'])
+('Fav_Tunes', ['abc_tune', 'def_tune'])
+
+
+
+for i,j in user_info.items():
+    print(f"{i}-->{j}")
+
+O: 
+Name-->Sachin
+Age-->34
+Fav_movies-->['Dhoom', 'Sholey', 'Sally']
+Fav_Tunes-->['abc_tune', 'def_tune']    
