@@ -239,3 +239,11 @@ List Comprehension with if else statement :
 mylist = [1,2,3,4,5,6,7,8,9,10]
 
 newlist = [i**2 if i %2==0 else -i for i in mylist]
+
+
+
+
+Dictionary Comprehension : 
+name = 'sachinsasa'
+newdict = {char:name.count(char) for char in name}
+print(newdict)
