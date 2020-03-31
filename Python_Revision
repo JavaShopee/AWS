@@ -314,3 +314,19 @@ def new_func(name, *args , lname = 'unknown', **kwargs):
 
 new_func('sachin' , 1, 2, 3, a =1, b=2)
     
+    
+    
+    
+good example with kwargs :
+
+def sample_func(l,**kwargs):
+    if kwargs.get('reverse_string') == True:
+        return [i[::-1].title() for i in l]
+    else:
+        return [i.title() for i in l]
+
+
+
+
+
+print(sample_func(['sachin','ramesh'],reverse_string=True))
