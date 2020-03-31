@@ -376,3 +376,15 @@ for i in numbers:
     1. Call Iter Function, Iter function will convert iterable to iterator
     iter(numbers) >> iterator
     2. next(item(numbers)) ; next function will be callled on iterator
+    
+    
+    
+    
+ zip functon in python :
+ 
+userid = ['userid1','userid2','userid3']
+names = ['harshit','mohit','rohit']
+
+print(tuple(zip(userid,names)))
+
+if userid has 2 and names has 3, priority will be given to smaller list
