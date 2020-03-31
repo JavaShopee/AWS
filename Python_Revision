@@ -351,5 +351,18 @@ print(list(map(lambda a:a**2 ,mylist)))
 outlist = [a**2 for a in mylist]
 print(outlist)
 
-with inbuilt functions, use map object 
+with inbuilt functions, use map filter
 otherwise use iterable
+
+
+map, filter objects is iterable ONLY ONCE
+
+
+List , Tuples , Strings are iterables
+map, filter objs are iterator
+
+for i in numbers:
+    print(i) >>>
+    1. Call Iter Function, Iter function will convert iterable to iterator
+    iter(numbers) >> iterator
+    2. next(item(numbers)) ; next function will be callled on iterator
