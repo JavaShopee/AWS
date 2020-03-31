@@ -282,3 +282,35 @@ def myfunc(num,*args):
 
 
 print(myfunc(2,*[1,2,3]))
+
+
+
+kwargs gather the keyworded args as dictionary whereas args gather the argument as tuple
+def myfunc(**kwargs):
+    print(type(kwargs))  > <class 'dict'>
+    
+    
+    
+Dictionary unpacking with kwargs:
+
+def myfunc(**kwargs):
+    for k,v in kwargs.items():
+        print(f"{k}->{v}")
+
+
+d = {"FName":"Sachin","LName":"Aroraa"}
+myfunc(**d)
+
+
+
+
+Order : PADK : parameters >> args >> default parameter >> kwargs
+def new_func(name, *args , lname = 'unknown', **kwargs):
+    print(name)
+    print(args)
+    print(lname)
+    print(kwargs)
+
+
+new_func('sachin' , 1, 2, 3, a =1, b=2)
+    
