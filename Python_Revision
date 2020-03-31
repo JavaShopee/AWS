@@ -351,3 +351,5 @@ print(list(map(lambda a:a**2 ,mylist)))
 outlist = [a**2 for a in mylist]
 print(outlist)
 
+with inbuilt functions, use map object 
+otherwise use iterable
