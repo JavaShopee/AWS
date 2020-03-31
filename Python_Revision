@@ -380,11 +380,18 @@ for i in numbers:
     
     
     
- zip functon in python :
- 
+zip functon in python :
+zip the two lists and give you the dict obj/tuple obj 
+
 userid = ['userid1','userid2','userid3']
 names = ['harshit','mohit','rohit']
 
 print(tuple(zip(userid,names)))
 
 if userid has 2 and names has 3, priority will be given to smaller list
+
+Tuple of this type can be easily converted to dictionary
+(('userid1', 'harshit'), ('userid2', 'mohit'), ('userid3', 'rohit'))
+
+
+print(dict(zip(userid,names)))
