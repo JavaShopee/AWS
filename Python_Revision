@@ -493,3 +493,15 @@ def addme(a,b):
     return a+b
 
 print(addme(2,3))
+
+
+Time Function :
+t1 = time.time()
+@decorator_func
+def addme(a,b):
+    ''' This is the sample addition function'''
+    return a+b
+
+print(addme(2,3))
+t2 = time.time()
+print("Total Time Taken is : ", (t2-t1))
