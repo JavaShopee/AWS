@@ -408,6 +408,23 @@ for i in k:
 for i in k:
     print(i)
   
+
+
+Generator Comprehension :
+
+squares = (i**2 for i in range(1,11))
+
+for num in squares:
+    print(num)
+
+
+for num in squares:
+    print(num)
+    
+    
+    
+    
+    
     
     
 zip functon in python :
