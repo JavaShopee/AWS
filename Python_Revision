@@ -444,7 +444,7 @@ print(add_me(2,4,6,7,8,10,10.9))
 
 
 
-
+Function taking function as argument: 
 
 def myfunc(func , l):
     new_list = []
@@ -455,3 +455,26 @@ def myfunc(func , l):
 def new_func(func,l):
     return [func(i) for i in l]
 print(myfunc(lambda a:a**3,[1,2,3,4,5]))
+
+
+
+
+Decorator Function :
+
+from functools import wraps
+def decorator_func(any_function):
+    @wraps(any_function)
+    def wrapper_function(*args, **kwargs):
+        """ This is wrapper function"""
+        print("This is awesome function")
+        return any_function(*args, **kwargs)
+    return wrapper_function
+
+@decorator_func
+def func(a,b):
+    ''' This is add function'''
+    return a+b
+
+print(func(3,4))
+
+
