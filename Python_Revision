@@ -391,6 +391,23 @@ for i in numbers:
   > If you want to use the sequence again and again, use list
   > If you want to use the sequence only once, use generators
   
+  
+   Generator Function/ Comprehension
+  
+   Generator Function
+   def func(n):
+    for i in range(n+1):
+        yield i
+
+k = list(func(10))
+print(k)
+
+for i in k:
+    print(i)
+
+for i in k:
+    print(i)
+  
     
     
 zip functon in python :
