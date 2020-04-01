@@ -377,7 +377,20 @@ for i in numbers:
     iter(numbers) >> iterator
     2. next(item(numbers)) ; next function will be callled on iterator
     
+    If we run a for loop on iterables, it will be first converted to iterator
+    We can run loop on both
     
+    
+    
+  Generator is also sequence(like list) but it's iterator 
+  List is iterable
+    
+  > You created a list , full list will get stored in memory, memory usage
+  > You created a generator, only one number will be generated and stored in memory at a time
+  enhannced performance, reduced memory usage
+  > If you want to use the sequence again and again, use list
+  > If you want to use the sequence only once, use generators
+  
     
     
 zip functon in python :
