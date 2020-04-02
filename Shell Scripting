@@ -53,3 +53,10 @@ Enter array by user
 echo "Enter Names"
 read -a names
 echo "Names are ${names[0]} ${names[1]}
+
+
+
+
+echo "Enter Names " 
+read 
+echo  "Entered Names are $REPLY "   >> Default it will go to reply 
