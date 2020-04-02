@@ -80,3 +80,10 @@ else
    echo "condition is false"
 fi   
    
+
+
+
+
+
+Integer comparision with angular brackets "< >", use if (( $count > 10 ))
+String comparision with angular brackets "< >", use if [[ $word > 'b' ]]
