@@ -1,0 +1,39 @@
+Shell Scripts are interpreted and not compiled
+
+Search what are the shell types which ur OS supports:
+cat /etc/shells
+
+
+/bin/sh           : Born Shell , original shell still used unix env
+/bin/bash         : Born again shell, improved version od born shell, GNU shell , intutive and flexible
+/bin/rbash        :  
+/bin/dash
+/usr/bin/tmux
+/usr/bin/screen
+
+which bash > where bash is located 
+/bin/bash
+
+-rw-rw-r-- 1 ubuntu ubuntu    0 Apr  2 07:14 hello.sh
+
+read write you--read write group--read write user
+
+chmod +x hello.sh   >> Add execute permission
+./hello.sh          >> Execute the shell script
+
+
+# >>> commnet
+Variables store data inside them
+Sys Varibles : Created and maintained by linux and unix OS
+USer variables
+
+Sys Varibles
+echo $BASH  >> Name of the bash shell
+echo $BASH_VERSION
+echo $HOME
+echo $PWD
+
+
+echo "Enter Name"
+read name
+echo "Entered Name is #name"
