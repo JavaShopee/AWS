@@ -87,3 +87,87 @@ fi
 
 Integer comparision with angular brackets "< >", use if (( $count > 10 ))
 String comparision with angular brackets "< >", use if [[ $word > 'b' ]]
+
+
+
+
+#! /bin/bash
+count=10
+if[ $count -eq 10 ]
+then 
+  echo "condition is true"
+elif [ $count -eq 11 ]
+then 
+  echo "something"
+else
+   echo "condition is false"
+fi  
+
+
+
+
+
+File Handling :
+
+echo -e "Enter the filename : \c"
+read filename
+if [ -e $filename ]
+echo ("$filename exists")
+else
+echo ("$filename Not exists")
+
+File Test Operators: 
+-e : exists
+-b : block special file like : image, video
+-c : character special file like normal text file
+-s : check whether file is empty or not 
+-r : Read Permisssion
+-w :
+-x : Execute permission
+-f : exists valid file
+
+cat > filename : override
+cat >> filename : append
+
+
+
+
+
+
+
+echo -e "Enter the name of file \c: "
+read filename
+
+if [ -f $filename ]
+then 
+   if [ -w $filename ]
+   echo "Write some data then ctrl+d"
+   cat >> $filename
+   else
+   echo "File doesn't have the write permission"
+   fi
+ else
+     echo "Not the valid file"
+ fi
+ 
+ 
+
+if [ $age -gt 18 ] && [ $age -lt 30 ]
+then
+   echo "Valid Age"
+else
+   echo "Invalid Age"
+
+
+if [ $age -gt 18 -a $age -lt 30 ]
+if [[ $age -gt 18 && $age -lt 30 ]]
+
+
+
+
+
+
+
+
+
+
