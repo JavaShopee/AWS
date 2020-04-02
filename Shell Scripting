@@ -59,4 +59,24 @@ echo "Names are ${names[0]} ${names[1]}
 
 echo "Enter Names " 
 read 
-echo  "Entered Names are $REPLY "   >> Default it will go to reply 
+echo  "Entered Names are $REPLY "   >> Default it will go to reply
+
+
+./hello.sh a b c
+
+echo $0 $1 $2 $3
+args=("$@")
+echo ${args[0]} ${args[1]} ${args[2]} ${args[3]}
+echo $@    
+echo $#
+
+
+#! /bin/bash
+count=10
+if[ $count -eq 10 ]
+then 
+  echo "condition is true"
+else
+   echo "condition is false"
+fi   
+   
