@@ -34,6 +34,22 @@ echo $HOME
 echo $PWD
 
 
+Take Input from the user:
+
 echo "Enter Name"
 read name
 echo "Entered Name is $name"
+
+echo "Enter Names"
+read name1 name2 name3
+echo "Entered Names are $name1 $name2 $name3"
+
+
+read -p 'username :' user_var 
+echo "username is : $user_var"
+
+Enter array by user
+
+echo "Enter Names"
+read -a names
+echo "Names are ${names[0]} ${names[1]}
