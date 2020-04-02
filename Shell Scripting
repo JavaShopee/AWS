@@ -36,4 +36,4 @@ echo $PWD
 
 echo "Enter Name"
 read name
-echo "Entered Name is #name"
+echo "Entered Name is $name"
