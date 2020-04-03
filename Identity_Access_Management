@@ -57,7 +57,8 @@ Assign Policies to the group
 Permisssins are group of policies
 
 Roles : Where you need to define the permissions for resources and external accounts 
-Allows 2 services to communicate 
+Allows 2 services/features to communicate
+Cross Account Access
 
 Ex 1
 In  normal situation, instance never communicates with S3 by itself. We have to assign a JSON policy /IAM role to EC2 Instance in order 
@@ -86,7 +87,20 @@ acc.
 
 
 
+Policies: Defines permisssions for 3 diffeent entitie:
+Users, Groups and Roles
 
+50 S3 buckets, I m looking to give access to only one S3 bucket to Kunal  >> Custom 
+
+
+
+
+Steps : 
+1. Create 2 S3
+2. Atach custom IAM policy to the one of the bucket for Read Only Access
+3. Create gp
+4. Attch Custom IAM pol to the gp
+5. Create a user and attach to the same gp
 
 
 
