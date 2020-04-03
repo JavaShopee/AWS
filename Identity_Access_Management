@@ -40,6 +40,22 @@ Create a custom IAM policy and implement it
 Object >> Fundamental entity , Any piece of data that we put in S3 bucket is called object
 
 
+**************************************************************************************************
+Root Acc: You signup using the pmt information using credit card or debit card
+Function of root acc : Create IAM users
+Function of Root Acc Owner : 
+1. Authentication for users(username/pwd)
+2. Autherization for users(Access type)
+Root Acc Owner manages billing and can track user's activity
+
+Root Acc owner is not supposed to perform any deletion, termination of resources >> Process Oriented approach
+These activities should be performed by IAM users
+
+JSON Policies(permissions) : What type of access each individual should have
+
+
+
+
 
 
 
