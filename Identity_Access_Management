@@ -52,6 +52,37 @@ Root Acc owner is not supposed to perform any deletion, termination of resources
 These activities should be performed by IAM users
 
 JSON Policies(permissions) : What type of access each individual should have
+Group : Logical collection of IAM users
+Assign Policies to the group 
+Permisssins are group of policies
+
+Roles : Where you need to define the permissions for resources and external accounts 
+Allows 2 services to communicate 
+
+Ex 1
+In  normal situation, instance never communicates with S3 by itself. We have to assign a JSON policy /IAM role to EC2 Instance in order 
+to initiate 2 way comm with S3 bucket
+
+
+Attach the policy to the role
+Attach the role to the instance
+
+Ex2 : Cross Region Replication , no 2 regions can comm with itself
+S3 bucket in Mumbai (source bucket) 
+S3 bucket in NCal   (Desination bucket)
+
+Any thing in source auto copied to dest.
+Video file in S3 bucket, ability to create copy of video file and save that in dest buck : CRR
+Assign policy to the role and attach role to the instance.
+
+
+Ex3 : Cross Account Access
+
+Steve having access to Dev root acc
+S3 bucket in prod root Acc
+Steve looking to push the code to S3 bucket 
+Create IAM role assigning some JSON policies, Steve will initate the commnad "Switch Role" , he will get the temp access to S3 in other 
+acc.
 
 
 
