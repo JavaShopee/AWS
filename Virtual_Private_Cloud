@@ -31,7 +31,7 @@ Ranges (X from 0 to 255):
 Depending upon the private IP addr range of subnet and vpc, private IP is assigend to EC2 instance 
 VPC : 10.0.0.0/16
 SUbnet : 10.0.2.0/24
-EC2 : 10.0.2.32/24
+EC2 : 10.0.2.2/32
 
 Public IP : External Communication over the internet
 Range : Except private and loop back IPs troubleshooting (127.x.x.x)
