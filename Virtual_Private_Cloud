@@ -111,6 +111,8 @@ VPC >
 Default           : Managed by AWS  
 Customer Managed  : Managed by customer
 
+
+In Default VPC,
 Every subnet is public, there is no concept of security/private subnet
 By default, every instance will be launched in public subnet and every instance will get public ip by default
 Less flexible , Less Secure
