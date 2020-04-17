@@ -8,3 +8,28 @@ content based routing.You can just route the traffic to ports,IP addresses, cont
 Network Load Balancer >> Newest, Ultra High Perfomcnae, Fast, millions of request per sec.
 Should be handling millions of request, ecommerce platform.
 *****************************************************************************
+Auto Scaling Components :1.  Auto Scaling Group 
+                          It is a logical collection of identical EC2 instances.
+                          Group the instances together depending upon the services/application running upon them.
+
+For Example : ASG1 : 3 Instances > Running Wordpress Site
+            : ASG2 : 4 Instances > Running Drupal Application
+            
+2. Launch Configuration : 
+Ability to launch and terminate the instances automatically
+What should be the AMI, Security Grp, EBS Volume, Instance Type, Key Pairs, Softwares/Scripts/Application ??
+
+Auto Scaling as a service will refer to Launch Configuration to undersatnd the specification
+and based upon that it will deploy the instances in auto scaling group.
+
+3. Scaling Policies : Scale Out / Scale In
+Scale Out : Increase/ Launch the num of instances within auto scaling group
+Scale In  : Decrease/ Terminate(Not STOP) the num of instances within auto scaling group
+
+4. Scaling Plan :
+Fixed : Fix the num of instances up and running within ASG
+Dynamic : Depending upon certain threshold, increase /decrease num of instances up and running within ASG
+Dynamic Example : 
+            CPU usage of entire ASG > 80, Scale Out
+            CPU usage of entire ASG < 30, Scale In
+Scheduled Action(Time of Day) : Depending upon Time/Date, SacleOut/ScaleIn
