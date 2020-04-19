@@ -37,10 +37,17 @@ Scheduled Action(Time of Day) : Depending upon Time/Date, SacleOut/ScaleIn
 
 
 ***********************IAM**************************************
+Ex 1
 User pulling image from EC2 Instance running wordpress site. Instance indirecly communicating with S3 bucket.
 Instance never communicates with S3 bucket by itself.
 
 We have to crete JSON policy and attch to IAM Role. Assign IAM role to EC2 Instance.
 
+Ex 2
+CRR 
+No two regions can comm by themself
 
+S3 Source bucket in mumbai
+Another Dest S3 in NCal
+Create IAM role using JSON policies and attach it to source bucket in order to copy data from source to target
 
