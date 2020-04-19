@@ -55,3 +55,8 @@ Ex 3
 Cross Account Access 
 Steve, part of Dev root acc, wants to push the code in S3 in prod root acc.
 Assign JSON policies to role and steve use that IAM role to push (using "Switch Role" command) the data to S3 bucket in aother acc. 
+
+
+Policies(JSON Doc) define the permisssion for 3 entities : Users Groups and Roles
+Need to Custom Policy :
+50 S3 buckets, User Kunal need Read Only access to only one S3 bucket
