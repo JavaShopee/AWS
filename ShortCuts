@@ -51,3 +51,7 @@ S3 Source bucket in mumbai
 Another Dest S3 in NCal
 Create IAM role using JSON policies and attach it to source bucket in order to copy data from source to target
 
+Ex 3
+Cross Account Access 
+Steve, part of Dev root acc, wants to push the code in S3 in prod root acc.
+Assign JSON policies to role and steve use that IAM role to push (using "Switch Role" command) the data to S3 bucket in aother acc. 
