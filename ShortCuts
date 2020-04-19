@@ -33,3 +33,14 @@ Dynamic Example :
             CPU usage of entire ASG > 80, Scale Out
             CPU usage of entire ASG < 30, Scale In
 Scheduled Action(Time of Day) : Depending upon Time/Date, SacleOut/ScaleIn
+
+
+
+***********************IAM**************************************
+User pulling image from EC2 Instance running wordpress site. Instance indirecly communicating with S3 bucket.
+Instance never communicates with S3 bucket by itself.
+
+We have to crete JSON policy and attch to IAM Role. Assign IAM role to EC2 Instance.
+
+
+
