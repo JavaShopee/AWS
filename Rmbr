@@ -1,5 +1,10 @@
 AWS now spans 70 Availability Zones within 22 geographic regions around the world
 
+In Default VPC, there is no concept of private subnets.
+In non Default VPC,there is no concept of public IPs, we have to depend upon elastic IPs
+
+NACL is a firewall that allows /denies the traffic wrt subnet. It will process the rules from top to bottom and allows/denies the 
+traffic as per the rule configured.
 
 Configure AWS CLI:
 
