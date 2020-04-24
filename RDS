@@ -35,3 +35,10 @@ configure ACL and SG such that DB instances should recieve traffice from known E
 DB Intance NOT in VPC accessed by cleint app not in internet
 DB instance marked publicly accessible 
 SG for DB insatcne, known IP addresses.
+
+
+
+
+DB Subnet Gp :
+Subnet which will be having your database instances
+Multi AZ
