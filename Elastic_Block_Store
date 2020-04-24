@@ -63,7 +63,7 @@ Higher the Throughput, better the performance
 
 
 General Purpose SSD GP2 : Small to medium size envs, No consitent performance, 
-On an average : Baseline of 3 iops per GiB with minimum of 100 and brustable upto 3000
+On an average : Backed by Solid-State Drives (SSDs), General Purpose (SSD) volumes provide the ability to burst to 3,000 IOPS per volume
 Use Case : Development Env, System Boot volumes
 
 Provisioned IOPS SSD : Highest and consistent performance 
