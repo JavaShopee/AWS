@@ -1,0 +1,37 @@
+Amazon RDS manages backups, software patching, recovery and auto failure detection 
+
+DB Intance and EC2 Instance in same VPC
+
+Inbound rule for DB sec group will have the traffic coming in from known IP addresses of EC2 intances in same vpc
+Inbound rule for DB sec group will have the traffic coming in from EC2 SG
+
+DB Instance in VPC accseesd by EC2 NOT in VPC(thru classic link)
+Before Dec 2013
+
+DB Intance in VPC accessed by EC Instance in diff VPC
+same region : VPC peering
+diff region : 
+DB instance should have pulblic ip
+DB instance should be publicly access, public subnet and subnet shoudl have IGW
+publicly accessible option to yes
+
+
+DB Intance in VPC which is accessed by client application thru the Internet
+DB intance in public subnet 
+IGW public subnet thru enty in route table
+OR
+
+VPC > Bation Host (inside Public subnet)
+Private Subnet having DB instance
+admin can get the secure access to Bation host from their he can initiate another conn to DB instance in private subnet.
+
+
+
+DB Intance NOT in VPC accessed by EC2 Instance in VPC
+DB Intance public subnet
+DB instance marked publicly accessible 
+configure ACL and SG such that DB instances should recieve traffice from known EC2 instances
+
+DB Intance NOT in VPC accessed by cleint app not in internet
+DB instance marked publicly accessible 
+SG for DB insatcne, known IP addresses.
