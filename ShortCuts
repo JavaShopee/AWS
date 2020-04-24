@@ -96,4 +96,23 @@ Components you get full access upon :
 5. NACL(Network Access Contol List)
 6. Virtual Private Gateway/Customer Gateway
 7. NAT Device > NAT Gateway > NAT Instance
-*************************************************************************************
+******************************************Route 53*******************************************
+Routing Policiy : Simple : Just route the traffic to one of the instance in n/w
+Routing Policiy : Latency Based : For user in india, Mumabi region will serve the traffic as opposed to N Cal
+Routing Policiy : Weighted Routing Policy : 50% traffic to Mumbai and 50% to N Cal
+Routing Policiy : GeoLocation Routing Policy : Depending upon the geo location, you will be routed to that particualr 
+resource/region
+                 Asia Users : Mumbai
+                 North Amarica : N Cal
+                 rest will not go anywhre(other than these 2 continents, will not go anywhere)
+Routing Policiy : FailOver :
+Mumbai : Primary/Active
+N Cal : Seconday / Stand By
+
+Route 53 will make use of cloudwatch to perform health checkup of Mumbai Region, IF Mumbai goes down, it will failover to 
+the N Cal region. cloudwatch will declare mumbai as unhealthy.
+We have to configure health check for this.
+
+Routing Policiy : Multi Value Answer :
+Different Instances for same domain
+xyz.com >> 122.12.32.22, 132.23.32.22
