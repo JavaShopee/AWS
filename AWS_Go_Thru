@@ -9,3 +9,4 @@ yum install -y httpd.x86_64
 systemctl start httpd.service
 systemctl enable httpd.service
 curl localhost:80
+echo "Hello World" > /var/www/html/index.html
