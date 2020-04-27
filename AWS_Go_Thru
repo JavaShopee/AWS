@@ -1,3 +1,11 @@
 IAM:
 
 We apply permissions to group and users inherit these permissions
+
+
+Installing httpd on ec2:
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+curl localhost:80
