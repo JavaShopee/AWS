@@ -2,6 +2,17 @@ https://www.youtube.com/watch?v=WAj--8exE5c
 
 
 EBS Vol and Instance should be in same AZ
+Amazon EBS Provides ability to create snapshot(bacup) of EBS volume and write  a copy of data in volume of amazon S3,
+where it is stored redundently in multiple AZ.
+
+
+
+
+
+
+
+***************************************************************************************************************************
+
 
 
 Elastic_Block_Store : Categories : 
