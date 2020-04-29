@@ -5,6 +5,17 @@ EBS Vol and Instance should be in same AZ
 Amazon EBS Provides ability to create snapshot(bacup) of EBS volume and write  a copy of data in volume of amazon S3,
 where it is stored redundently in multiple AZ.
 
+Snapshots are used:
+Move the vols across the AZ
+Create multiple new EBS vols
+Expand the size of vol
+
+
+When we create a volume from the snapshot, it's exactly the same copy of vol at the time snapshot was taken.
+Snapshots are incremental backups, whnever you add new blocks of data to snapshots, only the data that has been changed
+will be added to s3 bucket.
+
+
 
 
 
