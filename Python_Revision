@@ -1,3 +1,5 @@
+_ represents the output of the previos operation.
+
 # Ordered Collection of Items
 # You can store anything inside list like int, float, char
 
