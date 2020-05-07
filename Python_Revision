@@ -1,4 +1,13 @@
 _ represents the output of the previos operation.
+String is immutable in python
+
+>>> myname = 'sachin'
+>>> myname[0:3] = 'rach'
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    myname[0:3] = 'rach'
+TypeError: 'str' object does not support item assignment
+
 
 # Ordered Collection of Items
 # You can store anything inside list like int, float, char
