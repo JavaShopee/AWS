@@ -139,6 +139,17 @@ user_info = {
     "Fav_Tunes":["abc_tune","def_tune"]
 }
 
+
+prod = {
+    'JS'    : 'Atom',
+    'Python': ['Sublime','PyCharm'],
+    'Java'  : {
+        'javaSE':'Netbeans',
+        'JavaEE':'Eclipse'
+    }
+}
+print(prod['Java']['javaSE'])
+
 for i in user_info.items():
     print(i)
 
