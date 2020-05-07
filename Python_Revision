@@ -150,6 +150,14 @@ O :
 
 
 
+data = {1:'Sachin'
+       ,2:'Ravi'
+       ,4:'Promod'}
+
+print(data.get(3,'Not Found'))
+
+
+
 for i,j in user_info.items():
     print(f"{i}-->{j}")
 
