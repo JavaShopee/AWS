@@ -9,6 +9,11 @@ Traceback (most recent call last):
 TypeError: 'str' object does not support item assignment
 
 
+List  : Mutable collection of elements
+Tuple : Immutable collection of elements 
+Set   : Can't contain dups, doen't maintain inseertion order
+
+
 # Ordered Collection of Items
 # You can store anything inside list like int, float, char
 
