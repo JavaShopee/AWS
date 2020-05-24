@@ -6,15 +6,6 @@ In non Default VPC,there is no concept of public IPs, we have to depend upon ela
 NACL is a firewall that allows /denies the traffic wrt subnet. It will process the rules from top to bottom and allows/denies the 
 traffic as per the rule configured.
 
-Configure AWS CLI:
-
-C:\Users\Sachin Arora>aws configure
-AWS Access Key ID [****************7ANQ]: AKIAI4TDR5WATOZLN7CQ
-AWS Secret Access Key [****************KkQs]: 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
-Default region name [ap-south-1]:
-Default output format [json]:
-
-
 aws ec2 create-security-group --group-name "My CLI Group" --description --"My AWS CLI Group"
 aws ec2 describe-security-groups --group-name "My CLI Group"
 aws ec2 authorize-security-group-ingress --group-name "My CLI Group" --protocol tcp --port 22 --cidr 0.0.0.0/0 
