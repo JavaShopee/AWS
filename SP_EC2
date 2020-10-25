@@ -1,3 +1,5 @@
 EC2
 
 Resizeable compute capacity in the cloud.
+EC2 is nothing but virtual machine that we deploy in the confinment of AWS Cloud
+It has some compute capacity : VCPU, RAM, GPU, Storage
