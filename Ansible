@@ -1,1 +1,33 @@
-https://www.youtube.com/watch?v=y0pS-P4W0cM&list=PL2qzCKTbjutIyQAe3GglWISLnLTQLGm7e&index=2
+c
+
+
+Ansible : Open Source Automation tool
+        : Simple to setup and powerful
+        : Perform 
+             : Configuration Mgt
+             : Application Deploymelnt
+             : Task Automation
+             : IT orchestration
+             
+             
+Ansible Architecture :
+
+Ansible Engine / Controller / Master : Where you install your Ansible
+Ansible Nodes / Clients :  Servers that you are going to manage with Ansible
+
+Invntory File : IPs/ FQDN of Ansible nodes
+Ansible.cfg : PWD for remote server users/ Parameters to work with Remote Seeervrs, Path of Inventory File
+
+Playbook / Adhoc Commands using Modules
+Ansible uses SSH connectivity to work with Remote Servers
+
+Ansible is called Agent less Architecture:  We are not going to insatll any software on remote servers to work from Ansible Engine 
+Python/ YAML based Syntax
+Large number of Ready to use modules for System Mgt
+Custom modules can be added if needed
+
+
+             
+             
+             
+             
