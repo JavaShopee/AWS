@@ -65,7 +65,50 @@ Add IP of Hosts in hosts file
 
 >> ansible all -m ping
 
+
+The default ansible home directory /etc/ansible/ which consists of
+hosts
+roles
+ansible.cfg  >> /etc/ansible/hosts
              
+             
+[ansadmin@localhost ansible]$ cd
+[ansadmin@localhost ~]$ mkdir my_ansible_working_dir
+[ansadmin@localhost ~]$ cd my_ansible_working_dir/
+[ansadmin@localhost my_ansible_working_dir]$ cp -rpP /etc/ansible/* .
+[ansadmin@localhost my_ansible_working_dir]$ ls -lrt
+total 28
+drwxr-xr-x. 2 ansadmin ansadmin     6 Nov  4 01:54 roles
+-rw-r--r--. 1 ansadmin ansadmin 19985 Nov  4 01:54 ansible.cfg
+-rw-r--r--. 1 ansadmin ansadmin    15 Nov 26 14:20 myhosts
+-rw-r--r--. 1 ansadmin ansadmin  1007 Nov 26 14:22 hosts
+
+
+
+export Ansible_Host_Key_Checking = False
+
+ansible.cfg > 
+host_key_checking = False
+
+Inventory file with Groups and Group of Groups
+
+
+[ansadmin@localhost my_ansible_non_prod]$ vi hosts
+[ansadmin@localhost my_ansible_non_prod]$ ansible group1 -m ping
+[ansadmin@localhost my_ansible_non_prod]$ ansible group1:group2 -m ping
+
+vi hosts
+[group1]
+localhost
+
+[group2]
+13.233.129.209
+
+[db_oracle:children]
+group1
+group2
+
+
              
              
              
