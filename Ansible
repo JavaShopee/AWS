@@ -27,6 +27,44 @@ Custom modules can be added if needed
 
 https://github.com/ValaxyTech/DevOpsDemos/blob/master/Ansible/Ansible_installation_on_RHEL8.MD
 https://www.youtube.com/watch?v=-Y8Oatd49qA
+
+
+Ansible Installation on RHEL 8  
+
+>> sudo su 
+>> yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+from https://fedoraproject.org/wiki/EPEL
+>> yum install ansible
+>> ansible --version
+
+Launch Amazon Linux 
+
+On Master and Hosts:
+
+>> useradd ansadmin
+>> passwd ansadmin
+>> visudo
+ansadmin     ALL=(ALL)
+>> vi /etc/ssh/sshd_config
+/PasswordAuthentication yes
+
+>>systemctl restart sshd
+>>service sshd restart
+
+On Master
+>>sudo su ansadmin 
+>>cd
+>>ssh-keygen
+>>cd .ssh/
+>>ssh-copy-id host-ip
+>>cd
+>>cd /etc/ansible/
+>>sudo vi hosts
+
+Add IP of Hosts in hosts file
+
+>> ansible all -m ping
+
              
              
              
