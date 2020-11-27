@@ -131,6 +131,15 @@ ansible group3 -m ping --list-hosts
 Files Modules in Ansible 
 https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html
 
+Install Git on Hosts with Root Privileges :
+ansible 13.232.222.133 -m yum -a "name=git state=present" -b
+ansible 13.232.222.133 -m yum -a "name=httpd state=present" -b
+
+Gathering Facts :
+The task of collecting remote system information is called Gathering Facts
+Collected/ Gathered Information is called Facts or Variables
+You can collect facts using Setup Modules in adhoc commands
+
 
 
 
