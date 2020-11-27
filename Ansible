@@ -140,6 +140,20 @@ The task of collecting remote system information is called Gathering Facts
 Collected/ Gathered Information is called Facts or Variables
 You can collect facts using Setup Modules in adhoc commands
 
+Ansible Playbooks : By Default call Setup Module to gather facts tasks
+
+
+Syntax :
+Ansible group_of_servers -m setup
+ansible 13.232.222.133 -m setup -a "filter=ansible_mounts"
+
+
+Facts : Information about your managed nodes : 2 Types:
+Default Facts
+Custome Facts
+
+
+
 
 
 
