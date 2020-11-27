@@ -109,6 +109,31 @@ group1
 group2
 
 
-             
+
+Fetch File from Host 
+>> ansible 13.232.222.133 -m fetch -a "src=/home/ansadmin/demo.txt dest=./{{inventory_hostname}}_demo.txt flat=yes"
+flat=yes : No extra dir structure will be created otherwise host dir structure
+
+
+Create a file hello.txt under tmp location: 
+ansible 13.232.222.133 -m file -a "path=/tmp/hello.txt state=touch"
+ansible 13.232.222.133 -m file -a "path=/tmp/newhello.txt state=touch mode='777'"
+
+Remove a file 
+ansible 13.232.222.133 -m file -a "path=/tmp/newhello.txt state=absent"
+ansible 13.232.222.133 -m file -a "path=/tmp/hello state=directory"
+
+With Root Privileges -b
+ansible 13.232.222.133 -m file -a "path=/etc/demo.txt state=touch" -b
+ansible group3 -m ping --list-hosts
+
+
+Files Modules in Ansible 
+https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html
+
+
+
+
+
              
              
