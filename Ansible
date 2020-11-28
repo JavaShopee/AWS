@@ -152,6 +152,72 @@ Facts : Information about your managed nodes : 2 Types:
 Default Facts
 Custome Facts
 
+Sample Playbook 
+---
+ - name: The Sample Name
+   hosts: all
+   tasks:
+   - name: Default Verbosity
+     debug:
+      msg: "this is default msg"
+      verbosity: 0
+   - name: Verbosity is 2
+     debug:
+      msg: "Verbo is 2"
+      verbosity: 2
+
+
+
+Sample Playbook
+
+---
+ - name: Sample Name
+   hosts: 65.0.96.120
+   tasks:
+   - name: Print a message
+     debug:
+      msg:
+       -  "Sample Playbook"
+       -  "Message 2"
+       -  "Message 3"
+
+
+#   - debug: msg="This is sample playbook"
+
+
+Sample Playbook
+!/bin/ansible-playbook
+ - name: Usage of debug module
+   hosts: all
+   tasks:
+   - name: print a var using debug module
+     debug:
+#      msg: "The host name is : {{inventory_hostname}}"
+       var: inventory_hostname
+       
+       
+How to read and print a variable value using ansible playbook
+---
+ - hosts: localhost
+   vars:
+    x: 45
+    my_name: "Sachin"
+   vars_prompt:
+    name: y
+    prompt: Enter the value for y
+    private: false
+   gather_facts: false
+   tasks:
+   - debug:
+      msg:
+       - "The x value is : {{x}}"
+       - "The my_name is : {{my_name}}"
+       - "The value of y is {{y}}"
+
+       
+       
+
+
 
 
 
