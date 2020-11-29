@@ -42,6 +42,7 @@ Launch Amazon Linux
 On Master and Hosts:
 
 >> useradd ansadmin
+>> useradd -m ansadmin (for Ubuntu)
 >> passwd ansadmin
 >> visudo
 ansadmin     ALL=(ALL)
@@ -268,6 +269,54 @@ ansible-playbook install_uninstall.yml -e "pkg=httpd req_state=present"
    - yum:
       name: "{{pkg}}"
       state: "{{req_state}}"
+      
+VS Code Editor Installation      
+      
+step1: Import Microsoft GPG key
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+step2: create the following repo file to enable the Visual Studio Code repository
+   sudo nano /etc/yum.repos.d/vscode.repo
+   
+   Paste the following content into the file:
+
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+
+step3: Install vs code
+   sudo yum install code
+
+step4:   Launch visual studio code using termainal
+   code .
+step5: Add Required Extensions
+   ansible extention/plugin
+
+
+
+ignore_errors: yes
+
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+     - block:
+        - command: "ls /home/ansadmin/dir1" 
+          register: out_dir1
+        - command: "ls /home/ansadmin/dir2" 
+          register: out_dir2
+        - command: "ls /home/ansadmin/dir3" 
+          register: out_dir3
+       ignore_errors: yes
+
+     - debug: var=out_dir1 
+     - debug: var=out_dir2
+     - debug: var=out_dir3
+      
+      
+      
 
 
 
