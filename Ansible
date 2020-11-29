@@ -242,8 +242,32 @@ ansible-playbook cmd-line-args.yml -e "x=10"
    
    Map 
    ansible-playbook cmd-line-args.yml -e "{'x': {'one': 1, 'two': 2},'y':20}"
+   
+   
+   
+   
+   Passing Values in file :
+   ansible-playbook cmd-line-args.yml -e "@var_values.yml"
+   
+---
+ x: 45
+ y:
+  - 4
+  - 67
+  - "ansible"
 
 
+Installing Packages :
+
+ansible-playbook install_uninstall.yml -e "pkg=httpd req_state=present"
+---
+ - hosts: localhost
+   gather_facts: false
+   become: yes
+   tasks:
+   - yum:
+      name: "{{pkg}}"
+      state: "{{req_state}}"
 
 
 
