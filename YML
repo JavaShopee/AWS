@@ -1,0 +1,27 @@
+YAML
+
+Key: Value
+Name: Sachin
+Age: 35
+
+Called as scaler representation of data
+
+Value: 
+  - 2
+  - 3: Three
+  - 4
+Called as Sequence Data Collection (List in python)  
+
+Cricket_Players:
+   - Sachin: 45
+   - Dhoni: 36
+   - Raydu: 30
+   
+Called as Map Data Collection(Dictionary in Pyhton)   
+
+Sequence are ordered collection whereas Map are unordered collection
+
+   
+   
+   
+   
