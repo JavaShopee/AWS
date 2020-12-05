@@ -27,7 +27,18 @@ Custom modules can be added if needed
 
 https://github.com/ValaxyTech/DevOpsDemos/blob/master/Ansible/Ansible_installation_on_RHEL8.MD
 https://www.youtube.com/watch?v=-Y8Oatd49qA
+Install Python latest version (on Control node and Managed host)
 
+yum install python3 -y
+By default, python3 is the command to run python commands. to use just python, use "alternatives" command. (on Control node and Managed host)
+
+alternatives --set python /usr/bin/python3
+Check for Python version
+
+python --version
+Install python-pip package manager (on Control node)
+
+yum -y install python3-pip
 
 Ansible Installation on RHEL 8  
 
