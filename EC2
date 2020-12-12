@@ -16,3 +16,56 @@ like CPU utilization
 CW perform healthcheck every 5 mins 
 It will retrive metric along with value
 CPU Utilization == 70%(every 5 mins stadard monitoring)
+
+
+
+
+
+
+*****************************************************************************************************************************************
+EC2 : Resizeable Compute Capacity in the cloud
+Compute Capacity :: vCPU, GPU, RAM , Storage
+
+Instance Type :: It is a virtual representation of underlying physical resources
+t2.micro > Instance Type
+1 CPU, 2.5 GHz Intel Xeon Processor, 1 GiB RAM, 8 GiB/ 30 GiB Storage
+
+OS > Linux / Windows + Application + Script + Software + Services  > AMI
+
+IP Address : 
+Private IPs : Internal Comm
+Range  : 
+10.x.x.x , 172.16.x.x to 172.31.x.x , 192.168.x.x
+x > 0 to 255
+
+Public IPs :
+Used for external communication
+Range :  Except private IP Range
+Except Loop Back IPs : 127.0.0.1 > Troubleshooting
+
+Who assigns public IPS ? AWS Free , BYOIPs( lease public IPs from ISP) $ 
+Downside of public IPs : Not Static, It changes by itself
+
+
+Elastic IPs : Fixes the downside of public IPs
+Same as public ips but they are static in nature, Same Range as public IPs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
