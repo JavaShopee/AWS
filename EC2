@@ -11,11 +11,40 @@ IAM Role has some permisions attahced to it. For Example EC2 intance with IAM ro
 so that EC2 can push/pull images to and from S3 bucket
 
 Cloud Watch : EC2 pust the metrics to CW. 
-Metrics ; parameters you use to analyze/gauge the performce of EC2 intatnce
+Metrics : parameters you use to analyze/gauge the performce of EC2 intatnce
 like CPU utilization
 CW perform healthcheck every 5 mins 
 It will retrive metric along with value
 CPU Utilization == 70%(every 5 mins stadard monitoring)
+
+Detailed Monitoring : You have to pay for it, Every 1 min
+
+Hypervisor USed by AWS : Xen
+
+Oracle Enterprise Database : Doesn't support shared tenancy
+
+
+Billing Models for EC2 instances
+
+Ondemand : Based on number of hours consumed, No partial hour billing
+Reserved : for 1 yr/3 yr contract , 70% discount compared to OnDemand
+Spot Pricing: Lab Experiment
+              90% Discount compared to OnDemand
+              You have to bid for it, can be terminated any time and given to user who has higher bid than you
+Dedicated/Shared : Allocate complete physical Server for you 
+Per Second Billing : Run the instance for at least 60 secs, Support Amazon Linux and Ubuntu Only  (AMIs)
+
+Security Group : Virtal FW restrict I/o traffic wrt instance
+
+We apply filters to make use of restrictions :
+1. Protocol
+2. Port
+3. Source / Dest IP addresses
+              
+              
+
+
+
 
 
 
@@ -52,6 +81,20 @@ Same as public ips but they are static in nature, Same Range as public IPs
 
 
 AWS falls into Public/Private/Hybrid.  >>  Public Cloud
+
+Virtual Private Cloud : Virtual Data Center. >> Gives you Security, Isolation , Transparency , More Control  upon your resources 
+Region : Geo Localtion where AWS has its DAta Centers
+
+VPC is virtual Data Center Located in the confinment of region
+
+We carve out Subnets in VPCs
+
+Subnets : Block of private ip addresses
+          Consists of EC2/DB Instances
+          
+          Each subnet is lined to Data Center which is called Avalibality Zone
+          Data Centers in Different Regions are called AZs
+
 
 
 
