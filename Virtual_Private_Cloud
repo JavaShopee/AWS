@@ -9,7 +9,7 @@ AWS Tutorials | Virtual Private Cloud (VPC) Masterclass | May 21 and 22, 2019
 
 Is the virtual data center and you get the full control upon its resources
 Flexibility and enhanced security
-Isolated VPC
+Isolated from other VPCs
 
 Components you get full access upon :
 1. To define the IP addresses : You can specify private IP addresses for your VPCs and Subnets
@@ -150,12 +150,12 @@ Carve out subnet out of it , add 8 more bits to n/w
 10.0.0.0/24
 10.0.1.0/24
 10.0.2.0/24
-10.0.3.0/24 ...............10.0.255.0/24
+10.0.3.0/24 ...............10.0.255.0/24  
 
 Total 256 subnets
 
 Carve out instance out of it , add 8 more bits to subnet let'say 10.0.2.0/24
-
+    
 10.0.2.0/32
 10.0.2.1/32
 10.0.2.2/32
@@ -197,6 +197,13 @@ one.
 Now, try installing updates to the instance running within Private
 subnet.
 Clean up
+
+
+
+
+
+If you choose Dedicated Tenancy at the VPC level, no matter what you have selected at Instance level, Instance will be launched in Dedicated host
+
 
 VPC Peering:
 Connect mutliple VPCs together
