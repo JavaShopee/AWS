@@ -90,6 +90,8 @@ acc.
 Policies: Defines permisssions for 3 diffeent entitie:
 Users, Groups and Roles
 
+JSON Documents which defienes the permission
+
 50 S3 buckets, I m looking to give access to only one S3 bucket to Kunal  >> Custom 
 
 
