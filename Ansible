@@ -133,11 +133,23 @@ Ansible.cfg file locations with priority
 
 How Ansible works ?
 Tasks wil be excuted on Managed Nodes only
-Module( like shell) will be pusted to Managed Nodes
+Module( like shell) will be pushed to Managed Nodes (Engine is going to push on Managed Nodes and Not Vice Versa ... So called Push Mechanism)
+Chef follows pull mechanism
+
+Not insatlling any Software on Remote Nodes : Agent Less Architecture
 Once the tasks will be exeuted, module from Managed Node will be removed
 
 ANSIBLE_KEEP_REMOTE_FILES=1 ansible all -m ping
 But where it will store Module on Managed Nodes  ??? /home/ansadmin/.ansible/tmp
+
+
+In ansible.cfg file, there is a parameter forks :
+forks = 5 means at a time it's going to execute task on 5 Managed Nodes
+if 12 servers, 3 goes
+
+ansible all -m shell -a "sleep 5 ; echo 'hi'"
+
+
 
 Module will be pushed here and result will be sent back to Control Node
 
