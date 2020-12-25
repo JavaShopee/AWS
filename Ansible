@@ -78,10 +78,12 @@ Add IP of Hosts in hosts file
 >> ansible all -m ping
 
 
-The default ansible home directory /etc/ansible/ which consists of
+The default ansible home directory c which consists of
 hosts
 roles
 ansible.cfg  >> /etc/ansible/hosts
+
+/etc/ansible/ is called defauly ansible home
              
              
 [ansadmin@localhost ansible]$ cd
@@ -96,7 +98,7 @@ drwxr-xr-x. 2 ansadmin ansadmin     6 Nov  4 01:54 roles
 -rw-r--r--. 1 ansadmin ansadmin  1007 Nov 26 14:22 hosts
 
 
-
+Everytime engine connect to node, it's asking for yes/no 
 export Ansible_Host_Key_Checking = False
 
 ansible.cfg > 
