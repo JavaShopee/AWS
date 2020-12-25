@@ -123,6 +123,12 @@ group1
 group2
 
 
+Ansible.cfg file locations with priority
+1. ANSIBLE_CONFIG env variable
+2. ./ansible.cfg from current dir
+3. ~/.ansible.cfg from home dir
+4. /etc/ansible/ansible.cfg
+
 
 Fetch File from Host 
 >> ansible 13.232.222.133 -m fetch -a "src=/home/ansadmin/demo.txt dest=./{{inventory_hostname}}_demo.txt flat=yes"
