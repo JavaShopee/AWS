@@ -130,6 +130,16 @@ Ansible.cfg file locations with priority
 4. /etc/ansible/ansible.cfg
 
 
+
+How Ansible works ?
+Tasks wil be excuted on Managed Nodes only
+Module( like shell) will be pusted to Managed Nodes
+Once the tasks will be exeuted, module from Managed Node will be removed
+
+ANSIBLE_KEEP_REMOTE_FILES=1 ansible all -m ping
+But where it will store Module on Managed Nodes  ??? /home/ansadmin/.ansible/tmp
+
+
 Modules : Through modules, you can work with remote nodes. Predefined scripts to work with Remote nodes
 
 
