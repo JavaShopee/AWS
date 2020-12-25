@@ -130,6 +130,9 @@ Ansible.cfg file locations with priority
 4. /etc/ansible/ansible.cfg
 
 
+Modules : Through modules, you can work with remote nodes. Predefined scripts to work with Remote nodes
+
+
 Fetch File from Host 
 >> ansible 13.232.222.133 -m fetch -a "src=/home/ansadmin/demo.txt dest=./{{inventory_hostname}}_demo.txt flat=yes"
 flat=yes : No extra dir structure will be created otherwise host dir structure
