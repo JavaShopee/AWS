@@ -133,6 +133,33 @@ Ansible.cfg file locations with priority
 Modules : Through modules, you can work with remote nodes. Predefined scripts to work with Remote nodes
 
 
+Introduction to Ansible Ad-hoc Commands
+uptime
+free -m
+
+Using Shell script run above 2 commands:
+vi multi_task.sh
+uptime
+free -m
+:wq
+
+sh multi_task.sh
+
+Ansible Ad-hoc Commands : Execute single tasks on Managed Nodes
+Shell Script like playbook, you can exeute multiple tasks at a time.
+
+Shell Module :
+ansible db_server:web_server -m shell -a "uptime"
+
+Lists all Modules :
+ansible-doc -l
+ansible-doc shell
+ansible-doc -l | wc -l
+3387 Modules
+
+
+
+
 Fetch File from Host 
 >> ansible 13.232.222.133 -m fetch -a "src=/home/ansadmin/demo.txt dest=./{{inventory_hostname}}_demo.txt flat=yes"
 flat=yes : No extra dir structure will be created otherwise host dir structure
