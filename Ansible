@@ -182,6 +182,24 @@ ansible-doc shell
 ansible-doc -l | wc -l
 3387 Modules
 
+Transfer a file | copy a file to nodes  >> Copy Module
+_______________________________________
+
+ansible db_server -m copy -a "src=source/file/location dest=dest/location"
+
+idempotent : If there are changes, then and only then file will be copied, otherwise CHANGED=FALSE
+ansible group2 -m copy -a "content='Hi There\n' dest=/tmp/hello.txt backup=yes"
+
+\n > Terminal will be coming to New Line
+
+Downloading a file from Ansible Managed Nodes to Ansible Engine  > Fetch Module
+______________________________________________________________
+
+
+
+
+
+
 
 
 
