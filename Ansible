@@ -126,7 +126,7 @@ group2
 Ansible.cfg file locations with priority
 1. ANSIBLE_CONFIG env variable
 2. ./ansible.cfg from current dir
-3. ~/.ansible.cfg from home dir
+3. ~/.ansible.cfg from home dir (/home/ansadmin)
 4. /etc/ansible/ansible.cfg
 
 
