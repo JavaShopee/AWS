@@ -139,6 +139,8 @@ Once the tasks will be exeuted, module from Managed Node will be removed
 ANSIBLE_KEEP_REMOTE_FILES=1 ansible all -m ping
 But where it will store Module on Managed Nodes  ??? /home/ansadmin/.ansible/tmp
 
+Module will be pushed here and result will be sent back to Control Node
+
 
 Modules : Through modules, you can work with remote nodes. Predefined scripts to work with Remote nodes
 
