@@ -144,10 +144,11 @@ But where it will store Module on Managed Nodes  ??? /home/ansadmin/.ansible/tmp
 
 
 In ansible.cfg file, there is a parameter forks :
-forks = 5 means at a time it's going to execute task on 5 Managed Nodes
+forks = 5 (default) means at a time it's going to execute task on 5 Managed Nodes
 if 12 servers, 3 goes
 
 ansible all -m shell -a "sleep 5 ; echo 'hi'"
+forks = 1 : Serial Execution instead of Parallel Execution
 
 
 
