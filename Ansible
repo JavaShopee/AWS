@@ -520,6 +520,51 @@ ignore_errors: true
            msg: "This will always execute"
 
 
+Ansible reusable concept with import and include
+______________________________________________________
+
+--- 
+ - name: Simple Play To Install Mul Packages
+   hosts: group3
+   gather_facts: true
+   become: yes
+   tasks:
+     - import_tasks: install_webserver_RedHat.yml
+       when: ansible_os_family=="RedHat"
+     - import_tasks: install_java_RedHat.yml
+       when: ansible_os_family=="RedHat" 
+       
+       
+install_java_RedHat.yml       
+---
+ - name: Insalling Java on RedHat Family
+   yum:
+     name: java-1.8.0-openjdk
+     state: present
+       
+ install_webserver_RedHat.yml  
+ 
+ ---
+ - name: Insalling WebServer on RedHat Family
+   yum:
+    name: httpd
+    state: present
+
+
+import_tasks are static : If we have dynamic vars like ansible_os_family, it will NOT be resolved
+All Import * are preprocessed at the playbooks are parsed
+
+include_tasks are dynamic : If we have dynamic vars like ansible_os_family, it will  be resolved  
+All Include * are processed at the time of execution of playbook  
+
+
+Ansible has following modules for Import and Include
+import_playbook import_tasks import_vars import_roles
+include.....
+
+
+Java, Tomcat Installation and Configuration using Playbook
+________________________________________________________________
 
 
 
