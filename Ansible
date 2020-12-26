@@ -250,6 +250,35 @@ ansible 13.235.133.114 -m setup -a "filter=ansible_mounts"
 
 Ansible Facts >> Default and Custom
 
+Create and Work with Ansible Custom Facts | Automation with Ansible Playbook  >>setup module
+_____________________________________________________________________________
+Get User Defined Facts
+Every Week Git Version, HTTPD Version
+
+ansible all -m shell -a "git --version"
+ansible all -m shell -a "/usr/sbin/httpd --v"
+
+
+Steps to create custom facts :
+1. /etc/ansible/facts.d dir on Managed Node
+2. .fact file inside facts.d
+3. Output of the file should be json format 
+4. Execution permission for the fact file
+
+
+vi git_httpd_ver.fact
+
+#!/bin/bash
+git_version=$(git --version | awk '{print $3}')
+httpd_version=$(httpd -version | awk 'NR==1 {print $3}')
+
+cat << EOF
+{ "GIT_VERSION" : "$git_version",
+  "httpd_version" : "$httpd_version"
+}
+EOF
+
+ansible group1 -m setup -a "filter=ansible_local"   >> Custom Facts are stored under ansible_local
 
 
 
