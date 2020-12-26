@@ -286,6 +286,85 @@ ansible 13.235.133.114 -m file -a "path=/etc/ansible/facts.d state=directory" -b
 ansible 13.235.133.114 -m copy -a "src=/etc/ansible/facts.d/git_httpd_ver.fact dest=/etc/ansible/facts.d/git_httpd_ver.fact mode='0755'" -b
 ansible group2 -m setup -a "filter=ansible_local"
 
+Working with Ansible Dynamic Inventory
+____________________________________
+Static Inventory 
+Dynamic Inventory : are scripts like shell/python for dynamic envs
+Cloud is dynamic env
+Ansible has dynamic inventory script for below enc
+AWS EC2
+Open Stack 
+Google Compute Engine 
+Space Walk
+Jails etc...
+
+
+raw module | How to mange the servers which are not installed with Python ?
+___________________________________________________________________________
+
+If you don't have python on managed nodes, then you can't use copy / fetch modules, you have to use raw modules
+
+ansible data_center -m raw -a "uptime"
+ansible data_center -m raw -a "scp "   >> Copy file to Managed Node
+
+Simple usage of debug module | Basics to write playbooks How to print message using Playbook >> Debug Module 
+___________________________________________________________________________________________
+
+Debug Module prints statements, vars, expressions
+
+and accepts 3 parameters i.e. msg, var, verbosity
+
+---
+ - hosts: group2
+   tasks:
+   - debug: msg="Welcome to Ansible Playbook"
+   
+   
+---
+ - name: The Sample Play Book
+   hosts: group2
+   tasks:
+   - name: Print the Message
+     debug:
+      msg:
+      - "Welcome to Ansible Playbook"
+      - "These are the basis Concepts"
+      - "Discuss Advanced Concepts"
+      
+      
+      
+#!/bin/ansible-playbook
+ - name: Usage of debug Module
+   hosts: group2
+   tasks:
+   - name: printing a var value using debug module
+     debug:
+      msg: "This is the hostname : {{inventory_hostname}}"
+     
+     
+#!/bin/ansible-playbook
+ - name: Usage of debug Module
+   hosts: all
+   tasks:
+   - name: printing a var value using debug module
+     debug:
+#     msg: "This is the hostname : {{inventory_hostname}}"
+      var: inventory_hostname
+      
+   
+
+ansible-playbook print_any_msg.yml --syntax-check
+
+
+
+
+
+
+
+
+
+
+
 
 
 NOPASSWD : ALL
