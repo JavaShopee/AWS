@@ -194,9 +194,49 @@ ansible group2 -m copy -a "content='Hi There\n' dest=/tmp/hello.txt backup=yes"
 
 Downloading a file from Ansible Managed Nodes to Ansible Engine  > Fetch Module
 ______________________________________________________________
+ansible db_server -m fetch -a "src=source/file/location/MNode dest=dest/location/Controller"
+
+ansible 13.235.133.114 -m fetch -a "src=/home/ansadmin/demo.txt dest=./demo/"
+
+
+13.235.133.114 | CHANGED => {
+    "changed": true,
+    "checksum": "85f2da7189901858923a65b5d36f309d01e434c2",
+    "dest": "/home/ansadmin/my_ans_working_dir/demo/13.235.133.114/home/ansadmin/demo.txt",
+    
+ 
+To avoid above directory structure
+ansible 13.235.133.114 -m fetch -a "src=/home/ansadmin/demo.txt dest=./newdemo/{{inventory_hostname}}_demo.txt flat=yes"
+
+
+Create or Delete a file or directory on Managed Nodes  >   File Module
+________________________________________________________
+
+ansible 13.235.133.114 -m file -a "path=/home/ansadmin/helloo.txt state=touch"
+ansible 13.235.133.114 -m file -a "path=/home/ansadmin/helloo.txt state=touch mode='0777'"
+ansible 13.235.133.114 -m file -a "path=/home/ansadmin/helloo.txt state=absent"
+ansible 13.235.133.114 -m file -a "path=/home/ansadmin/helloo state=directory"
+ansible 13.235.133.114 -m file -a "path=/etc/hello.txt state=touch"        >> Permission Denied
+ansible 13.235.133.114 -m file -a "path=/etc/hello.txt state=touch" -b     >> providing Root Privileges for ansadmin user
+
+ansible db -m ping --list-host
+ansible -h 
+
+Different modules to work with files
+____________________________________
+
+https://docs.ansible.com/ansible/2.8/modules/list_of_files_modules.html
+
+Install a package using yum module on Linux Managed Nodes
+________________________________________________________
+
+System : Linux > Module as yum
+System : Ubuntu/Debian > Module as apt
 
 
 
+NOPASSWD : ALL
+No need to provide any pwd while running your ansible adhoc command with Root Privileges from your ansadmin user
 
 
 
