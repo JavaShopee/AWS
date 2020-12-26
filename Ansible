@@ -234,6 +234,12 @@ System : Linux > Module as yum
 System : Ubuntu/Debian > Module as apt
 
 
+ansible db -m yum "name=git state=present" -b
+ansible db -m yum "name=httpd state=present" -b
+
+state=present/absent/latest
+
+
 
 NOPASSWD : ALL
 No need to provide any pwd while running your ansible adhoc command with Root Privileges from your ansadmin user
