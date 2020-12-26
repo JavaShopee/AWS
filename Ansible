@@ -351,7 +351,24 @@ and accepts 3 parameters i.e. msg, var, verbosity
 #     msg: "This is the hostname : {{inventory_hostname}}"
       var: inventory_hostname
       
+ansible-playbook verbosity_usage.yml -vv
    
+---
+ - name: Usage of verbosity
+   hosts: group2
+   tasks:
+   - name: Default Verbosity is zero
+     debug:
+      msg: "this is  default message"
+      verbosity: 0
+   - name: Verbosity is 2
+     debug:
+      msg: "With Verbosity"
+      verbosity: 2
+
+
+
+
 
 ansible-playbook print_any_msg.yml --syntax-check
 
