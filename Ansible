@@ -234,8 +234,8 @@ System : Linux > Module as yum
 System : Ubuntu/Debian > Module as apt
 
 
-ansible db -m yum "name=git state=present" -b
-ansible db -m yum "name=httpd state=present" -b
+ansible db -m yum -a "name=git state=present" -b
+ansible db -m yum -a "name=httpd state=present" -b
 
 state=present/absent/latest
 
