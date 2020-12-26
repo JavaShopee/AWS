@@ -374,9 +374,61 @@ ansible-playbook print_any_msg.yml --syntax-check
 
 
 
+How to read and print a variable value using ansible playbook ? | DevOps
+________________________________________________________________________
 
 
+---
+ - hosts: group2
+   vars:
+    x: 45
+    my_name: Sachin
+   gather_facts: false
+   tasks:
+   - debug:
+      msg:
+       - "The x value is {{x}}"
+       - "Name is {{my_name}}"
 
+
+---
+ - hosts: group2
+   vars:
+    x: 45
+    my_name: Sachin
+   vars_prompt:
+    - name: username
+      prompt: Enter your username
+      private: no
+    - name: password
+      prompt: Enter your password
+      private: yes
+   gather_facts: false
+   tasks:
+   - debug:
+      msg: "Your username is {{username}} and password is {{password}}"
+      
+      
+One playbook to install any package | command line arguments  
+____________________________________________________________
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ \\
 
 
 
