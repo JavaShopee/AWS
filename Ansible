@@ -270,7 +270,7 @@ vi git_httpd_ver.fact
 
 #!/bin/bash
 git_version=$(git --version | awk '{print $3}')
-httpd_version=$(httpd -version | awk 'NR==1 {print $3}')
+httpd_version=$(/usr/sbin/httpd -version | awk 'NR==1 {print $3}')
 
 cat << EOF
 { "GIT_VERSION" : "$git_version",
@@ -280,6 +280,11 @@ EOF
 
 ansible group1 -m setup -a "filter=ansible_local"   >> Custom Facts are stored under ansible_local
 
+Now Repeat the process for Managed Nodes
+
+ansible 13.235.133.114 -m file -a "path=/etc/ansible/facts.d state=directory" -b
+ansible 13.235.133.114 -m copy -a "src=/etc/ansible/facts.d/git_httpd_ver.fact dest=/etc/ansible/facts.d/git_httpd_ver.fact mode='0755'" -b
+ansible group2 -m setup -a "filter=ansible_local"
 
 
 
