@@ -240,6 +240,19 @@ ansible db -m yum -a "name=httpd state=present" -b
 state=present/absent/latest
 
 
+Introduction to Ansible Default facts  >> setup Module
+____________________________________
+
+Ansible Facts/Variables are the information about your Managed Nodes like : OS , processor, python, release etc
+Gathering Facts using setup modules >> Default in ansible Play Books
+
+ansible 13.235.133.114 -m setup -a "filter=ansible_mounts"
+
+Ansible Facts >> Default and Custom
+
+
+
+
 
 NOPASSWD : ALL
 No need to provide any pwd while running your ansible adhoc command with Root Privileges from your ansadmin user
