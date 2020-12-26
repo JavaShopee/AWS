@@ -411,6 +411,133 @@ ________________________________________________________________________
       
 One playbook to install any package | command line arguments  
 ____________________________________________________________
+
+CLA as Scaler
+ansible-playbook cmd_line.yml -e "x=20"
+ansible-playbook cmd_line.yml -e "x=20 y=30"
+ansible-playbook cmd_line.yml -e "x=20 y='Ansible Demo'"
+ansible-playbook cmd_line.yml -e "{'x':20 , 'y':30}"
+
+as Sequence 
+ansible-playbook cmd_line.yml -e "{'x':[1,2,3],'y':[3,4,5]}"
+
+as Map
+ansible-playbook cmd_line.yml -e "{'x': {'one':1,'Two':2} ,'y':[3,4,5]}"
+
+as file
+ansible-playbook cmd_line.yml -e "@var_vals.yml"
+cmd_line.yml
+---
+ - hosts: group2
+   gather_facts: false
+   tasks:
+   - debug:
+      msg:
+       - "The x value is {{x}}"
+       - "The y value is {{y}}"
+       
+       
+var_vals.yml
+---
+ x: 45
+ y:
+  - 4
+
+
+
+Example CLA
+vi install_uninstall.yml
+---
+ - name: This is the simple play to install and uninstall packages
+   hosts: localhost
+   gather_facts: false
+   become: yes
+   tasks:
+   - name: TO Insatll and UnInstall {{pkg}}
+     yum:
+      name: "{{pkg}}"
+      state: "{{req_state}}"
+
+ansible-playbook install_uninstall.yml -e "pkg=nginx req_state=present"
+
+
+Error handling with block rescue concepts  >> Yum and Service Modules, Command
+________________________________________
+ignore_errors: true  
+
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+     - command: "ls /home/ansadmin/my_ans_working_dir/mydir1"
+       register: mydir1_out
+     - debug: var=mydir1_out
+     - command: "ls /home/ansadmin/my_ans_working_dir/mydir4"
+       register: mydir4_out
+       ignore_errors: yes     
+     - debug: var=mydir4_out
+     - command: "ls /home/ansadmin/my_ans_working_dir/mydir3"
+       register: mydir3_out
+     - debug: var=mydir3_out
+
+---
+- hosts: localhost
+  tasks:
+    - debug: var=ansible_os_family
+    
+    
+    
+---
+- hosts: group3
+  tasks:
+    - block: 
+      - name: Installing httpd RedHat OS 
+        yum:
+          name: httpd
+          state: present
+      - name: Starting httpd RedHat OS
+        service:
+          name: httpd
+          state: started
+      when: ansible_os_family=="RedHat"      
+      become: yes
+    - debug: var=ansible_os_family    
+
+
+
+---
+- hosts: localhost
+  tasks:
+    - block:
+      - name: Finding Files
+        command: "ls /home/ansadmin/my_ans_working_dir/mydir1"
+        register: mydir1_out
+      rescue:
+        - debug: 
+           msg: "The given path is not a valid path"
+      always:
+        - debug: 
+           msg: "This will always execute"
+
+
+
+
+
+ 
+ ---
+ - hosts: group2
+   gather_facts: false
+   tasks:
+   - debug:
+      msg:
+       - "The x value is {{x}}"
+       
+       
+       
+
+  - 67
+       
+
  
  
  
@@ -422,13 +549,6 @@ ____________________________________________________________
  
  
  
- 
- 
- 
- 
- 
- 
- \\
 
 
 
