@@ -711,10 +711,23 @@ alternatives --config java
          
          
 
+Introduction AWS Provisioning using Ansible |Environment setup for Ansible to work with AWS Cloud
+________________________________________________________________________________________________
 
+pip3 install awscli --user
+aws configure
 
-
-
+---
+ - name: Sample Play to launch EC2
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   tasks:
+      - name: Simple Tasks to Launch EC2 Instance
+        ec2: 
+          instance_type: t2.micro
+          image: ami-04b1ddd35fd71475a
+          region: ap-south-1
 
 
 
