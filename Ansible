@@ -731,14 +731,34 @@ aws configure
 
 
 
+Ansible - Vault | Protect your sensitive data using Ansible Vault Concept
+____________________________________________________________________________
+
+ansible-vault encrypt launch-ec2.yml
+ansible-playbook launch-ec2.yml --ask-vault-pass
+ansible-vault decrypt launch-ec2.yml
+ansible-vault create launch-ec2.yml
+ansible-vault view launch-ec2.yml
+ansible-vault edit launch-ec2.yml
+ansible-vault rekey launch-ec2.yml
+ansible-playbook launch-ec2.yml --vault-password-file mypass
+ansible-playbook launch-ec2.yml --vault-id mypass
 
 
-
-
-
-
-
-
+---
+ - name: Sample Play to launch EC2
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   vars_files: aws-keys.yml
+   tasks:
+      - name: Simple Tasks to Launch EC2 Instance
+        ec2: 
+          instance_type: t2.micro
+          image: ami-04b1ddd35fd71475a
+          region: ap-south-1
+          aws_access_key: "{{aws_access_key}}"
+          aws_secret_key: "{{aws_secret_key}}"
 
 
 
