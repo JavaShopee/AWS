@@ -5,3 +5,11 @@ git config --list
 git help
 git help add
 
+Initialize Direcory as GIT
+git init
+
+git status
+git add .
+git add SampleDoc.txt
+git commit -m "First Git Commit"
+
