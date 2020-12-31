@@ -13,3 +13,10 @@ git add .
 git add SampleDoc.txt
 git commit -m "First Git Commit"
 
+git log
+git log --author="Sachin"
+
+
+Working Dir >>>> Staging Area >>>> Repository
+git status   >>   git add     >>    git commit
+
