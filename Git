@@ -20,3 +20,21 @@ git log --author="Sachin"
 Working Dir >>>> Staging Area >>>> Repository
 git status   >>   git add     >>    git commit
 
+
+
+git diff >
+Difference between a.txt(Local Repo) and b.txt(Modified inside Working Area NOT NEW FILE)
+
+git diff --staged
+Difference between a.txt(Local Repo) and b.txt(Staging Area)
+
+
+Delete File in Git 
+git rm filename.txt
+
+
+
+
+
+
+
