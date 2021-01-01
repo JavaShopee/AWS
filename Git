@@ -45,8 +45,15 @@ git branch develop
 git checkout deveop
 
 
+git checkout master >> Move to the Target
+git merge develop >> the Source
 
 
+Move the file from Staging Area to Working Area
+git reset HEAD filename
+
+Move the file from local Repo to Working Area
+git reset HEAD~
 
 
 
