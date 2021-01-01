@@ -33,6 +33,18 @@ Delete File in Git
 git rm filename.txt
 
 
+git init
+git remote add origin "https://github.com/JavaShopee/git_github.git"
+git pull origin master
+git push origin master
+
+
+Git Branching >> Creating new branch means adding just a pointer without taking extra space. In this way branching is much faster
+
+git branch develop
+git checkout deveop
+
+
 
 
 
