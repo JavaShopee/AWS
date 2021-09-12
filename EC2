@@ -40,6 +40,11 @@ We apply filters to make use of restrictions :
 1. Protocol
 2. Port
 3. Source / Dest IP addresses
+
+
+
+SSH > Port 22
+RDP > Port 3389
               
               
 
