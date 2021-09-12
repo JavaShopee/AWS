@@ -45,6 +45,8 @@ We apply filters to make use of restrictions :
 
 SSH > Port 22
 RDP > Port 3389
+HTTTP: 80
+HTTPS : 443
               
               
 
