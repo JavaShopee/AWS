@@ -47,7 +47,6 @@ Helm : Poweful tool for K8s tempate and package mgt, Ability to convert K8s obje
 configation template with cross connectivity
 
 Kompose : translate docker compose file into kubernetes object
-Helm : Poweful tool for K8s tempate and package mgt, Ability to convert K8s objetcs in reusable templates, Ability to provide complex multi configation template with cross 
 Kustomize : Configuration  Mgt tool similar to HELM
 
 
