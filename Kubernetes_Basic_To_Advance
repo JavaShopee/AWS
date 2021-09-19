@@ -1,0 +1,18 @@
+kubectl config view    >> Status of k8 cluster
+minikube start
+minikube status
+minikube stop
+
+Create first deployment 
+kubectl create deployment hello-nodes --image=k8s.gcr.io/echoserver:1.4
+kubectl get deployment
+kubectl get pods
+
+Expose the deployment to create service which can be accessed thru external world
+kubectl expose deployment hello-nodes --type=LoadBalancer --port=8080
+kubectl get services
+minikube service hello-nodes
+
+Cleanup
+kubectl delete service hello-nodes
+kubectl delete deployment hello-nodes
