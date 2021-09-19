@@ -16,3 +16,40 @@ minikube service hello-nodes
 Cleanup
 kubectl delete service hello-nodes
 kubectl delete deployment hello-nodes
+
+
+Namespace : are the ways to separate and organize objects in K8s
+kubectl get namespaces
+kubectl get pods --namespace <namespace_name>
+kubectl get pods --all-namespaces
+kubectl create namespace <namespace_name>
+
+High Availability in K8s cluster >> Multiple control plane >> Multi master and multi worker node toplogoy
+User will need LB to communciate with multiple control planes
++
+Worler node will also communcate with LB
+
+ETCD Management : 
+
+Stacked ETCD :
+2 mater node >> 2 control palne >>  scheduler , controler, etcd, api server
+two etcd will communicate with each other called stacked etcd
+
+External ETCD : Remove etcd from each control plane
+Each etcd is maintained on separate server, two etcd will communicate with each other 
+
+
+K8s Management Tools :
+kubectl 
+kubeadm : Create the K8 cluster and helping users to make the cluster functional
+Minikube
+Helm : Poweful tool for K8s tempate and package mgt, Ability to convert K8s objetcs in reusable templates, Ability to provide complex multi 
+configation template with cross connectivity
+
+Kompose : translate docker compose file into kubernetes object
+Helm : Poweful tool for K8s tempate and package mgt, Ability to convert K8s objetcs in reusable templates, Ability to provide complex multi configation template with cross 
+Kustomize : Configuration  Mgt tool similar to HELM
+
+
+
+
