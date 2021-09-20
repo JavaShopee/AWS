@@ -219,4 +219,18 @@ sudo systemctl restart kubelet
 
 kubectl get nodes
 kubectl uncordon <master-node>
+***************************************************************************************************************************************************
+
+
+Application Config : K8s allows users to pass the dynamic conf values to app at runtime line app.properties file
+These dynamic conf help users to control the app flow
+
+
+2 ways to supply  dynamic conf values to app:
+Config Maps : Non Sensitive Data , Stores th data in key value format, prevents hardcoding config data to pod specifications
+Secrets : Sensitive Data
+
+
+
+
 
