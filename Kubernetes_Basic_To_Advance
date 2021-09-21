@@ -264,3 +264,37 @@ spec:
 ***********************************************************************************************************
 
 
+Liveness Probe : continious check the container healtchek. helps to determine the container state.
+Restart the failing containers but that also depends upon the restart policy of your application
+Active Healthcheck. If liveness probe is failing, it will auto restart your containers
+User can execute 2 types of liveness probe : 
+   1. Running commands in containers
+   2. Periodic HTTP Healthcheck
+
+initialDelaySeconds : How long to wait before sending a probe after container starts
+periodSeconds : How often a probe will be sent
+timeOutSeconds : How long a request can take to respond before it's considered as failure
+
+
+StartUp Probe :
+Long Startup time - Legagy kind of application
+Liveness probe will try to start the containers and it may go in infinite loop forever
+StartUp Probe runs at a container startup and stop running at container success.
+As soon as first startup probe is success, it will exit out and it will never execute on your container.
+It will not send the liveness probe until first startup probe will be success.
+
+failureThreshold: 30 >> Number of failures in startup probe
+periodSeconds: 10
+
+Applciation will have 30*10 = 5 min to finish its startup
+
+
+Readiness Probe : My app is ready to consume the traffic
+Front end app/containes started quickly + DB app backend app/containers taking some time to respond
+Readiness probe will  app  is completely ready to serve the traffic
+NO Tranfiic is sent to containers untill the first readiness probe will be success
+
+load large DS, Configuration file during the startup, external DB
+
+
+
