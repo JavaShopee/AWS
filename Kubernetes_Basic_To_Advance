@@ -262,7 +262,7 @@ spec:
      cpu: "_m"
 
 ***********************************************************************************************************
-
+Worked on monitoring the container resoureces in K8s cluster with Liveness, Readiness and StartUp probes
 
 Liveness Probe : continious check the container healtchek. helps to determine the container state.
 Restart the failing containers but that also depends upon the restart policy of your application
