@@ -508,7 +508,26 @@ spec:
  
  
  Replication Controller : Desired number of pods are up and running at spefied point of time.
- 
+ apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: alipne-box-replicationcontroller
+spec:
+  replicas: 3
+  selector:
+    app: alipne-box
+  template:
+    metadata:
+      name: alpine
+      labels:
+        app: alipne-box
+    spec:
+      containers:
+      - name: alpine-box
+        image: alpine
+        command: ["sleep", "3600"]
+        
+kubectl scale --replicas <name_of_RC>
  
  
  
