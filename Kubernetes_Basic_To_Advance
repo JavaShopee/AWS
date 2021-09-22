@@ -502,3 +502,13 @@ spec:
  
  Stateful App
  Data that is saved from the activities of one session for the use in next session
+ DB Services are stateful services, they have the file system that can't be split in multiple instances
+ can be scaled vertically
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
