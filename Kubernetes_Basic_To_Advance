@@ -435,6 +435,8 @@ spec:
  They do not requuire any control plane or API Server
  Kubelet watches each static pod and restarts if its fail
  
+ Monitoring, Configuration without Control Server/ API Server
+ 
  On any node go to /etc/kubernetes/manifests/ >> Create Yml file
  to strt the pod >> sudo systemctl restart kubelet
  
@@ -445,9 +447,46 @@ spec:
  
  **************************************************************************************************************************************************
  
+ Node Affinity and Anti Affinity
  
+ Node Affinity is enhanced version of Node Selector, used for pod allocation on worker node
+ Not to schedule pod on node is achieved by Anti Affinity, opp to affinity and node selector
  
- 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-nodeaffinity
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: disktype
+                operator: In
+                values:
+                  - ssd
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-node-anti-affinity
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: disktype
+                operator: NotIn
+                values:
+                  - ssd
  
  
  
