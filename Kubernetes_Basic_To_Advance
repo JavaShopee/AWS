@@ -428,3 +428,21 @@ spec:
             - containerPort: 80
             
  ********************************************************************************************************************************************
+ 
+ 
+ Static Pod in K8s, Mirror Pods
+ Static Pod are directly managed by kubelet on K8s nodes
+ They do not requuire any control plane or API Server
+ Kubelet watches each static pod and restarts if its fail
+ 
+ Mirror Pod : created for each static pod, monitor the static pod via K8s APIs
+ User can't change or update static pods via mirror pods
+ 
+ **************************************************************************************************************************************************
+ 
+ 
+ 
+ 
+ 
+ 
+ 
