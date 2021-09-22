@@ -336,4 +336,32 @@ spec:
     - name: shared-data
       emptyDir: {}
      
-Test
+***************************************************************************************
+
+
+
+Scheduler >> Responsible to schedule pods on nodes and that scheduling depends upon multiple factors :
+
+Schedules select the nodes on the basis of: 
+1. Resource Req Vs Avaible Node Resources
+   4 core cpu , 2 GB Resource req >> Only one worker node is capable to handle that request, schedule on tht node
+   
+2. Configuration like node labels
+   Define the lables on node and use the same labels on pod/container specification
+   K8 read the manifest file and match the labels
+   
+3. node Selector, affinity and anti affinity
+   node Selector use the labels (key value pair) to select the suitable node 
+    
+4. node name
+   manifest file we can define the node name
+
+
+
+
+
+
+
+
+
+
