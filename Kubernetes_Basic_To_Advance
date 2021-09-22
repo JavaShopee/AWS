@@ -493,4 +493,12 @@ spec:
                   - ssd
  
  
+ *******************************************************************************************************************************************************
+ Stateless App
+ Application data geenrated in one session can not be used in next session with that client
+ can be scaled horizontally
+ New Pods can be created for Stateless App
  
+ 
+ Stateful App
+ Data that is saved from the activities of one session for the use in next session
