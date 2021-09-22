@@ -336,7 +336,7 @@ spec:
     - name: shared-data
       emptyDir: {}
      
-***************************************************************************************
+***********************************************************************************************************************************
 
 
 
@@ -346,17 +346,61 @@ Schedules select the nodes on the basis of:
 1. Resource Req Vs Avaible Node Resources
    4 core cpu , 2 GB Resource req >> Only one worker node is capable to handle that request, schedule on tht node
    
+   
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-app
+spec:
+  containers:
+    - name: app
+      image: alpine
+      command:
+        - sleep
+        - '3600'
+      resources:
+        requests:
+          memory: 64Mi
+          cpu: 1000m
+  nodeSelector:
+    disktype: ssd
+   
 2. Configuration like node labels
    Define the lables on node and use the same labels on pod/container specification
    K8 read the manifest file and match the labels
    
 3. node Selector, affinity and anti affinity
    node Selector use the labels (key value pair) to select the suitable node 
+   
+   kubectl get node --show-labels
+   kubectl label nodes <node_name> disktype=ssd
+   
+   
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-nodeselector
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeSelector:
+    disktype: ssd
     
 4. node name
    manifest file we can define the node name
+   
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-nodename
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeName: k8s-worder-01
 
-
+***************************************************************************************************************************************
 
 
 
