@@ -429,11 +429,16 @@ spec:
             
  ********************************************************************************************************************************************
  
- 
  Static Pod in K8s, Mirror Pods
+ 
  Static Pod are directly managed by kubelet on K8s nodes
  They do not requuire any control plane or API Server
  Kubelet watches each static pod and restarts if its fail
+ 
+ On any node go to /etc/kubernetes/manifests/ >> Create Yml file
+ to strt the pod >> sudo systemctl restart kubelet
+ 
+ It will create a mirror pod on master node and try to delete the pod and it will not get deleted because User can't change or update static pods via mirror pods
  
  Mirror Pod : created for each static pod, monitor the static pod via K8s APIs
  User can't change or update static pods via mirror pods
