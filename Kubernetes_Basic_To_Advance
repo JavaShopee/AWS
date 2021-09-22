@@ -452,6 +452,10 @@ spec:
  Node Affinity is enhanced version of Node Selector, used for pod allocation on worker node
  Not to schedule pod on node is achieved by Anti Affinity, opp to affinity and node selector
  
+ Node Affinity have enhanced syntax as compared to Node Selector
+ requiredDuringSchedulingIgnoredDuringExecution  : Hard Affinity
+ prefferedDuringSchedulingIgnoredDuringExecution  : Soft Affinity
+ 
 apiVersion: v1
 kind: Pod
 metadata:
