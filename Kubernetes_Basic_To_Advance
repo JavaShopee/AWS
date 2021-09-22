@@ -507,7 +507,7 @@ spec:
  
  
  
- 
+ Replication Controller : Desired number of pods are up and running at spefied point of time.
  
  
  
