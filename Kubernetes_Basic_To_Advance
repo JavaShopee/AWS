@@ -618,6 +618,12 @@ spec:
           args:
             - '-c'
             - echo Hello from the Ubantu container; sleep 3600
+            
+            
+ kubectl set image <delpoyment name> <container name>=<image name>
+ kubectl set image delpoyment/chef-server chef-server=chef/chefdk:4.9.10 --record
+ kubectl rollout status depolyment/chef-server
+ kubectl rollout history depolyment/chef-server
 
 
  
