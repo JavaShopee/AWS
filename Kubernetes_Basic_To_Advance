@@ -624,6 +624,11 @@ spec:
  kubectl set image delpoyment/chef-server chef-server=chef/chefdk:4.9.10 --record
  kubectl rollout status depolyment/chef-server
  kubectl rollout history depolyment/chef-server
+ 
+ kubectl rollout undo depolyment/chef-server
+ kubectl rollout undo depolyment/chef-server --to-revision=1
+ 
+ kubectl edit depolyment/chef-server
 
 
  
