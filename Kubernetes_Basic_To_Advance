@@ -635,5 +635,29 @@ kubectl rollout pause depolyment/chef-server >> Bulk Changes
 kubectl rollout resume depolyment/chef-server
 kubectl scale depolyment/chef-server --replicas=5
 
- 
+
+*********************************************************************************************************************************************
+
+Service is used to access the application running on pods
+
+Replication Controller : Pods are dynmaic in nature, created and terminated during scaling
+Deployment : Image Version Upgrade, pods are dynamically created and terminated
+Pods can not be accessed directly but thru a service
+
+Publish the service : service types
+-----------------------------------
+
+Cluster IP : Publish the service on cluster internal IP so tht other pods can access the service if they want
+Choosing this value makes the service only reachable from within the cluster
+
+
+
+NodePort : Exposes the service at each node id at static port.
+You will be able to. connect the nodeport service from outside the cluster by requesting NodeId:Nodeport
+
+Load Balancer : Expose the service externally using cloud provider load balancer
+load balancer will route the traffic to ClusterIP and NodePort
+
+
+minikube service <service-name> --url
  
