@@ -631,5 +631,9 @@ spec:
  kubectl edit depolyment/chef-server
 
 
+kubectl rollout pause depolyment/chef-server >> Bulk Changes
+kubectl rollout resume depolyment/chef-server
+kubectl scale depolyment/chef-server --replicas=5
+
  
  
