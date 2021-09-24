@@ -694,3 +694,13 @@ spec:
   
   
  *******************************************************************************************************************************************
+ 
+ 
+ Pod Lifecycle
+ 
+ 
+ Pending : Pod is accepted by kubernetes but container is not yet started
+ Running : at least one container is running
+ Succedded : All Succeded 
+ Failed : at least one failed
+ CrashLoopBackOff : trying to start again and again
