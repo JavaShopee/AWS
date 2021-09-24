@@ -704,3 +704,27 @@ spec:
  Succedded : All Succeded 
  Failed : at least one failed
  CrashLoopBackOff : trying to start again and again
+
+
+Also Go to Udemy
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-demo
+spec:
+  containers:
+  - name: lifecycle-demo-container
+    image: nginx
+    lifecycle:
+      postStart:
+        exec:
+          command: ["/bin/sh", "-c", "echo Hello from the postStart
+handler > /usr/share/message"]
+      preStop:
+        exec:
+          command: ["/bin/sh","-c","nginx -s quit; while killall -0
+nginx; do sleep 1; done"]
+
+
+****************************************************************************************************************************
