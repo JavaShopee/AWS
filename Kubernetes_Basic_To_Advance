@@ -763,3 +763,26 @@ Pod Selector : to which pod in the Namespace n/w policy will be applied
  Namespace selector : Select namespace to allow traffic from/to
  IP Block : Selct IP Range to allow traffic from/to
  Port : Specify one or more port that allow traffic
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sample-network-policy
+  namespace: network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: frontend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            role: test-network-policy
+      ports:
+      - protocol: TCP
+        port: 80
