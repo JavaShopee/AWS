@@ -762,3 +762,4 @@ Pod Selector : to which pod in the Namespace n/w policy will be applied
                toSelector : Egress traffic
  Namespace selector : Select namespace to allow traffic from/to
  IP Block : Selct IP Range to allow traffic from/to
+ Port : Specify one or more port that allow traffic
