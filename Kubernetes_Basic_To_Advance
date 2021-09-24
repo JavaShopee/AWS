@@ -728,3 +728,10 @@ nginx; do sleep 1; done"]
 
 
 ****************************************************************************************************************************
+
+DNS allows communication between the pods
+kube-dns runs as a service in kube-system namespace
+
+All pods in Kubeadm cluster will be given the domain name like :
+pod-ip.namespace-name.pod.cluster.local
+pods indside kubernertes clustr comminicate via IP addr or dns
