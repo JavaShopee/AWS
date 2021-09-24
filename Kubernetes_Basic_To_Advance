@@ -661,3 +661,19 @@ load balancer will route the traffic to ClusterIP and NodePort
 
 minikube service <service-name> --url
  
+ 
+ *****************************************************************************************************************************
+ 
+ key value pair that are attached to objects
+ can be attached to objetcs at the time of creation and sebsequently modified and added at any time
+ Once lables are attahced to the objects we can filter the result on the basis of labels >> Label Selectors
+ multiple lable with single objs ans single label with mutliple objs
+ 
+ Once nodes are tagged, we can use label selector to run podes on specific nodes
+ 
+ kubectl label nodes <node-name> disktype=ssd
+ kubectl get nodes --show-labels
+ 
+ Inside the pod :
+ nodeSelector:
+  disktype: ssd
