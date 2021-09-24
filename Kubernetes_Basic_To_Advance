@@ -673,10 +673,24 @@ minikube service <service-name> --url
  
  kubectl label nodes <node-name> disktype=ssd
  kubectl get nodes --show-labels
- 
  Inside the pod :
- nodeSelector:
-  disktype: ssd
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-web
+  labels:
+    app: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.16.0
+    ports:
+      - name: nginxport
+        containerPort: 80
+  nodeSelector:
+    disktype: ssd
   
   
  *******************************************************************************************************************************************
