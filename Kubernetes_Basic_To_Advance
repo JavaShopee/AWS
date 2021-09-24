@@ -735,3 +735,30 @@ kube-dns runs as a service in kube-system namespace
 All pods in Kubeadm cluster will be given the domain name like :
 pod-ip.namespace-name.pod.cluster.local
 pods indside kubernertes clustr comminicate via IP addr or dns
+
+
+
+******************************************************************************************
+******************************************************************************************
+
+Network policies are used to control traffic flow at IP address and port level
+
+Purpose : Keeping the pods isolated from traffic they don't need
+
+Pods can communicate using 3 identifiers :
+Other pods that are allowed
+Namespaces that are allowed
+IP Blocks
+
+
+N/W Policy Components :
+Pod Selector : to which pod in the Namespace n/w policy will be applied
+               pod selectort can select the pods using matching labels
+               empty pod selector select all pods in the namespace
+               
+               N/w policy apply on both Ingress(traffic coming to pod from other source) and Egress traffic(traffic leaving the pod to dest)
+               
+               fromSelector : Ingress Traffic
+               toSelector : Egress traffic
+ Namespace selector : Select namespace to allow traffic from/to
+ IP Block : Selct IP Range to allow traffic from/to
