@@ -800,7 +800,7 @@ Service Routing : Client make the request to service which routes the traffic to
 End Point : Backend entity tht will connect service and pods
 Combinattion of pod ip and pod port
 
-**************************************************************************
+*******************************************************************************************************************************************
 
 Service Type : how and where service will expose the app
 Defaut is cluster ip
@@ -821,7 +821,7 @@ Backend LB will connect to NodePort and NodePort will comnnect to POD
 Extenal Name  : LB Service type you need to creaate the CNAME which will directly access the service in K8
 
 
-
+**********************************************************************************************************************************
 
 
 
