@@ -827,3 +827,9 @@ Extenal Name  : LB Service type you need to creaate the CNAME which will directl
 Service DNS Names : allow application within the cluster to easily locate the service
 Service-name.namespace-name.svc.cluster-domain.example >> Use if the pods and service are in diff NS
 Service-name.namespace-name.svc.cluster.local
+
+
+
+****************************************************************
+
+Ingress Cont
