@@ -786,3 +786,42 @@ spec:
       ports:
       - protocol: TCP
         port: 80
+
+
+******************************************************************************************************************************************
+
+K8S Services : Access the pods to outside world
+Abstract layer b/w pods and client
+Way to expose app as a set of pods
+
+
+Service Routing : Client make the request to service which routes the traffic to pods in Load Balancer fashion
+
+End Point : Backend entity tht will connect service and pods
+Combinattion of pod ip and pod port
+
+**************************************************************************
+
+Service Type : how and where service will expose the app
+Defaut is cluster ip
+
+Cluter IP, NodePort, LB, Ext Name
+
+Cluter IP : Expose the service within the cluster network, client is within the cluster
+Use Cluster IP when client is other pods within the cluster belonging to diff namespace
+
+By default comm b/w pods in enaled thru IP asdd but what when pods belongs to diff ns ? >> Cluster IP
+
+NodePort : expose application outside cluster network, client is asscessing the service from outside the network.
+
+LB: Expose service to outer world but cloud ILB is required.
+You are using the K8s services on some public cloud and that public cloud supports some kind ok LB. like AWS, Azure, GCP
+Backend LB will connect to NodePort and NodePort will comnnect to POD
+
+Extenal Name  : LB Service type you need to creaate the CNAME which will directly access the service in K8
+
+
+
+
+
+
