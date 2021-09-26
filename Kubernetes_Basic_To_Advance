@@ -6,8 +6,6 @@ Installation Steps for Mimikube :
 
 K8S Version > 1.20.2
 
-
-
 kubectl config view    >> Status of k8 cluster
 minikube start
 minikube status
