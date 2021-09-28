@@ -151,7 +151,7 @@ kubectl get pods -o wide    >> which pod is running on which node
 Remove the worker node from cluster , to apply security patches, add some additional disc, Increase the capacity of worker node
 Application should have no downtime
 
-Containers running on node should be gracefully terminated and should be rescheduled on avilable worker node
+Containers running on node should be gracefully terminated and should be rescheduled on avilable worker node. Not applicaple for Bare pos.
 
 kubectl drain <nodename> >> make sure no deamonset running on node
 deamonset >> pods that are tightly coupled to worker node, like monitoring , health check, performance check that are running on each worker node
