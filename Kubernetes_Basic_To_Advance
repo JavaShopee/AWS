@@ -230,6 +230,8 @@ kubectl uncordon <master-node>
 ***************************************************************************************************************************************************
 
 
+kubectl create vs kubectl apply : If the resource already exists kubectl create will give you an error
+
 Application Config : K8s allows users to pass the dynamic conf values to app at runtime line app.properties file
 These dynamic conf help users to control the app flow
 
