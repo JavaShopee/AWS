@@ -266,6 +266,14 @@ Secrets : Sensitive Data
 
 
 
+We can pass config Map and Secrets to Containrs at runtime :
+Using > Env Vars, Mount Vols, posix
+
+In posix we dont need to define separate env var for each key value pair 
+there is one to one mapping b/w key value pair unlike using env vars
+
+
+
 
 ***********************************************************************************************************
 
