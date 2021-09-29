@@ -1,4 +1,4 @@
-Installation Steps for Mimikube :
+Installation Steps for Minikube :
 
 1. Install Docker CE Edition    > 20.10.6
 2. Install Kubectl              > 1.21.1            
@@ -231,6 +231,30 @@ kubectl uncordon <master-node>
 
 
 kubectl create vs kubectl apply : If the resource already exists kubectl create will give you an error
+***************************************************************************************************************************************************
+
+Role Based Access Mgt (RBAC)   > Can't provide admin access to all the individuals working in org
+Allows manage the user access in the K8S cluster
+Example : Limited access to Deployments and Pods
+
+K8S RBAC Objects > Roles and ClusterRoles > Define set of permission
+Role > Define permission within namespace, limited to Namespace
+ClusterRoles > Define permission within cluster, not limited to NS, limited to cluster
+
+RoleBinding binds the role to the user
+ClusterRolesBinding : Binds the clsuter roles to the user 
+
+
+Steps >> Add User in K8S cluster
+      >> Create Role
+      >> Create Role Biding
+
+
+
+
+
+
+***************************************************************************************************************************************************
 
 Application Config : K8s allows users to pass the dynamic conf values to app at runtime line app.properties file
 These dynamic conf help users to control the app flow
