@@ -382,8 +382,13 @@ spec:
      
 ***********************************************************************************************************************************
 
+INIT Containers : Specialized containers that runs before the app containers in POD
+Utility / Setup Script that are NOT the part of app containers
+App Image : Less Bulky and light weight
 
+Will execute in sequence
 
+***********************************************************************************************************************************
 Scheduler >> Responsible to schedule pods on nodes and that scheduling depends upon multiple factors :
 
 Schedules select the nodes on the basis of: 
