@@ -486,6 +486,8 @@ spec:
  They do not requuire any control plane or API Server
  Kubelet watches each static pod and restarts if its fail
  
+ Use Cases : Whenever you want to perform some bootstrap on your nodes, go for statci pod
+ 
  Monitoring, Configuration without Control Server/ API Server
  
  On any node go to /etc/kubernetes/manifests/ >> Create Yml file
