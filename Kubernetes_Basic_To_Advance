@@ -455,6 +455,8 @@ spec:
 Daemon Set : Runs copy of pod on each node
 Daemon Set runs copy of pod on new node as they are added to the cluster
 Daemon Set will be helpful in case of Monitoring, Log Collection and proxy configuration
+Daemon Set follow the normal scheduling rules around the node labels, taints and tolerations
+
 
 
 apiVersion: apps/v1
