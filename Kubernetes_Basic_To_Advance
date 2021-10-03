@@ -793,9 +793,21 @@ All pods in Kubeadm cluster will be given the domain name like :
 pod-ip.namespace-name.pod.cluster.local
 pods indside kubernertes clustr comminicate via IP addr or dns
 
+************************************************************************************************************************************************************************************
+
+CNI Plugins : Nodes will remain NOTREADY until you install Network Plugin and the user won't be able to run pods
+CNI Plugins provides the connectivty b/w podss as per K8s n/w model. Multiple CNI N/W plugins are available like Calico Network plugins
 
 
-******************************************************************************************
+
+
+************************************************************************************************************************************************************************************
+
+CNI Plugins : Nodes will remain NOTREADY until you install Network Plugin and the user won't be able to run pods
+CNI Plugins provides the connectivty b/w podss as per K8s n/w model. Multiple CNI N/W plugins are available like Calico Network plugins
+
+
+
 ******************************************************************************************
 
 Network policies are used to control traffic flow at IP address and port level
