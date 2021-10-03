@@ -809,7 +809,7 @@ CNI Plugins provides the connectivty b/w podss as per K8s n/w model. Multiple CN
 
 
 ******************************************************************************************
-
+Worked on network policies in K8S cluster to control the traffic flow at IP addr level and port level
 Network policies are used to control traffic flow at IP address and port level
 
 Purpose : Keeping the pods isolated from traffic they don't need
@@ -818,6 +818,8 @@ Pods can communicate using 3 identifiers :
 Other pods that are allowed
 Namespaces that are allowed
 IP Blocks
+
+By default, Pods are Non Isolated, accept the traffic from all sources
 
 
 N/W Policy Components :
