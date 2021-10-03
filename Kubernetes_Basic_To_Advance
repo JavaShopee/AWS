@@ -903,4 +903,70 @@ Service-name.namespace-name.svc.cluster.local
 
 ****************************************************************
 
-Ingress Cont
+Ingress Controller : is used to maange the external access to service in K8S cluster
+
+External Client ----------> Ingress Controller ---------------> Services
+
+
+Ingress Controller : is the obj b/w client and services, abstarct interface for providing more secure traffic
+Apart from Node port service, SSL Termination, LB, NameBase Virtual Hosting
+
+Ingress defines set of routing rules
+Each rule has a set of path each with the backend. Request matching a path will be routed to associated backend
+
+
+Ingress >> Corresponding Hosts >> Service >> Dep >> Pod > Cont
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-rules
+spec:
+  rules:
+  - host: nginx-official.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: nginx-official-service
+            port:
+              number: 80
+  - host: magical-nginx.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: magical-nginx
+            port:
+              number: 80
+
+
+
+****************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
