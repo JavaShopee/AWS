@@ -1009,8 +1009,8 @@ spec:
  emptyDir data persist until the pod persists. If POD is deleted, data will get deleted.
  If container is killed (without killling the POD), data will still persist.
  
- Conatier can be killed by killing the process.
-
+Conatier can be killed by killing the process.
+emptyDir : Mutiple contaiers within the pod can refer the same emptyDir vol
 
 
 
