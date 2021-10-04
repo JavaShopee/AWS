@@ -951,10 +951,69 @@ spec:
 Data Storage In K8s
 
 
+Container File system is ephemeral. Files in the container FS exists as lonk as container exists.
+Data in the container FS is long as soon as the container is deleted or recreated.
+
+The problem is there in Stateful apps. Solutions is volumes.
+
+Volumes allow to send store the data outside containers while allowing containers to access the data at runtime.
+Real time replication : What ever changes are there in container FS, same changes will also be replicatied to External File System.
+
+Persitent Volumes are bit more adv than volumes. Persitent Volumes allows users to treat storage as an abstract resource and consume it using pods.
+
+
+Volume Types : NFS, Cloud Storage, Config Maps and Secrets, File Sys on K8s node
+
+********************************************************************************************************************************
+
+Volume and Volume Mount
+Volume : is the POD specifcation, User can define storage vol available in for the pod
+Volume Mount is the container spec, refers the vol in pod spec and provides the mount path
 
 
 
 
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-pod
+spec:
+  volumes:
+  - name: hostpath-vol
+    hostPath:
+      path: /var/tmp.                    >> Location on host machine/node
+  containers:
+  - name: hostpath-pod
+    image: 'k8s.gcr.io/busybox'
+    command: ["/bin/sh", "-c", "echo Hello Team, This is Sample File for HostVolume - $(date) >> /output/output.txt"]
+    volumeMounts:
+    - name: hostpath-vol
+      mountPath: /output               >> within the container
+      
+      
+      
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-emptydir
+spec:
+  containers:
+  - name: redis
+    image: redis
+    volumeMounts:
+    - name: redis-storage
+      mountPath: /data/redis
+  volumes:
+  - name: redis-storage
+    emptyDir: {}                               >> Dynamic loc within the host machine
+    
+    
+ emptyDir data persist until the pod persists. If POD is deleted, data will get deleted.
+ If container is killed (without killling the POD), data will still persist.
+ 
+ Conatier can be killed by killing the process.
 
 
 
