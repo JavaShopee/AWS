@@ -1098,5 +1098,33 @@ kubectl get pods -n kube-system
 kubectl describe pod pod-name -n kube-system
 
 
+**********************************************************************************************************
 
 
+Logs of K8S services on each node :
+
+sudo journalctl -u kubelet -n 100 (Tail last 100 lines)
+sudo journalctl -u kubelet -f (follow the log)
+sudo journalctl -u docker
+
+
+Default log output redirected to :
+/var/log/kube-apiserver.log
+/var/log/kube-scheduler.log
+/var/log/kube-control-manager.log
+
+
+not for kubeadm >> Executing everything as a pod
+
+kubectl logs -n kube-system <pod name>
+
+
+************************************************************************************************************************
+
+Troubleshoot Applications in K8S
+
+
+kubectl describe pod pod-name
+kubectl exec pod pod-name -c container-name -- command
+
+*********************************************************************************************************************
