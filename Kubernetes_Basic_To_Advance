@@ -1128,6 +1128,6 @@ kubectl describe pod pod-name
 kubectl exec pod pod-name -c container-name -- command
 
 *********************************************************************************************************************
-
+Worked on troubleshooting the self managed K8S cluster
 Container Log
 kubectl logs pod-name -c container-name
