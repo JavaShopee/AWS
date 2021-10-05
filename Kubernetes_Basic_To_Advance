@@ -1073,6 +1073,29 @@ without PVC, you can not attch p vols to your resouces
 
 ***********************************************************************************************************************
 
+Troubleshoot K8S Cluster
+
+
+If API Server is down, 
+Connection to the server localhost:6443 was refused. Did you specify the rigth port and host?
+
+Make sure docker and kubelet services are up and running on master node
+
+
+Node Status :
+
+kubectl get nodes
+kubectl describe node <node name>
+
+sudo systemctl status docker
+sudo systemctl status kubelet
+sudo systemctl start kubelet
+sudo systemctl enable kubelet.  >> If the node is going to reboot
+
+
+All pods in kube system name sapace shoule be in the running state
+kubectl get pods -n kube-system
+kubectl describe pod pod-name -n kube-system
 
 
 
