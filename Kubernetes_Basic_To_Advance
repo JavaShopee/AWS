@@ -1128,3 +1128,6 @@ kubectl describe pod pod-name
 kubectl exec pod pod-name -c container-name -- command
 
 *********************************************************************************************************************
+
+Container Log
+kubectl logs pod-name -c container-name
