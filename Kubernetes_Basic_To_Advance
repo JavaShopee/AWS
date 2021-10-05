@@ -1046,8 +1046,32 @@ spec:
         
 
 
+****************************************************************************************************************************************
 
 
+Persistent Volume in K8S
+Persistent Volume is K8S obj which allows user to treat storage as an abstract resource to pods
+Persistent Volume is the resource in the cluster just like node
+
+with Persistent Volume, you can define the storage as local disk or cloud storage
+
+Storage Class : Another K8s obj, Specify all type of storage service they offer on their platform
+                Somebody needs to control where that where the user is creating the persitent vol, that control is given by storage class
+
+within the storage class, allowVolumeExpansion : Ability to resize storage class once they are created. true /false
+
+
+persistentVolumeReclaimPolicy:
+Reclaim Policy : How the storage class will be used when the PVs assocaited with PVCs will be deleted
+
+                 Retain : Keep All data 
+                 Delete : Delete underlying storage resorces
+                 Recycle : Delete underlying storage data and allow PVs to be reuse
+                 
+PVC is the request for storage by the user. Another K8S obj. PVC looks for PV that is able to meet the criteria, found, then bind PV to PVC
+without PVC, you can not attch p vols to your resouces
+
+***********************************************************************************************************************
 
 
 
