@@ -1131,3 +1131,10 @@ kubectl exec pod pod-name -c container-name -- command
 Worked on troubleshooting the self managed K8S cluster
 Container Log
 kubectl logs pod-name -c container-name
+
+
+****************************************************************
+
+Packaging and deploying the app in K8S with the utility : HELM
+
+HELM is K8S based package installer
