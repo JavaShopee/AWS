@@ -1138,3 +1138,6 @@ kubectl logs pod-name -c container-name
 Packaging and deploying the app in K8S with the utility : HELM
 
 HELM is K8S based package installer
+
+
+https://www.youtube.com/watch?v=pHGc87zHLlo&list=PL7iMyoQPMtANm_35XWjkNzDCcsw9vy01b
