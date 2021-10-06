@@ -1139,5 +1139,50 @@ Packaging and deploying the app in K8S with the utility : HELM
 
 HELM is K8S based package installer
 
+Chart Structure >> Chart.yml , template, Values.yml
 
-https://www.youtube.com/watch?v=pHGc87zHLlo&list=PL7iMyoQPMtANm_35XWjkNzDCcsw9vy01b
+which helm
+
+helm create <chart name>
+helm create springboot
+
+tree springboot
+
+helm template <chart name>  >> fill all the placeholders
+heml lint <chart name>    >> detects any problems, syntax error, compilation
+
+
+helm install myfirstspringboot springboot
+helm install <release name> <chart name>
+
+helm list -a
+kubectl get all
+
+
+
+kubectl get all >> Verify K8 Cluster
+
+Upgrade Helm Release
+______________________
+
+update Chart.yml with version num
+update Values.yml with replica num
+
+helm upgrade <release name> <chart name>
+helm upgrade myfirstspringboot springboot
+helm rollback myfirstspringboot 1
+helm rollback <release name> <revision num>
+
+helm list -a
+kubectl get all
+
+helm delete myfirstspringboot
+helm list -a
+
+
+
+
+
+
+
+
