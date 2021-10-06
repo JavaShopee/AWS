@@ -1135,6 +1135,8 @@ kubectl logs pod-name -c container-name
 
 ****************************************************************
 
+Worked on Deploying and Upgrading Sping Boot pplication in K8S cluster using Helm Charts
+
 Packaging and deploying the app in K8S with the utility : HELM
 
 HELM is K8S based package installer
