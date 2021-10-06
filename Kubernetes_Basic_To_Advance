@@ -1181,8 +1181,18 @@ helm list -a
 
 
 
+Handle Up Stream repo in helm chrt
+__________________________________
+helm repo list
+helm repo add <repo name> <repo url>
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo list
+helm search repo bitnami
 
+helm repo update >> Pull all latest changes in local env
+helm repo index helloworld. >> generates index.yml in helm chart
 
+helm repo remove bitnami
 
 
 
