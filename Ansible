@@ -123,6 +123,8 @@ group1
 group2
 
 
+cp -rpP -r /etc/ansible/* .       >> Command to copy all files and dir
+
 Ansible.cfg file locations with priority
 1. ANSIBLE_CONFIG env variable
 2. ./ansible.cfg from current dir
