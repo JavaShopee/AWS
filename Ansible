@@ -11,7 +11,7 @@ setup,raw(if python is NOT installed on managed node)
 
 ansible 13.232.165.93 -m yum -a "name=git state=latest" -b -k -K
 -k :: SSH Password
--K :: Sudo Password
+-K :: Sudo Password (visudo)
 
 Diff Shell and Commnad Module
 Commnad : Default
