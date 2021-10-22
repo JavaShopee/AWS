@@ -1,5 +1,10 @@
 https://www.youtube.com/watch?v=sGeZm__pZ9I&list=PL2qzCKTbjutIyQAe3GglWISLnLTQLGm7e
 
+Ansible is called Agent less Architecture:  We are not going to insatll any software on remote servers to work from Ansible Engine 
+Module( like shell) will be pushed to Managed Nodes (Engine is going to push on Managed Nodes and Not Vice Versa ... So called Push Mechanism)
+idempotent : If there are changes, then and only then file will be copied, otherwise CHANGED=FALSE        COPY Module
+
+
 Ansible : Open Source Automation tool
         : Simple to setup and powerful
         : Perform 
