@@ -5,7 +5,7 @@ Module( like shell) will be pushed to Managed Nodes (Engine is going to push on 
 idempotent : If there are changes, then and only then file will be copied, otherwise CHANGED=FALSE        COPY Module
 
 
-Modules : Ping ,Copy(src,dest,backup=yes) ,Shell ,Fetch(src,dest,flat=yes) ,file(path,state,mode='0777'),setup
+Modules : Ping ,Copy(src,dest,backup=yes) ,Shell ,Fetch(src,dest,flat=yes) ,file(path,state,mode='0777'),yum, setup
 
 
 Ansible : Open Source Automation tool
