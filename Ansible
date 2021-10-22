@@ -6,7 +6,7 @@ idempotent : If there are changes, then and only then file will be copied, other
 
 
 Modules : Ping ,Copy(src,dest,backup=yes) ,Shell ,Fetch(src,dest,flat=yes) ,file(path,state,mode='0777'),yum(name, state), command(default module if you don'tmention any module) 
-setup
+setup,raw(if python is NOT installed on managed node)
 
 Diff Shell and Commnad Module
 Commnad : Default
@@ -263,6 +263,7 @@ Ansible Facts/Variables are the information about your Managed Nodes like : OS ,
 Gathering Facts using setup modules >> Default in ansible Play Books
 
 ansible 13.235.133.114 -m setup -a "filter=ansible_mounts"
+ansible webservers -m setup -a "filter=ansible_date_time"
 
 Ansible Facts >> Default and Custom
 
