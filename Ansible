@@ -571,7 +571,7 @@ How to read variable values from yml and json
 One playbook to install any package | command line arguments  
 ____________________________________________________________
 
-CLA as Scaler
+CLA as Scaler --extra-var
 ansible-playbook cmd_line.yml -e "x=20"
 ansible-playbook cmd_line.yml -e "x=20 y=30"
 ansible-playbook cmd_line.yml -e "x=20 y='Ansible Demo'"
