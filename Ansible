@@ -466,6 +466,23 @@ which ansible-playbook
 
 
 
+Data Structures :Scaler,Sequence ,Map
+---
+ - hosts: localhost
+   vars: 
+    #pkgs: ['vim','wget','nano','httpd']
+    pkgs:
+     - 'vim'
+     - 'wget'
+     - 'nano'
+     - 'httpd'
+    #dist: {'linux':'httpd', 'ubuntu':'apache2'}
+    dist:
+     'linux': 'httpd'
+     'ubuntu': 'apache2'
+   tasks:
+   - debug: var=dist
+
 How to read and print a variable value using ansible playbook ? | DevOps
 ________________________________________________________________________
 
