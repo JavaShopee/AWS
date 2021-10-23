@@ -6,7 +6,19 @@ idempotent : If there are changes, then and only then file will be copied, other
 
 
 Modules : Ping ,Copy(src,dest,backup=yes) ,Shell ,Fetch(src,dest,flat=yes) ,file(path,state,mode='0777'),yum(name, state), command(default module if you don'tmention any module) 
-setup,raw(if python is NOT installed on managed node)
+setup,raw(if python is NOT installed on managed node),set-fact,debug
+
+
+Use of set-fact module
+---
+ - hosts: localhost
+   gather_facts: false
+   tasks:
+   - shell: "bash --version"
+     register: bash_ver
+   - set_fact:
+      bash_version: "{{bash_ver.stdout.split('\n')[0].split()[3]}}"
+   - debug: var=bash_version
 
 
 ansible 13.232.165.93 -m yum -a "name=git state=latest" -b -k -K
