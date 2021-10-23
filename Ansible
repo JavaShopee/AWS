@@ -427,6 +427,11 @@ ansible-playbook verbosity_usage.yml -vv
 
 ansible-playbook print_any_msg.yml --syntax-check
 
+which ansible-playbook
+./copyfile.yml -vvvvvvvvv
+./copyfile.yml --syntax-check
+./copyfile.yml -check    >> Dry Run
+
 
 
 How to read and print a variable value using ansible playbook ? | DevOps
