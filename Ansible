@@ -435,6 +435,24 @@ ansible-playbook verbosity_usage.yml -vv
       msg:
       - "Sample Line 2"
       verbosity: 2
+      
+      
+      
+      
+---
+ - hosts: localhost
+   var:
+    x: 4
+    my_name: 'sachin'
+    my_num: 12.32
+    my_b: yes
+   tasks:
+   - debug: 
+      msg: 
+       - "Value of x is {{x}} and type is {{x|type_debug}}"
+       - "Value of my_name is {{my_name}} and type is {{my_name|type_debug}}"
+       - "Value of my_num is {{my_num}} and type is {{my_num|type_debug}}"
+       - "Value of my_b is {{my_b}} and type is {{my_b|type_debug}}"
 
 
 
