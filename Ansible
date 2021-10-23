@@ -636,7 +636,10 @@ ansible-playbook install_uninstall.yml -e "pkg=nginx req_state=present"
        - "OS Distribution is {{os_dist}}"
        - "OS Release is {{os_name}}"
        
-ansible localhost -m setup | grep ansible       
+ansible localhost -m setup | grep ansible      
+ansible localhost -m setup >> debug : var=ansible_facts
+
+
 ---
  - hosts: localhost
    #gather_facts: yes
