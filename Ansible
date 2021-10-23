@@ -620,6 +620,35 @@ vi install_uninstall.yml
 ansible-playbook install_uninstall.yml -e "pkg=nginx req_state=present"
 
 
+
+
+---
+ - hosts: localhost
+   gather_facts: fales
+   become: yes
+   tasks: 
+   - shell: "cat /etc/os-release | awk -F = 'NR==1 {print $2}' | tr '\"' ' '"
+     register: os_dist
+   - shell: "uname"
+     register: os_name
+   - debug:
+      msg: 
+       - "OS Distribution is {{os_dist}}"
+       - "OS Release is {{os_name}}"
+       
+ansible localhost -m setup | grep ansible       
+---
+ - hosts: localhost
+   #gather_facts: yes
+   tasks:
+   - debug:
+      msg:
+       - "ansible_distribution is {{ansible_distribution}}"
+       - "ansible_python_version is {{ansible_python_version}}"
+       - "ansible_system is {{ansible_system}}"
+       - "ansible_user_shell is {{ansible_user_shell}}"
+
+
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
 ignore_errors: true  
