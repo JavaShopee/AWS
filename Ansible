@@ -530,6 +530,44 @@ ________________________________________________________________________
       msg: "Your username is {{username}} and password is {{password}}"
       
       
+      
+     
+     
+     
+How to read variable values from yml and json     
+     
+---
+ x: 4
+ y: 
+  - 23
+  - 24
+  - 'ansible'
+ pkgs: {'linux': 'httpd','ubuntu': 'apache2'}
+
+
+
+---
+{
+   "x": 20,
+   "y": [1,2,3,4,5],
+   "r": {"one":1,"two":2,"three":3}
+}
+
+
+---
+ - hosts: localhost
+   vars_files: 
+   - vars_values.yml
+   - vars_values.json
+   tasks:
+   - debug: var=pkgs
+
+
+
+     
+      
+      
+      
 One playbook to install any package | command line arguments  
 ____________________________________________________________
 
