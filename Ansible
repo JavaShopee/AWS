@@ -329,6 +329,39 @@ If you don't have python on managed nodes, then you can't use copy / fetch modul
 ansible data_center -m raw -a "uptime"
 ansible data_center -m raw -a "scp "   >> Copy file to Managed Node
 
+
+
+Ansible Variables
+__________________
+
+ansible all -m debug -a "var=inventory_hostname"
+ansible all -m debug -a "var=inventory_hostname_short"
+ansible all -m debug -a "var=groups.keys()"
+ansible all -m debug -a "msg={{inventory_hostname}}"
+
+[db]
+localhost
+
+[webservers]
+15.206.174.164
+
+[passwordauth]
+15.206.174.165 ansible_ssh_user=xyz ansible_ssh_pass=xyz@123                                           >> Host Wise Vars (High Priority than Group Vars)
+
+[webservers:vars]
+ansible_ssh_user=xyz 
+ansible_ssh_pass=xyz@123
+
+[passwordauth:vars]
+ansible_ssh_user=xyz 
+ansible_ssh_pass=xyz@123
+
+[all:vars]
+ansible_ssh_user=xyz 
+ansible_ssh_pass=xyz@123                                                                             >> Group Vars
+
+
+
 Simple usage of debug module | Basics to write playbooks How to print message using Playbook >> Debug Module 
 ___________________________________________________________________________________________
 
