@@ -421,6 +421,20 @@ ansible-playbook verbosity_usage.yml -vv
       msg: "With Verbosity"
       verbosity: 2
 
+---
+ - name: Play Name Goes Here
+   hosts: localhost
+   tasks:
+   - name: Task 1 Name Goes Here
+     debug:
+      msg:
+      - "Sample Line 1"
+      verbosity: 0
+   - name: Tsak 2 Name Goes Here
+     debug:
+      msg:
+      - "Sample Line 2"
+      verbosity: 2
 
 
 
