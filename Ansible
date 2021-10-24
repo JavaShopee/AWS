@@ -917,6 +917,27 @@ Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
 ignore_errors: true  
 
+
+---
+ - hosts: localhost
+   gather_facts: false 
+   become: yes
+   tasks:
+   - service: name=nginx state=started
+     ignore_errors: yes
+   - service: name=httpd state=started
+   
+
+---
+ - hosts: localhost
+   gather_facts: false 
+   become: yes
+   tasks:
+   - yum: name=httpd state=present
+     register: out
+     failed_when: out.rc==0
+   
+   
 ---
  - hosts: localhost
    gather_facts: false
