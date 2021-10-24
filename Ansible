@@ -783,7 +783,7 @@ Membership Oprs:
       
       
       
-Test Oprs : is defined,is undefined, is lower, is upper, is even, is divisiblby, is file, is directory, is file      
+Test Oprs : is defined,is undefined, is lower, is upper, is even, is odd, is divisiblby, is file, is directory, is file,is number 
 
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
