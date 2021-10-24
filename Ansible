@@ -785,6 +785,29 @@ Membership Oprs:
       
 Test Oprs : is defined,is undefined, is lower, is upper, is even, is odd, is divisiblby, is file, is directory, is file,is number 
 
+
+---
+ - hosts: localhost
+   gather_facts: false 
+   vars:
+    x: 10
+    y: 20
+   tasks:
+   - debug:
+      msg:
+      - "The value of x is {{x}}"
+      - "The value of y is {{y}}"
+     when: x > y
+     
+---
+ - hosts: localhost
+   gather_facts: yes
+   tasks:
+   - apt: name=apache2 state=present
+     when: ansible_distribution == 'Ubuntu'
+   - yum: name=httpd state=present
+     when: ansible_distribution != 'Ubuntu'
+
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
 ignore_errors: true  
