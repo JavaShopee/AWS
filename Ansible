@@ -822,7 +822,26 @@ Test Oprs : is defined,is undefined, is lower, is upper, is even, is odd, is div
       msg:
       - "the larger of {{x}} and {{y}} is {{ x if (x > y) else (y)}}"
       
-      
+---
+ - hosts: localhost
+   gather_facts: false 
+   tasks:
+   - yum: name=httpd state=present
+     register: out
+   - debug: var=out.register
+     when: out.changed==true
+
+
+---
+ - hosts: localhost
+   gather_facts: true
+   tasks:
+   - yum: name=httpd state=present
+     register: out
+     notify: start httpd
+   handlers:
+   - name: start httpd
+     service: name=httpd state=started    
       
       
 
