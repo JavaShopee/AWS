@@ -863,7 +863,22 @@ Loops:
       - Pkg_3
       - Pkg_4
       - Pkg_5
-      
+  
+  
+  
+  ---
+ - hosts: localhost
+   gather_facts: false 
+   tasks:
+   - yum: name={{item}} state=present
+     loop:
+      - Pkg_1
+      - Pkg_2
+      - Pkg_3
+      - Pkg_4
+      - Pkg_5
+
+
       
 
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
