@@ -766,6 +766,25 @@ Comparision Operators
  
 
 
+
+Membership Oprs:
+
+---
+ - hosts: localhost
+   gather_facts: false 
+   vars:
+    x: [12,22,33,44,55]
+    y: 33
+   tasks:
+   - debug:
+      msg:
+      - "y in x : {{y in x}}"
+      - "y not in x : {{y not in x}}"
+      
+      
+      
+Test Oprs : is defined,is undefined, is lower, is upper, is even, is divisiblby, is file, is directory, is file      
+
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
 ignore_errors: true  
