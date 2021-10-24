@@ -650,6 +650,29 @@ ansible localhost -m setup >> debug : var=ansible_facts
        - "ansible_python_version is {{ansible_python_version}}"
        - "ansible_system is {{ansible_system}}"
        - "ansible_user_shell is {{ansible_user_shell}}"
+       
+      
+      
+Arithemetic Operators >> Jinja Syntax
+
+---
+ - hosts: localhost
+   gather_facts: no
+   vars:
+    x: 40
+    y: 20
+   tasks: 
+   - debug:
+      msg:
+      - "The value of x is {{x}}"
+      - "The value of y is {{y}}"
+      - "The value of {{x}} + {{y}} is {{x+y}}"
+      - "The value of {{x}} - {{y}} is {{x-y}}"
+      - "The value of {{x}} * {{y}} is {{x*y}}"
+      - "The value of {{x}} / {{y}} is {{x/y}}"
+      - "The value of {{x}} % {{y}} is {{x%y}}"
+      
+       
 
 
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
