@@ -879,7 +879,39 @@ Loops:
       - Pkg_5
 
 
-      
+---
+ - hosts: localhost
+   gather_facts: false 
+   tasks:
+   - debug:
+      msg: "Executing first task"
+     tags:
+      - first
+      - common 
+   - debug:
+      msg: "Executing Second task"
+     tags:
+      - second
+   - debug:
+      msg: "Executing third task"
+     tags:
+      - third
+      - common
+   - debug:
+      msg: "Executing fourth task"
+     tags:
+      - fourth     
+   - debug:
+      msg: "Executing fifth task"
+     tags:
+      - fifth
+
+ ansible-playbook mul_tasks.yml --tags common
+ ansible-playbook mul_tasks.yml --skip-tags common
+ ansible-playbook mul_tasks.yml --list-tags
+ 
+ never tag >>  By default never execute any task
+ always tag >>  always execute that task
 
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
 ________________________________________
