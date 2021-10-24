@@ -673,6 +673,56 @@ Arithemetic Operators >> Jinja Syntax
       - "The value of {{x}} % {{y}} is {{x%y}}"
       
        
+---
+ - hosts: localhost
+   gather_facts: no
+   vars_prompt:
+    - name: x
+      prompt: Enter value of x
+      private: no
+    - name: y
+      prompt: Enter value of y
+      private: no
+   tasks: 
+   - debug:
+      msg: 
+      - "The value of x is {{x}} and type is {{x|type_debug}}"
+      - "The value of y is {{y}} and type is {{y|type_debug}}"
+      - "The value of {{x}} + {{y}} is {{x|int + y|int}}"
+      
+
+
+---
+ - hosts: localhost
+   gather_facts: no
+   vars_files:
+    - my_vars.yml
+   tasks: 
+   - debug:
+      msg: 
+      - "The value of x is {{x}} and type is {{x|type_debug}}"
+      - "The value of y is {{y}} and type is {{y|type_debug}}"
+      - "The value of {{x}} + {{y}} is {{x|int + y|int}}"
+
+
+---
+ x: 4
+ y: 10
+ 
+ 
+ 
+ansible-playbook myprompt.yml -e "x=50 y=20"
+---
+ - hosts: localhost
+   gather_facts: no
+   tasks:
+   - debug:
+      msg:
+      - "The value of x is {{x}} and type is {{x|type_debug}}"
+      - "The value of y is {{y}} and type is {{y|type_debug}}"
+      - "The value of {{x}} + {{y}} is {{x|int + y|int}}"
+
+ 
 
 
 Error handling with block rescue concepts  >> Yum and Service Modules, Command
