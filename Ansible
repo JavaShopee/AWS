@@ -822,6 +822,10 @@ Test Oprs : is defined,is undefined, is lower, is upper, is even, is odd, is div
       msg:
       - "the larger of {{x}} and {{y}} is {{ x if (x > y) else (y)}}"
       
+      
+      
+      
+Handlers :       
 ---
  - hosts: localhost
    gather_facts: false 
@@ -841,7 +845,24 @@ Test Oprs : is defined,is undefined, is lower, is upper, is even, is odd, is div
      notify: start httpd
    handlers:
    - name: start httpd
-     service: name=httpd state=started    
+     service: name=httpd state=started   
+     
+     
+     
+Loops:
+ 
+ ---
+ - hosts: localhost
+   gather_facts: false 
+   tasks:
+   - debug
+      msg: "Pkg under execution is {{item}}"
+     loop:
+      - Pkg_1
+      - Pkg_2
+      - Pkg_3
+      - Pkg_4
+      - Pkg_5
       
       
 
