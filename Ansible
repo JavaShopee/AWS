@@ -1036,6 +1036,8 @@ import_playbook import_tasks import_vars import_roles
 include.....
 
 
+Delegate to : expicitly mention on which server we want to execute the particular task even if hosts: all (used with run_once: true)
+Local_action : will run on localhost only
 
 ---
  - hosts: all
