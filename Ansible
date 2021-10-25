@@ -1036,6 +1036,37 @@ import_playbook import_tasks import_vars import_roles
 include.....
 
 
+
+---
+ - hosts: all
+   gather_facts: True
+   become: false 
+   tasks:
+   - name: 
+     shell: "uptime"
+     register: out_uptime
+   - debug:
+      msg: cc  
+   - file:
+      dest: ./discovery.csv
+      state: absent
+     delegate_to: localhost
+     run_once: true
+   - copy:
+      dest: ./discovery.csv
+      content: "ansible_system, ansible_distribution, ansible_product_version, uptime\n"
+     delegate_to: localhost
+     run_once: true
+   - lineinfile:
+      path: ./discovery.csv
+      line: "{{ansible_system}}, {{ansible_distribution}}, {{ansible_product_version}}, {{out_uptime.stdout.split(',')[0]}}"  
+     delegate_to: localhost 
+
+
+
+
+
+
 Java, Tomcat Installation and Configuration using Playbook  >> Template Module
 ________________________________________________________________
 
