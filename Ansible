@@ -1065,8 +1065,20 @@ Local_action : will run on localhost only
      delegate_to: localhost 
 
 
+Template Module
+
+Useful Command
+find . -iname index.html
 
 
+---
+ - hosts: all
+   gather_facts: false 
+   become: yes
+   tasks:
+   - yum: name=httpd state=present
+   - template: src=index.html dest=/usr/share/httpd/noindex/index.html 
+   - service: name=httpd state=started
 
 
 Java, Tomcat Installation and Configuration using Playbook  >> Template Module
