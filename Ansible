@@ -1065,7 +1065,9 @@ Local_action : will run on localhost only
      delegate_to: localhost 
 
 
-Template Module
+Template Module :is used to copy a file from ansiblle engine to Managed Nodes with some dynamic data 
+Copy Module >> For Static Files
+Template Module >> Dynamic Data (Source is j2 file jinja file)
 
 Useful Command
 find . -iname index.html
@@ -1079,6 +1081,22 @@ find . -iname index.html
    - yum: name=httpd state=present
    - template: src=index.html dest=/usr/share/httpd/noindex/index.html 
    - service: name=httpd state=started
+   
+   
+   
+   
+---
+ - hosts: localhost
+   gather_facts: no
+   tasks:
+   - ec2:
+       instance_type: t2.micro
+       image: ami-06a0b4e3b7eb7a300
+       region: ap-south-1
+      
+pip3 install boto boto3 --user
+pip3 install awscli --user       
+
 
 
 Java, Tomcat Installation and Configuration using Playbook  >> Template Module
