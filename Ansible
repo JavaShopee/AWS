@@ -1098,6 +1098,27 @@ pip3 install boto boto3 --user
 pip3 install awscli --user       
 
 
+Multi SGs
+---
+ - hosts: localhost
+   gather_facts: no
+   tasks:
+   - ec2:
+       instance_type: t2.micro
+       image: ami-06a0b4e3b7eb7a300
+       count: 1
+       region: ap-south-1
+       key_name: Test_Asus  
+       group: ['launch-wizard-3','launch-wizard-2']
+       wait: yes
+       instance_tags: 
+         Name: Test
+         Env: Dev
+       
+       
+       
+       
+       
 
 Java, Tomcat Installation and Configuration using Playbook  >> Template Module
 ________________________________________________________________
