@@ -1177,10 +1177,7 @@ ProvidePassword:
        aws_access_key: {{aws_access_key}} 
        aws_secret_key: {{aws_secret_key}}
 
-aws_keys.yml
----
- aws_access_key: "AKIA53MHQT4KFJOIKKXC" 
- aws_secret_key: "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"     
+
 
 
  ansible-vault encrypt aws_keys.yml
