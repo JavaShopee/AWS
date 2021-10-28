@@ -1090,8 +1090,8 @@ find . -iname index.html
    gather_facts: no
    tasks:
    - ec2:
-       instance_type: t2.micro
-       image: ami-06a0b4e3b7eb7a300
+       instance_type: 
+       image: 
        region: ap-south-1
       
 pip3 install boto boto3 --user
@@ -1105,7 +1105,7 @@ Multi SGs
    tasks:
    - ec2:
        instance_type: t2.micro
-       image: ami-06a0b4e3b7eb7a300
+       image: 
        count: 1
        region: ap-south-1
        key_name: Test_Asus  
@@ -1169,7 +1169,7 @@ ProvidePassword:
        count: 1
        region: ap-south-1
        key_name: 
-       group: ['launch-wizard-3']
+       group: 
        wait: yes
        instance_tags: 
          Name: Test
