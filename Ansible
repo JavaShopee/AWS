@@ -1116,9 +1116,85 @@ Multi SGs
          Env: Dev
        
        
+ ---
+ - hosts: localhost
+   gather_facts: no
+   connection: local
+   tasks:
+   - ec2:
+       instacne_id: 
+       region: ap-south-1
+       state: running
+       wait: yes
+     tags:
+      - start
+      - never
+   - ec2:
+       instacne_id: 
+       region: ap-south-1
+       state: stopped 
+       wait: yes
+       tags:
+         - stop
+         - never
+   - ec2:
+       instacne_id: 
+       region: ap-south-1
+       state: absent
+       wait: yes
+       tags:
+         - term
+         - never
+      
        
-       
-       
+ ec2_instance_facts : with for loop  
+ 
+ 
+ 
+ansible-vault encrypt myfile.yml
+EnterPassword: 
+ansible-playbook myfile.yml --ask-vault-pass
+ProvidePassword:
+   
+
+---
+ - hosts: localhost
+   gather_facts: no
+   connection: local
+   vars_file: aws_keys.yml
+   tasks:
+   - ec2:
+       instance_type: t2.micro
+       image: ami-06a0b4e3b7eb7a300
+       count: 1
+       region: ap-south-1
+       key_name: Test_Asus  
+       group: ['launch-wizard-3']
+       wait: yes
+       instance_tags: 
+         Name: Test
+         Env: Dev
+       aws_access_key: {{aws_access_key}} 
+       aws_secret_key: {{aws_secret_key}}
+
+aws_keys.yml
+---
+ aws_access_key: "AKIA53MHQT4KFJOIKKXC" 
+ aws_secret_key: "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"     
+
+
+ ansible-vault encrypt aws_keys.yml
+ ansible-playbook myfile.yml --ask-vault-pass
+ 
+ ansible-vault encrypt aws_keys.yml
+ ansible-playbook myfile.yml --ask-vault-pass
+ ansible-vault create myfile.yml
+ ansible-vault view myfile.yml
+ ansible-vault edit myfile.yml
+ ansible-vault rekey myfile.yml
+ ansible-playbook myfile.yml --vault-password-file mypass
+ same as ansible-playbook myfile.yml --vault-id mypass
+ 
 
 Java, Tomcat Installation and Configuration using Playbook  >> Template Module
 ________________________________________________________________
