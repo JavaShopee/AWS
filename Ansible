@@ -1165,10 +1165,10 @@ ProvidePassword:
    tasks:
    - ec2:
        instance_type: t2.micro
-       image: ami-06a0b4e3b7eb7a300
+       image:
        count: 1
        region: ap-south-1
-       key_name: Test_Asus  
+       key_name: 
        group: ['launch-wizard-3']
        wait: yes
        instance_tags: 
