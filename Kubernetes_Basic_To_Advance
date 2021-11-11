@@ -42,6 +42,7 @@ ETCD Management :
 Stacked ETCD :
 2 mater node >> 2 control palne >>  scheduler , controler, etcd, api server
 two etcd will communicate with each other called stacked etcd
+NOTE : Kubeadm installation followsthe stacked ETCD Model
 
 External ETCD : Remove etcd from each control plane
 Each etcd is maintained on separate server, two etcd will communicate with each other 
