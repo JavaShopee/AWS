@@ -172,6 +172,8 @@ kubectl uncordon <nodename>
 kubectl get nodes
 kubectl get pods -o wide
 
+Bare Podswill NOT Join
+
 
 Upgrading the K8s Cluster. >> Worked on K8s cluster update periodic task to keep the cluster sync with latest K8s release using kubeadm
 --------------------------
