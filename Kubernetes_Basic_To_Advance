@@ -234,6 +234,16 @@ kubectl uncordon <master-node>
 
 
 kubectl create vs kubectl apply : If the resource already exists kubectl create will give you an error
+
+kubectl describe pod <pod_name>
+kubectl get pods -o wide
+kubectl get pods -o json
+kubectl get pods -o yaml
+kubectl exec <pod name> -c <container_name> -- cat /etc/nginx/nginx.conf
+
+
+
+
 ***************************************************************************************************************************************************
 
 Role Based Access Mgt (RBAC)   > Can't provide admin access to all the individuals working in org
