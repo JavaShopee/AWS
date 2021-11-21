@@ -1,3 +1,5 @@
+Worked on managing container resources in K8s cluster
+
 Installation Steps for Minikube :
 
 1. Install Docker CE Edition    > 20.10.6
