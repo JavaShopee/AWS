@@ -13,7 +13,8 @@ minikube start
 minikube status
 minikube stop
 
-Create first deployment 
+Create first 
+
 kubectl create deployment hello-nodes --image=k8s.gcr.io/echoserver:1.4
 kubectl get deployment
 kubectl get pods
@@ -648,7 +649,7 @@ Deployment is one step higher than Replica Set, control both replica set and pod
 
 Use case : Create Deployment, Update deployment, Rolling Upgrade, Rollback, Pause/Resume Deployment
 
-Kubectl deployment status <deployment_name>
+Kubectl rollout status <deployment_name>
 Kubectl get rs
 
 apiVersion: apps/v1
