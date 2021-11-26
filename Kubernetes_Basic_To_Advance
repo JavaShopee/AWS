@@ -1,4 +1,5 @@
 Worked on managing container resources in K8s cluster
+Worked on rolling update and rollback using Kubernetes deployments
 
 Installation Steps for Minikube :
 
