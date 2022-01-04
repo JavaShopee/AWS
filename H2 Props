@@ -14,3 +14,58 @@ logging.level.org.springframework.web=INFO
 
 #spring.jpa.show-sql=true
 #pring.h2.console.settings.web-allow-others=true
+
+
+
+
+
+
+
+
+String url = "jdbc:mysql://localhost:3306/restdb";
+String password = "sachin_ql";
+String username = "root";
+	    try 
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url,username,password);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+
+List<Students> l = new ArrayList<Students>();
+		String sql = "select * from students";
+		try 
+		{
+		
+		Statement st = con.createStatement();
+		java.sql.ResultSet rs = st.executeQuery(sql);
+		while(rs.next())
+		{
+			Students s = new Students();
+			s.setName(rs.getString(1));
+			s.setRoll(rs.getInt(2));
+			
+			l.add(s);
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return l;
+
+
+PreparedStatement st = con.prepareStatement("insert into students values (?,?)");
+		st.setString(1,s.getName());
+        st.setInt(2,s.getRoll());
+		st.executeUpdate();
+
+
+PreparedStatement st = con.prepareStatement("update students set name = ? where roll = ?");
+		st.setString(1,s.getName());
+        st.setInt(2,s.getRoll());
+		st.executeUpdate();
