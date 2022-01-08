@@ -69,3 +69,40 @@ PreparedStatement st = con.prepareStatement("update students set name = ? where 
 		st.setString(1,s.getName());
         st.setInt(2,s.getRoll());
 		st.executeUpdate();
+		
+		
+		
+		
+		
+Insatll Java and set JAVA_HOME and JRE_HOME
+***************************************************
+sudo apt-get update
+sudo apt-get -y install openjdk-8-jdk openjdk-8-jre
+java -version
+printenv >>> Display env variables
+cat >> /etc/environment << EOL
+> JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+> JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+> EOL
+exit
+retstart
+printenv >> JAVA_HOME JRE_HOME shoule be there
+
+
+Insatll Jenkins 
+*************************
+https://pkg.jenkins.io/debian-stable/
+
+Upload Spring Boot ON GitHub
+https://www.youtube.com/watch?v=yZdmcMQkQRo
+
+Jenkins + GIT
+***********************
+GitHub Integrtion Plugin
+
+Jenkins + Maven
+***********************
+sudo apt-get install maven
+mvn --version
+
+/usr/share/maven
