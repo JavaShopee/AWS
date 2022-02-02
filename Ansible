@@ -2,6 +2,9 @@ https://www.youtube.com/watch?v=sGeZm__pZ9I&list=PL2qzCKTbjutIyQAe3GglWISLnLTQLG
 
 Ansible is called Agent less Architecture:  We are not going to insatll any software on remote servers to work from Ansible Engine 
 Module( like shell) will be pushed to Managed Nodes (Engine is going to push on Managed Nodes and Not Vice Versa ... So called Push Mechanism)
+Modules will be pushed to /home/ansadmin/.ansible/tmp dir on managed nodes
+ANSIBLE_KEEP_REMOTE_FILES=1 ansible all -m shell -a "uptime"
+
 idempotent : If there are changes, then and only then file will be copied, otherwise CHANGED=FALSE        COPY Module
 
 
