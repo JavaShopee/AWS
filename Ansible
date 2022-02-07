@@ -1,5 +1,9 @@
 https://www.youtube.com/watch?v=sGeZm__pZ9I&list=PL2qzCKTbjutIyQAe3GglWISLnLTQLGm7e
 
+
+Default Module is Command Module > If you don't specify any module on commnad line
+If you don't want to work with env vars like $HOME, < > | & then go for command module
+
 Ansible is called Agent less Architecture:  We are not going to insatll any software on remote servers to work from Ansible Engine 
 Module( like shell) will be pushed to Managed Nodes (Engine is going to push on Managed Nodes and Not Vice Versa ... So called Push Mechanism)
 Modules will be pushed to /home/ansadmin/.ansible/tmp dir on managed nodes
