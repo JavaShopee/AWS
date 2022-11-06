@@ -8,7 +8,7 @@ git rm --cached filename
 
 git restore --staged filename >> Unstage the file
 git checkout -- fileaneme  >> Before git add move to last commit
-git checkout -- f    >> Before git add move to last commit for entire working dir
+git checkout -f    >> Before git add move to last commit for entire working dir
 
 --------------------------------------------------------
 
