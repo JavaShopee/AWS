@@ -1,5 +1,6 @@
 git diff > Staging Area to Working Dir
 git diff --a > Staging Area to last commit
+git commit -a -m "Direct Commit for tracked files skip git add."
 
 
 
