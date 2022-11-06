@@ -6,7 +6,7 @@ git commit -a -m "Direct Commit for tracked files skip git add."
 File that is already tracked want to add to .gitignore
 git rm --cached filename
 
-git restore --staged filename
+git restore --staged filename >> Unstage the file
 git checkout -- fileaneme  >> Restore last commit 
 
 --------------------------------------------------------
