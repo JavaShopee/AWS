@@ -1,5 +1,5 @@
-git diff > Satging Area to Working Dir
-git diff --a > Satging Area to last commit
+git diff > Staging Area to Working Dir
+git diff --a > Staging Area to last commit
 
 
 
