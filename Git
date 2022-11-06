@@ -3,6 +3,9 @@ git diff --a > Staging Area to last commit
 git commit -a -m "Direct Commit for tracked files skip git add."
 
 
+============================================================
+
+
 
 git config --global user.name "Arora, Sachin"
 git config --global user.email "sacharora99@gmail.com"
