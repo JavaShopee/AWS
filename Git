@@ -1,3 +1,8 @@
+git diff > Satging Area to Working Dir
+git diff --a > Satging Area to last commit
+
+
+
 git config --global user.name "Arora, Sachin"
 git config --global user.email "sacharora99@gmail.com"
 git config --list
