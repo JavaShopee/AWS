@@ -12,6 +12,10 @@ git checkout -f    >> Before git add move to last commit for entire working dir
 
 --------------------------------------------------------
 
+Git Brancing
+
+git checkout -b develop (Create and checkout to develop branch)
+
 
 ============================================================
 
