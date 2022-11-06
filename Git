@@ -2,6 +2,10 @@ git diff > Staging Area to Working Dir
 git diff --a > Staging Area to last commit
 git commit -a -m "Direct Commit for tracked files skip git add."
 
+
+File that is already tracked want to add to .gitignore
+git rm --cached filename
+
 --------------------------------------------------------
 
 
