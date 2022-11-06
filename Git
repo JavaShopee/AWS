@@ -7,7 +7,7 @@ File that is already tracked want to add to .gitignore
 git rm --cached filename
 
 git restore --staged filename >> Unstage the file
-git checkout -- fileaneme  >> Restore last commit 
+git checkout -- fileaneme  >> Before git add move to last commit
 
 --------------------------------------------------------
 
